@@ -20,7 +20,7 @@ as I could find, no published experiment has measured both rates on the same
 record; a protocol with preregistered kill criteria for a Naghiloo-class setup
 is written up in the repository (p6/SPEC.md).
 
-Everything (code, frozen predictions, reports) is here: [REPO_URL].
+Everything (code, frozen predictions, reports) is here: https://github.com/maiconburn/recoverability-criticality.
 Two small asks, if any of this is of interest:
 1) Is `temp_tools.py` (the tomography conventions for the CSV releases)
    available? It would unlock the full-tomography version of the reanalysis.

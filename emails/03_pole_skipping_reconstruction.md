@@ -24,7 +24,7 @@ coefficients as the information proxy and constrained Pade resummation:
 By-products possibly of independent interest: the full mirror-EP trajectory
 q^2_c(lambda), and its extinction at lambda_ext = 0.1091(2) > 9/100.
 
-Code, frozen-prediction files and reports: [REPO_URL] (laptop-reproducible,
+Code, frozen-prediction files and reports: https://github.com/maiconburn/recoverability-criticality (laptop-reproducible,
 AI-assisted independent work — corrections welcome). If a cost/convergence
 layer would strengthen your program, I'd be glad if any of this is useful.
 
