@@ -1,0 +1,208 @@
+{
+  "communities": {
+    "0": [
+      "theory_validation_corpus_source_conversation_ansatz_local_rejeitada",
+      "theory_validation_corpus_source_conversation_criterio_de_previsao_cega",
+      "theory_validation_corpus_source_conversation_escolha_do_benchmark_gauss_bonnet",
+      "theory_validation_corpus_source_conversation_escolha_do_benchmark_qbtz",
+      "theory_validation_corpus_source_conversation_grozdanov_lemut_pedraza_2023",
+      "theory_validation_corpus_source_conversation_lu_ran_wu_2026",
+      "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "theory_validation_corpus_source_conversation_pole_skipping",
+      "theory_validation_corpus_source_conversation_qbtz",
+      "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "theory_validation_corpus_source_conversation_reconstrucao_por_informacao_mutua_condicional",
+      "theory_validation_corpus_source_conversation_resultado_cego_qbtz"
+    ],
+    "1": [
+      "theory_validation_corpus_source_conversation_bifurcacao_de_qes",
+      "theory_validation_corpus_source_conversation_black_brane_einstein_gauss_bonnet_5d",
+      "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "theory_validation_corpus_source_conversation_continuacao_de_pade",
+      "theory_validation_corpus_source_conversation_distancia_analitica_unica_rejeitada",
+      "theory_validation_corpus_source_conversation_geometria_das_singularidades_complexas",
+      "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "theory_validation_corpus_source_conversation_lei_de_complexidade_critica",
+      "theory_validation_corpus_source_conversation_ponto_excepcional",
+      "theory_validation_corpus_source_conversation_profundidade_informacional",
+      "theory_validation_corpus_source_conversation_resultado_cego_gauss_bonnet",
+      "theory_validation_corpus_source_conversation_teorema_de_stahl"
+    ],
+    "2": [
+      "theory_validation_corpus_source_conversation_casini_relative_entropy_bound",
+      "theory_validation_corpus_source_conversation_correspondencia_jlms",
+      "theory_validation_corpus_source_conversation_cruzamento_compton_schwarzschild",
+      "theory_validation_corpus_source_conversation_entropia_de_area_de_buraco_negro",
+      "theory_validation_corpus_source_conversation_entropia_relativa_quantica",
+      "theory_validation_corpus_source_conversation_escala_de_planck",
+      "theory_validation_corpus_source_conversation_limite_de_bekenstein",
+      "theory_validation_corpus_source_conversation_onset_de_recoverability",
+      "theory_validation_corpus_source_conversation_principio_holografico",
+      "theory_validation_corpus_source_conversation_reconstrucao_do_entanglement_wedge",
+      "theory_validation_corpus_source_conversation_saturacao_informacional"
+    ],
+    "3": [
+      "theory_validation_corpus_source_conversation_engelhardt_wall_qes",
+      "theory_validation_corpus_source_conversation_entropia_de_wald",
+      "theory_validation_corpus_source_conversation_entropia_generalizada",
+      "theory_validation_corpus_source_conversation_regra_universal_n_alpha_rejeitada",
+      "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "theory_validation_corpus_source_conversation_susceptibilidade_geometrica",
+      "theory_validation_corpus_source_conversation_transicao_de_page",
+      "theory_validation_corpus_source_conversation_troca_de_dominancia_de_page"
+    ],
+    "4": [
+      "theory_validation_corpus_source_conversation_coarse_graining",
+      "theory_validation_corpus_source_conversation_escala_como_coordenada_de_rg",
+      "theory_validation_corpus_source_conversation_espaco_de_estados_quanticos",
+      "theory_validation_corpus_source_conversation_espaco_tempo_como_projecao_quantica",
+      "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "theory_validation_corpus_source_conversation_kernel_multiescala_de_correlacoes",
+      "theory_validation_corpus_source_conversation_recoverability"
+    ],
+    "5": [
+      "theory_validation_corpus_source_conversation_compacidade",
+      "theory_validation_corpus_source_conversation_curvatura_do_espaco_tempo",
+      "theory_validation_corpus_source_conversation_equilibrio_de_emaranhamento",
+      "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "theory_validation_corpus_source_conversation_gravidade_termodinamica_de_jacobson",
+      "theory_validation_corpus_source_conversation_limite_de_fusao_no_ferro",
+      "theory_validation_corpus_source_conversation_raio_de_schwarzschild"
+    ],
+    "6": [
+      "theory_validation_corpus_source_conversation_consequencias_de_eletrons_extras",
+      "theory_validation_corpus_source_conversation_conservacao_da_carga",
+      "theory_validation_corpus_source_conversation_eletron_extra_por_atomo",
+      "theory_validation_corpus_source_conversation_explosao_coulombiana"
+    ]
+  },
+  "cohesion": {
+    "0": 0.22727272727272727,
+    "1": 0.19696969696969696,
+    "2": 0.18181818181818182,
+    "3": 0.2857142857142857,
+    "4": 0.38095238095238093,
+    "5": 0.2857142857142857,
+    "6": 0.5
+  },
+  "gods": [
+    {
+      "id": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "label": "Reconstrução espectral cega",
+      "degree": 7
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "label": "Geometria de Recoverability",
+      "degree": 6
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "label": "Formação de buraco negro",
+      "degree": 5
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_qbtz",
+      "label": "Quantum BTZ",
+      "degree": 5
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_pole_skipping",
+      "label": "Pole-skipping",
+      "degree": 5
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "label": "Modos quasinormais",
+      "degree": 5
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "label": "Superfície extremal quântica",
+      "degree": 4
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_recoverability",
+      "label": "Recoverability",
+      "degree": 4
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "label": "Complexidade espectral operacional",
+      "degree": 4
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "label": "Kernel de sensibilidade do observável",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Geometria de Recoverability",
+      "target": "Formação de buraco negro",
+      "source_files": [
+        "source-conversation.md",
+        "source-conversation.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "note": "Bridges community 5 → community 4"
+    },
+    {
+      "source": "Entropia relativa quântica",
+      "target": "Recoverability",
+      "source_files": [
+        "source-conversation.md",
+        "source-conversation.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "note": "Bridges community 2 → community 4"
+    },
+    {
+      "source": "Bifurcação de QES",
+      "target": "Superfície extremal quântica",
+      "source_files": [
+        "source-conversation.md",
+        "source-conversation.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "note": "Bridges community 3 → community 1"
+    },
+    {
+      "source": "Black brane Einstein-Gauss-Bonnet 5D",
+      "target": "Pole-skipping",
+      "source_files": [
+        "source-conversation.md",
+        "source-conversation.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "note": "Bridges community 0 → community 1"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `Ponto excepcional` connect `Community 1` to `Community 0`?",
+      "why": "High betweenness centrality (0.123) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Modos quasinormais` connect `Community 0` to `Community 1`?",
+      "why": "High betweenness centrality (0.106) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Bifurcação de QES` connect `Community 1` to `Community 3`?",
+      "why": "High betweenness centrality (0.104) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Consequências de elétrons extras`, `Explosão coulombiana`, `Conservação da carga elétrica` to the rest of the system?",
+      "why": "22 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

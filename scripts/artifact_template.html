@@ -1,0 +1,409 @@
+<title>Lei de Complexidade Crítica</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #f8f8fb;
+    --surface: #ffffff;
+    --ink: #20242f;
+    --muted: #5d6472;
+    --faint: #8b91a0;
+    --line: #e2e4ee;
+    --accent: #4f46e5;
+    --accent-soft: #edecfc;
+    --warm: #c76a05;
+    --warm-soft: #fdf2e3;
+    --good: #14764a;
+    --good-soft: #e5f4ec;
+    --card-shadow: 0 1px 2px rgba(32, 36, 47, 0.06);
+  }
+  :root:not([data-theme="light"]) { }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14161d;
+      --surface: #1c1f2a;
+      --ink: #e8eaf2;
+      --muted: #a3a9ba;
+      --faint: #767d8f;
+      --line: #2b2f3d;
+      --accent: #8f88f2;
+      --accent-soft: #262447;
+      --warm: #f0a63a;
+      --warm-soft: #33260f;
+      --good: #4cc38a;
+      --good-soft: #10291d;
+      --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14161d;
+    --surface: #1c1f2a;
+    --ink: #e8eaf2;
+    --muted: #a3a9ba;
+    --faint: #767d8f;
+    --line: #2b2f3d;
+    --accent: #8f88f2;
+    --accent-soft: #262447;
+    --warm: #f0a63a;
+    --warm-soft: #33260f;
+    --good: #4cc38a;
+    --good-soft: #10291d;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Spectral", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 4rem 1.4rem 5rem;
+  }
+  .mono {
+    font-family: "IBM Plex Mono", "SF Mono", Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+  }
+  h1 {
+    font-size: clamp(2.1rem, 5.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.1rem;
+    text-wrap: balance;
+  }
+  .lede {
+    font-size: 1.14rem;
+    font-weight: 300;
+    color: var(--muted);
+    margin: 0 0 2.4rem;
+    text-wrap: balance;
+  }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  h2 {
+    font-size: 1.45rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 3.2rem 0 0.9rem;
+    text-wrap: balance;
+  }
+  h2 .tag {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  p { margin: 0 0 1.05rem; }
+  em { font-style: italic; }
+  sub, sup { line-height: 0; }
+
+  .verdict-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+    gap: 0.7rem;
+    margin: 0 0 1rem;
+  }
+  .verdict {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.85rem 0.95rem;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .verdict .which {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+  }
+  .verdict .value {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .verdict .expected { font-size: 0.82rem; color: var(--muted); }
+  .chip {
+    align-self: flex-start;
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 0.14rem 0.5rem;
+    border-radius: 99px;
+    background: var(--good-soft);
+    color: var(--good);
+  }
+
+  .frozen {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 1.1rem 1.25rem;
+    margin: 1.6rem 0;
+    font-size: 0.98rem;
+  }
+  .frozen .label {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .frozen ul { margin: 0; padding-left: 1.1rem; }
+  .frozen li { margin-bottom: 0.3rem; }
+
+  .callout-warm {
+    background: var(--warm-soft);
+    border-left: 3px solid var(--warm);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1.4rem 0;
+    font-size: 0.97rem;
+  }
+
+  figure {
+    margin: 1.8rem 0 2rem;
+  }
+  figure .frame {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.8rem;
+    box-shadow: var(--card-shadow);
+  }
+  figure img { display: block; width: 100%; height: auto; border-radius: 4px; }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    margin-top: 0.65rem;
+    line-height: 1.5;
+  }
+  figcaption b { color: var(--ink); }
+
+  .num-table-wrap { overflow-x: auto; margin: 1.4rem 0; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  th {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--faint);
+    text-align: left;
+    padding: 0.45rem 0.8rem 0.45rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  td {
+    padding: 0.5rem 0.8rem 0.5rem 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+  }
+  td.n { font-family: "IBM Plex Mono", Menlo, monospace; font-variant-numeric: tabular-nums; color: var(--ink); }
+  tr:last-child td { border-bottom: none; }
+
+  .eq {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.92rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin: 1.1rem 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    color: var(--ink);
+  }
+  .ep-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 1.1rem 1.3rem;
+    margin: 1.4rem 0;
+  }
+  .ep-card div { min-width: 130px; }
+  .ep-card .k {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 0.2rem;
+  }
+  .ep-card .v {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--warm);
+  }
+  code {
+    font-family: "IBM Plex Mono", Menlo, monospace;
+    font-size: 0.85em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.08em 0.35em;
+  }
+  pre {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; border: none; padding: 0; }
+  .footer {
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--faint);
+  }
+  a { color: var(--accent); }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">Validação pré-registrada · EGB λ<sub>GB</sub> = 0.08 · 2026-08-28</p>
+  <h1>Lei de Complexidade Crítica</h1>
+  <p class="lede">No turno 112 da conversa, a teoria congelou três previsões sobre o custo de reconstruir um buraco negro perto de um ponto excepcional — antes de qualquer cálculo. O teste numérico completo saiu. <strong>As três formas estruturais confirmadas; o número congelado de 1.47 níveis/década foi medido em 1.45&nbsp;±&nbsp;0.02.</strong></p>
+
+  <div class="verdict-strip">
+    <div class="verdict">
+      <span class="which">P1 · amplificação 1/√d</span>
+      <span class="value">γ = 0.498 ± 0.062</span>
+      <span class="expected">previsto 0.5</span>
+      <span class="chip">CONFIRMADA</span>
+    </div>
+    <div class="verdict">
+      <span class="which">P2 · taxa ÷2 no EP</span>
+      <span class="value">2α<sub>EP</sub>/α<sub>ρ</sub> = 1.03 ± 0.22</span>
+      <span class="expected">previsto 1</span>
+      <span class="chip">CONFIRMADA</span>
+    </div>
+    <div class="verdict">
+      <span class="which">P3 · custo ∝ ln(1/d)</span>
+      <span class="value">reta, R² = 0.9995</span>
+      <span class="expected">5 pontos, 2 décadas</span>
+      <span class="chip">CONFIRMADA</span>
+    </div>
+    <div class="verdict">
+      <span class="which">P4 · níveis por década</span>
+      <span class="value">1.450 ± 0.019</span>
+      <span class="expected">congelado: ≈1.47</span>
+      <span class="chip">CONFIRMADA</span>
+    </div>
+  </div>
+
+  <div class="frozen">
+    <span class="label">O que estava congelado (turno 112)</span>
+    Para reconstrução geométrica com erro ε<sub>g</sub>(N) ~ e<sup>−αN</sup>, a previsão era:
+    <ul>
+      <li><b>P1</b> — fora do EP: ε<sub>ω</sub>(N,d) ∝ e<sup>−αN</sup>/√d</li>
+      <li><b>P2</b> — no EP: ε<sub>ω</sub>(N,0) ∝ e<sup>−αN/2</sup> (expoente cai pela metade)</li>
+      <li><b>P3</b> — complexidade: N<sub>ε</sub>(d) = A + (1/2α)·ln(1/d)</li>
+      <li><b>P4</b> — “cada década mais perto do EP exige ≈1.47 níveis extras”</li>
+    </ul>
+  </div>
+
+  <h2><span class="tag">§1</span>O ponto excepcional que existe de verdade</h2>
+  <p>O candidato natural — colisão do modo fundamental ω₀ com o primeiro overtone ω₁ — <em>não existe a distância finita</em>: varrendo o plano complexo de q², o gap entre eles só decai assintoticamente (~|q|<sup>−1/3</sup>). O EP real do benchmark é outro: a colisão do fundamental com seu <b>parceiro espelho</b> (ω → −ω̄) em momento espacial, a transição propagante → sobreamortecido. A simetria prende o EP ao eixo real de q² e faz de ρ = ((ω₁−ω₂)/2)² uma função real com zero simples — um EP de segunda ordem genuíno.</p>
+  <div class="ep-card">
+    <div><div class="k">q²<sub>c</sub></div><div class="v">−16.147205102</div></div>
+    <div><div class="k">ω<sub>c</sub></div><div class="v">−5.6738278 i</div></div>
+    <div><div class="k">gap residual</div><div class="v">4 × 10⁻⁶</div></div>
+  </div>
+  <p>O obstáculo que teria matado o teste: a colocação de Chebyshev tem número de condição de autovalor ~10¹⁰ nessa região — piso de ruído ~10⁻² em precisão dupla. A validação usa um solver de <em>shooting</em> (série de Frobenius no horizonte, QNM = zero do Wronskiano W(ω) = z⁵ψ′), com pares quase degenerados extraídos por modelo quadrático local de W — condicionamento <em>linear</em> no ruído, não √. Precisão: ~10⁻⁹ longe do EP, ~10⁻⁵ no EP. Validação externa: o fundamental de AdS₅ reproduz o valor de literatura 3.119452 − 2.746676i a 10⁻⁸.</p>
+
+  <h2><span class="tag">§2</span>Cada canal tem sua taxa</h2>
+  <p>13 geometrias de Padé admissíveis (N = 2..15 coeficientes near-horizon; N = 13 e 16 rejeitadas por polo físico). A decomposição exata ω± = μ ± √ρ separa o erro em <b>canal regular</b> |μ<sub>N</sub> − μ| e <b>canal crítico</b> |√ρ<sub>N</sub> − √ρ| — e cada um converge exponencialmente com taxa própria:</p>
+  <figure>
+    <div class="frame"><img src="{{FIG1}}" alt="Convergência exponencial da métrica, do canal crítico e da posição do EP"></div>
+    <figcaption><b>Fig. 1</b> — métrica em norma sup (α = 0.57), perturbação do canal crítico δρ<sub>N</sub> (α = 0.85) e deslocamento do EP (α = 0.85). A versão “um α universal” já tinha morrido no turno 110; é a taxa <em>do canal</em> que entra nas previsões — exatamente o refinamento do kernel de sensibilidade K<sub>𝒪</sub>.</figcaption>
+  </figure>
+
+  <h2><span class="tag">§3</span>P1 — a amplificação 1/√d</h2>
+  <p>O canal crítico cresce ao se aproximar do EP com expoente livre ajustado em</p>
+  <div class="eq">γ = 0.498 ± 0.062&nbsp;&nbsp;&nbsp;(previsto: 0.5)</div>
+  <p>enquanto o canal regular fica plano — os dois componentes que a própria teoria previu (o platô é a lei refinada κ<sub>𝒪</sub>·e<sup>−2Ng<sub>𝒪</sub></sup> do turno 110).</p>
+  <figure>
+    <div class="frame"><img src="{{FIG3}}" alt="Canal crítico crescendo como d^-1/2, canal regular plano"></div>
+    <figcaption><b>Fig. 2</b> — erro por canal vs d. Círculos: canal crítico, com a inclinação −1/2 prevista (tracejado). Quadrados pontilhados: canal regular, plano. Em d ≳ 10⁻², domina o termo δa·d (diferença de inclinação de ρ) — o “V” esperado.</figcaption>
+  </figure>
+
+  <h2><span class="tag">§4</span>P2 — a taxa cai exatamente pela metade no EP</h2>
+  <p>Longe do EP o erro espectral decai com a taxa do canal; no EP, com a metade:</p>
+  <div class="eq">α<sub>ρ</sub> = 0.851 ± 0.130&nbsp;&nbsp;·&nbsp;&nbsp;α<sub>EP</sub> = 0.438 ± 0.068&nbsp;&nbsp;·&nbsp;&nbsp;2α<sub>EP</sub>/α<sub>ρ</sub> = 1.03 ± 0.22</div>
+  <p>E a forma mais forte do resultado — a estrutura de raiz quadrada com <b>coeficiente unitário</b>, ponto a ponto, sobre ~5 décadas de δρ:</p>
+  <div class="eq">ε<sub>ω</sub>(N, 0) / √δρ<sub>N</sub> = 1.03 ± 0.09&nbsp;&nbsp;&nbsp;para todos os N = 4..15</div>
+  <figure>
+    <div class="frame"><img src="{{FIG2}}" alt="Erro no EP decai com metade da taxa; curva no EP coincide com sqrt(delta rho)"></div>
+    <figcaption><b>Fig. 3</b> — ε(N) longe do EP (azul) vs no EP (laranja). A curva laranja <em>cavalga exatamente</em> sobre √δρ<sub>N</sub> (pontilhado). As oscilações de Padé (N = 7, 10 bons; N = 8 ruim) são correlacionadas entre as curvas — como devem ser.</figcaption>
+  </figure>
+  <div class="callout-warm">
+    <b>Contraste interno previsto:</b> a <em>posição</em> do EP converge na taxa cheia (α = 0.848 ≈ α<sub>ρ</sub>), enquanto o <em>espectro no EP</em> converge na metade. Função suave da geometria vs observável √-sensível — a assinatura limpa de um EP de segunda ordem.
+  </div>
+
+  <h2><span class="tag">§5</span>O colapso universal</h2>
+  <p>Indo além do pré-registrado: o modelo do turno 112 implica uma forma fechada. Reescalando cada ponto por δρ<sub>N</sub>, todo o dataset (N, d) deve cair na curva <em>sem parâmetros livres</em> g(u) = √(u+1) − √u:</p>
+  <figure>
+    <div class="frame"><img src="{{FIG4}}" alt="Colapso de todos os dados na curva universal sem parâmetros livres"></div>
+    <figcaption><b>Fig. 4</b> — colapso do canal crítico: 11 valores de N × 8 distâncias sobre 4 décadas de u, na curva prevista (laranja). Desvios só em u ≳ 10³, onde o ramo δa·d assume — como esperado.</figcaption>
+  </figure>
+
+  <h2><span class="tag">§6</span>P3 e P4 — o preço em níveis de informação</h2>
+  <p>Regressão do canal crítico por distância dá o N* necessário para precisão 10⁻⁵ em cada d. Cinco pontos, uma reta (R² = 0.9995):</p>
+  <div class="eq">ΔN por década = 1.450 ± 0.019&nbsp;&nbsp;&nbsp;(congelado: ≈1.47 · de α<sub>ρ</sub> medido: 1.35)</div>
+  <figure>
+    <div class="frame"><img src="{{FIG5}}" alt="Níveis necessários crescem linearmente com décadas de aproximação"></div>
+    <figcaption><b>Fig. 5</b> — N*(d) vs décadas de aproximação. O crescimento logarítmico (P3) é a parte estrutural; o coeficiente medido saiu a 1.4% do número congelado no turno 112.</figcaption>
+  </figure>
+
+  <h2><span class="tag">§7</span>Limitações honestas</h2>
+  <p>Um único benchmark (EGB λ = 0.08) e um único EP; oscilações de Padé correlacionadas limitam o R² dos fits de taxa (~0.83); piso numérico ~10⁻⁵ no EP deixa os pontos de N = 14, 15 a fator ~3 do pior caso de robustez (taxas não mudam ao excluí-los); N<sub>ε</sub> como staircase literal é grosseiro — a medida quantitativa é a regressão contínua. Extensão natural: qBTZ e EPs em q² complexo.</p>
+
+  <h2><span class="tag">§8</span>Reprodução</h2>
+  <pre><code>cd theory-validation
+uv run pytest                              # 13 testes
+uv run python scripts/run_validation.py    # ~6 min, retoma se interrompido
+uv run python scripts/analyze_validation.py</code></pre>
+  <p>Saídas: <code>results/validation.json</code> (pares completos), <code>results/fits.json</code> (todos os fits), <code>results/figures/</code>. O grafo da teoria (<code>graphify-out/graph.json</code>) agora liga o nó-veredito a “Lei de complexidade crítica”, “Ponto excepcional” e “Complexidade espectral operacional”.</p>
+
+  <div class="footer">
+    Benchmark: black brane Einstein–Gauss–Bonnet 5D, λ<sub>GB</sub> = 0.08, escalar sem massa, unidades de raio de horizonte, normalização de tempo de boundary. Protocolo pré-registrado no turno 112 da conversa original; código em <code>~/fisica/theory-validation</code>.
+  </div>
+</div>

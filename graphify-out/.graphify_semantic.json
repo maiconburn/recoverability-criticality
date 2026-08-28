@@ -1,0 +1,1423 @@
+{
+  "nodes": [
+    {
+      "id": "theory_validation_corpus_source_conversation_consequencias_de_eletrons_extras",
+      "label": "Consequências de elétrons extras",
+      "file_type": "document",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "lines 1-15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_eletron_extra_por_atomo",
+      "label": "Elétron extra por átomo",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 001-002",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_explosao_coulombiana",
+      "label": "Explosão coulombiana",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 002",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_conservacao_da_carga",
+      "label": "Conservação da carga elétrica",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 002",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_limite_de_fusao_no_ferro",
+      "label": "Limite de fusão estelar no ferro",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 006",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "label": "Formação de buraco negro",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 008-020",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_raio_de_schwarzschild",
+      "label": "Raio de Schwarzschild",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 014-020",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_compacidade",
+      "label": "Compacidade",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 016-022",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_curvatura_do_espaco_tempo",
+      "label": "Curvatura do espaço-tempo",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 008-012",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_escala_de_planck",
+      "label": "Escala de Planck",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 024-036",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_cruzamento_compton_schwarzschild",
+      "label": "Cruzamento Compton-Schwarzschild",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 032-038",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_saturacao_informacional",
+      "label": "Saturação informacional",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 038-042",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_limite_de_bekenstein",
+      "label": "Limite de Bekenstein",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 038-042",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_entropia_de_area_de_buraco_negro",
+      "label": "Entropia de área de buraco negro",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 038-042",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_principio_holografico",
+      "label": "Princípio holográfico",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 038",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_gravidade_termodinamica_de_jacobson",
+      "label": "Gravidade termodinâmica de Jacobson",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 038 and 070",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_equilibrio_de_emaranhamento",
+      "label": "Equilíbrio de emaranhamento",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 042 and 070",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_entropia_relativa_quantica",
+      "label": "Entropia relativa quântica",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 042 and 070-074",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_correspondencia_jlms",
+      "label": "Correspondência JLMS",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 070-074",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_entropia_generalizada",
+      "label": "Entropia generalizada",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 062-074",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "label": "Superfície extremal quântica",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 062-096",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_transicao_de_page",
+      "label": "Transição de Page",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 064-096",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_recoverability",
+      "label": "Recoverability",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 070-100",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_coarse_graining",
+      "label": "Coarse-graining",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 070-100",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "label": "Geometria de Recoverability",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_espaco_de_estados_quanticos",
+      "label": "Espaço de estados quânticos",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 062, 098 and 100",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_espaco_tempo_como_projecao_quantica",
+      "label": "Espaço-tempo como projeção quântica",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 098-100",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_escala_como_coordenada_de_rg",
+      "label": "Escala como coordenada de RG",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 050-054 and 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_kernel_multiescala_de_correlacoes",
+      "label": "Kernel multiescala de correlações",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_qbtz",
+      "label": "Quantum BTZ",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 078-106",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_reconstrucao_por_informacao_mutua_condicional",
+      "label": "Reconstrução por informação mútua condicional",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 078-082",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_pole_skipping",
+      "label": "Pole-skipping",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 086-112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "label": "Modos quasinormais",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 080-112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "label": "Reconstrução espectral cega",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 098-106",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_black_brane_einstein_gauss_bonnet_5d",
+      "label": "Black brane Einstein-Gauss-Bonnet 5D",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_continuacao_de_pade",
+      "label": "Continuação de Padé",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-110",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_teorema_de_stahl",
+      "label": "Teorema de Stahl",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 108-110",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_geometria_das_singularidades_complexas",
+      "label": "Geometria das singularidades complexas",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-110",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "label": "Complexidade espectral operacional",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 102-112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "label": "Kernel de sensibilidade do observável",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 110",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_profundidade_informacional",
+      "label": "Profundidade informacional",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 110-112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_ponto_excepcional",
+      "label": "Ponto excepcional",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 090-112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_lei_de_complexidade_critica",
+      "label": "Lei de complexidade crítica",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 112",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_ansatz_local_rejeitada",
+      "label": "Ansatz local f = F(J) rejeitada",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 080 and 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_regra_universal_n_alpha_rejeitada",
+      "label": "Regra universal N alpha = C rejeitada",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 066-070 and 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_distancia_analitica_unica_rejeitada",
+      "label": "Distância analítica única rejeitada",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 110",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_lu_ran_wu_2026",
+      "label": "Lu-Ran-Wu 2026 pole-skipping reconstruction",
+      "file_type": "paper",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 102-110",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_grozdanov_lemut_pedraza_2023",
+      "label": "Grozdanov-Lemut-Pedraza 2023 reconstruction",
+      "file_type": "paper",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 106",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_engelhardt_wall_qes",
+      "label": "Engelhardt-Wall QES formalism",
+      "file_type": "paper",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 062-070",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_casini_relative_entropy_bound",
+      "label": "Casini relative-entropy formulation of the Bekenstein bound",
+      "file_type": "paper",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 042 and 070",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_entropia_de_wald",
+      "label": "Entropia de Wald",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 060-068",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_susceptibilidade_geometrica",
+      "label": "Susceptibilidade geométrica",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 062",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_reconstrucao_do_entanglement_wedge",
+      "label": "Reconstrução do entanglement wedge",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 070-098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_resultado_cego_qbtz",
+      "label": "Resultado cego em qBTZ",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 102",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_resultado_cego_gauss_bonnet",
+      "label": "Resultado cego em Gauss-Bonnet",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-106",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_bifurcacao_de_qes",
+      "label": "Bifurcação de QES",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 094-098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_onset_de_recoverability",
+      "label": "Onset de recoverability",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 096-098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_troca_de_dominancia_de_page",
+      "label": "Troca de dominância de Page",
+      "file_type": "concept",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 094-098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_criterio_de_previsao_cega",
+      "label": "Critério de previsão cega",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_escolha_do_benchmark_qbtz",
+      "label": "Escolha do benchmark qBTZ",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 078 and 098",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theory_validation_corpus_source_conversation_escolha_do_benchmark_gauss_bonnet",
+      "label": "Escolha do benchmark Gauss-Bonnet",
+      "file_type": "rationale",
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 104",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "theory_validation_corpus_source_conversation_consequencias_de_eletrons_extras",
+      "target": "theory_validation_corpus_source_conversation_eletron_extra_por_atomo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 001-002",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_eletron_extra_por_atomo",
+      "target": "theory_validation_corpus_source_conversation_explosao_coulombiana",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 002",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_eletron_extra_por_atomo",
+      "target": "theory_validation_corpus_source_conversation_conservacao_da_carga",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 002",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_limite_de_fusao_no_ferro",
+      "target": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 006",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "target": "theory_validation_corpus_source_conversation_raio_de_schwarzschild",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 014-020",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_compacidade",
+      "target": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 016-022",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "target": "theory_validation_corpus_source_conversation_curvatura_do_espaco_tempo",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 008-012",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_escala_de_planck",
+      "target": "theory_validation_corpus_source_conversation_cruzamento_compton_schwarzschild",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 032-038",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_cruzamento_compton_schwarzschild",
+      "target": "theory_validation_corpus_source_conversation_saturacao_informacional",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 036-038",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_saturacao_informacional",
+      "target": "theory_validation_corpus_source_conversation_limite_de_bekenstein",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 038",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_limite_de_bekenstein",
+      "target": "theory_validation_corpus_source_conversation_entropia_de_area_de_buraco_negro",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 038-042",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_entropia_de_area_de_buraco_negro",
+      "target": "theory_validation_corpus_source_conversation_principio_holografico",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 038",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_gravidade_termodinamica_de_jacobson",
+      "target": "theory_validation_corpus_source_conversation_curvatura_do_espaco_tempo",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 038",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_equilibrio_de_emaranhamento",
+      "target": "theory_validation_corpus_source_conversation_gravidade_termodinamica_de_jacobson",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 042 and 070",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_casini_relative_entropy_bound",
+      "target": "theory_validation_corpus_source_conversation_entropia_relativa_quantica",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 042 and 070",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_casini_relative_entropy_bound",
+      "target": "theory_validation_corpus_source_conversation_limite_de_bekenstein",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 042 and 070",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_correspondencia_jlms",
+      "target": "theory_validation_corpus_source_conversation_entropia_relativa_quantica",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 070",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_correspondencia_jlms",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_do_entanglement_wedge",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 070-074",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_engelhardt_wall_qes",
+      "target": "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 062-070",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "target": "theory_validation_corpus_source_conversation_entropia_generalizada",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 062-074",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_transicao_de_page",
+      "target": "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 064-096",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_transicao_de_page",
+      "target": "theory_validation_corpus_source_conversation_entropia_generalizada",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 064-096",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_entropia_relativa_quantica",
+      "target": "theory_validation_corpus_source_conversation_recoverability",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 070-098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_coarse_graining",
+      "target": "theory_validation_corpus_source_conversation_recoverability",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_recoverability",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_coarse_graining",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_kernel_multiescala_de_correlacoes",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_espaco_tempo_como_projecao_quantica",
+      "target": "theory_validation_corpus_source_conversation_espaco_de_estados_quanticos",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 098-100",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_espaco_tempo_como_projecao_quantica",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_escala_como_coordenada_de_rg",
+      "target": "theory_validation_corpus_source_conversation_coarse_graining",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_escala_como_coordenada_de_rg",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_formacao_de_buraco_negro",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_reconstrucao_do_entanglement_wedge",
+      "target": "theory_validation_corpus_source_conversation_recoverability",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_entropia_de_wald",
+      "target": "theory_validation_corpus_source_conversation_entropia_generalizada",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 060-068",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_entropia_de_wald",
+      "target": "theory_validation_corpus_source_conversation_susceptibilidade_geometrica",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 062",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_regra_universal_n_alpha_rejeitada",
+      "target": "theory_validation_corpus_source_conversation_entropia_de_wald",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 066-070 and 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_escolha_do_benchmark_qbtz",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 078 and 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_qbtz",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_por_informacao_mutua_condicional",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 078-082",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_qbtz",
+      "target": "theory_validation_corpus_source_conversation_pole_skipping",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 086-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_qbtz",
+      "target": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 080-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_ansatz_local_rejeitada",
+      "target": "theory_validation_corpus_source_conversation_qbtz",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 080 and 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_resultado_cego_qbtz",
+      "target": "theory_validation_corpus_source_conversation_qbtz",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 102",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_resultado_cego_qbtz",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 102",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "target": "theory_validation_corpus_source_conversation_pole_skipping",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 102-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "target": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 102-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_criterio_de_previsao_cega",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_lu_ran_wu_2026",
+      "target": "theory_validation_corpus_source_conversation_pole_skipping",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 102-110",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_lu_ran_wu_2026",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 102-110",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_grozdanov_lemut_pedraza_2023",
+      "target": "theory_validation_corpus_source_conversation_pole_skipping",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_grozdanov_lemut_pedraza_2023",
+      "target": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_escolha_do_benchmark_gauss_bonnet",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 104",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_black_brane_einstein_gauss_bonnet_5d",
+      "target": "theory_validation_corpus_source_conversation_pole_skipping",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_black_brane_einstein_gauss_bonnet_5d",
+      "target": "theory_validation_corpus_source_conversation_continuacao_de_pade",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_resultado_cego_gauss_bonnet",
+      "target": "theory_validation_corpus_source_conversation_black_brane_einstein_gauss_bonnet_5d",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_resultado_cego_gauss_bonnet",
+      "target": "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 104-106",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_continuacao_de_pade",
+      "target": "theory_validation_corpus_source_conversation_teorema_de_stahl",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 108",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_teorema_de_stahl",
+      "target": "theory_validation_corpus_source_conversation_geometria_das_singularidades_complexas",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 108",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_geometria_das_singularidades_complexas",
+      "target": "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 108",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "target": "theory_validation_corpus_source_conversation_profundidade_informacional",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 110",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "target": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 110",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "target": "theory_validation_corpus_source_conversation_profundidade_informacional",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 110",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_distancia_analitica_unica_rejeitada",
+      "target": "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 110",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_ponto_excepcional",
+      "target": "theory_validation_corpus_source_conversation_modos_quasinormais",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 090-112",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_ponto_excepcional",
+      "target": "theory_validation_corpus_source_conversation_kernel_de_sensibilidade_do_observavel",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 110-112",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_lei_de_complexidade_critica",
+      "target": "theory_validation_corpus_source_conversation_ponto_excepcional",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 112",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_lei_de_complexidade_critica",
+      "target": "theory_validation_corpus_source_conversation_complexidade_espectral_operacional",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turn 112",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_bifurcacao_de_qes",
+      "target": "theory_validation_corpus_source_conversation_superficie_extremal_quantica",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 094-098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_bifurcacao_de_qes",
+      "target": "theory_validation_corpus_source_conversation_ponto_excepcional",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 094-098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_onset_de_recoverability",
+      "target": "theory_validation_corpus_source_conversation_reconstrucao_do_entanglement_wedge",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 096-098",
+      "weight": 1.0
+    },
+    {
+      "source": "theory_validation_corpus_source_conversation_troca_de_dominancia_de_page",
+      "target": "theory_validation_corpus_source_conversation_transicao_de_page",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md",
+      "source_location": "turns 094-098",
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "information_geometry_bridge",
+      "label": "Information-geometry bridge",
+      "nodes": [
+        "theory_validation_corpus_source_conversation_limite_de_bekenstein",
+        "theory_validation_corpus_source_conversation_entropia_relativa_quantica",
+        "theory_validation_corpus_source_conversation_gravidade_termodinamica_de_jacobson",
+        "theory_validation_corpus_source_conversation_correspondencia_jlms",
+        "theory_validation_corpus_source_conversation_reconstrucao_do_entanglement_wedge"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md"
+    },
+    {
+      "id": "quantum_geometry_interface_events",
+      "label": "Quantum-geometry interface events",
+      "nodes": [
+        "theory_validation_corpus_source_conversation_bifurcacao_de_qes",
+        "theory_validation_corpus_source_conversation_onset_de_recoverability",
+        "theory_validation_corpus_source_conversation_troca_de_dominancia_de_page"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md"
+    },
+    {
+      "id": "blind_spectral_reconstruction_pipeline",
+      "label": "Blind spectral reconstruction pipeline",
+      "nodes": [
+        "theory_validation_corpus_source_conversation_pole_skipping",
+        "theory_validation_corpus_source_conversation_continuacao_de_pade",
+        "theory_validation_corpus_source_conversation_reconstrucao_espectral_cega",
+        "theory_validation_corpus_source_conversation_modos_quasinormais"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Users/maiconesteves/fisica/theory-validation/corpus/source-conversation.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

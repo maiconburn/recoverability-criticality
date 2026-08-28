@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Critical Reconstruction Cost near Exceptional Points"
+message: "If you use this code or these results, please cite this repository."
+type: software
+authors:
+  - family-names: Esteves
+    given-names: Maicon
+    email: maicon.burn@gmail.com
+date-released: 2026-08-28
+abstract: >
+  Universal information-cost law for parameter reconstruction near
+  second-order exceptional points, validated across a 5D Einstein-Gauss-Bonnet
+  black brane (nine couplings, including the acausal band), simulated and real
+  superconducting qubits, a cloud QPU (ibm_fez), tabulated Kerr quasinormal
+  modes, and real SXS numerical-relativity ringdowns. Includes a
+  zero-fit-parameter prediction of the reconstruction rate, EP-extinction
+  spectroscopy of the EGB family, and a two-task (spectral vs Petz-recovery)
+  no-locking measurement.
+license: MIT

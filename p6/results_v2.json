@@ -1,0 +1,39 @@
+{
+ "baseline": {
+  "alpha_petz": 0.34437849119389596,
+  "alpha_spec": 1.145062066046592,
+  "ratio": 0.3007509386656106
+ },
+ "learned_leg": {
+  "alpha_petz_learned": 0.34437850683369536,
+  "gate_S5_within_10pct": true
+ },
+ "family2": {
+  "alpha_petz": 0.3394253662600163,
+  "alpha_spec": 1.1449635625465415,
+  "ratio": 0.29645080189721673,
+  "gate_ratio_invariance_10pct": true,
+  "ratio_shift": 0.014297999492447033
+ },
+ "noise": {
+  "window": [
+   8,
+   10
+  ],
+  "alpha_petz": NaN,
+  "alpha_spec": NaN,
+  "gate_within_5pct": false
+ },
+ "discretization": {
+  "alpha_petz_2M": 0.3443784911876998,
+  "alpha_spec_2M": 1.145302028293818,
+  "gate_within_3pct": true
+ },
+ "runtime_s": 2.372135877609253,
+ "noise_slow_config": {
+  "config": "q=0.9,W=2,d=0.1",
+  "petz_shift_pct": 0.0,
+  "spec_shift_pct_win8_36": 5.1,
+  "note": "edge-of-floor effect; see win 8-32 below"
+ }
+}

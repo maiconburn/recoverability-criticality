@@ -1,0 +1,81 @@
+{
+ "frozen_at": "2026-08-28T18:55:36Z",
+ "anchor": {
+  "coupling": 0.08,
+  "alpha_rho": 0.851,
+  "err": 0.13,
+  "green": 1.358414584702132
+ },
+ "proxy": "Green's function of C\\[0,1] at nearest branch point of b; ratio-normalized to the lambda=0.08 anchor",
+ "kill_criteria": {
+  "k1": "dn/decade fails to track ln10/(2 alpha_pred) in >=5 couplings (R^2<0.9)",
+  "k2": "channel splitting alpha_rho/alpha_sup -> 1 with N (3 sigma)",
+  "k3": "no rate collapse as lambda -> 1/4 (predicted alpha -> larger, R -> 0 as branch point approaches horizon at lambda -> +inf? documented: for lambda -> 0.25-, z_s -> 0, x_s -> 1: green -> 0, alpha_pred -> 0: convergence must DEGRADE)"
+ },
+ "predictions": [
+  {
+   "coupling": -0.1,
+   "nearest_branch_green": 1.1486968305623677,
+   "alpha_rho_pred": 0.7196190425347402,
+   "alpha_rho_pred_err": 0.10993005350119414,
+   "dn_per_decade_pred": 1.5998639258374592,
+   "alpha_ep_pred": 0.3598095212673701
+  },
+  {
+   "coupling": -0.05,
+   "nearest_branch_green": 1.3890469495649584,
+   "alpha_rho_pred": 0.8701901226560972,
+   "alpha_rho_pred_err": 0.13293151109905127,
+   "dn_per_decade_pred": 1.3230356407435557,
+   "alpha_ep_pred": 0.4350950613280486
+  },
+  {
+   "coupling": 0.02,
+   "nearest_branch_green": 1.823756282334046,
+   "alpha_rho_pred": 1.142520563121452,
+   "alpha_rho_pred_err": 0.17453310599975178,
+   "dn_per_decade_pred": 1.0076777466058076,
+   "alpha_ep_pred": 0.571260281560726
+  },
+  {
+   "coupling": 0.05,
+   "nearest_branch_green": 1.528570919480998,
+   "alpha_rho_pred": 0.9575970893772219,
+   "alpha_rho_pred_err": 0.1462839266968729,
+   "dn_per_decade_pred": 1.2022723954244388,
+   "alpha_ep_pred": 0.47879854468861094
+  },
+  {
+   "coupling": 0.08,
+   "nearest_branch_green": 1.358414584702132,
+   "alpha_rho_pred": 0.851,
+   "alpha_rho_pred_err": 0.13,
+   "dn_per_decade_pred": 1.3528702073995569,
+   "alpha_ep_pred": 0.4255
+  },
+  {
+   "coupling": 0.12,
+   "nearest_branch_green": 1.1885828613460234,
+   "alpha_rho_pred": 0.7446062685106257,
+   "alpha_rho_pred_err": 0.11374713855038938,
+   "dn_per_decade_pred": 1.546176274878612,
+   "alpha_ep_pred": 0.37230313425531286
+  },
+  {
+   "coupling": 0.16,
+   "nearest_branch_green": 1.0395429778192924,
+   "alpha_rho_pred": 0.6512379093148508,
+   "alpha_rho_pred_err": 0.09948405195173984,
+   "dn_per_decade_pred": 1.7678524699341684,
+   "alpha_ep_pred": 0.3256189546574254
+  },
+  {
+   "coupling": 0.2,
+   "nearest_branch_green": 0.8813735870195429,
+   "alpha_rho_pred": 0.5521502279203656,
+   "alpha_rho_pred_err": 0.08434727336033787,
+   "dn_per_decade_pred": 2.0851074368533435,
+   "alpha_ep_pred": 0.2760751139601828
+  }
+ ]
+}
