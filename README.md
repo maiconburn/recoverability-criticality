@@ -2,7 +2,16 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22156019.svg)](https://doi.org/10.5281/zenodo.22156019)
 
-**From a Gauss–Bonnet black brane to real Kerr ringdowns and a cloud QPU — one numerical program, six systems.**
+**A theoretical law with independent gravitational, experimental-data and quantum-hardware probes.**
+
+| Evidence layer | System | Source | Synthetic? | Result |
+|---|---|---|---|---|
+| Controlled benchmark | 5D EGB black brane | exact/numerical model (this work) | yes | critical-cost law + exact rate halving at the EP |
+| Independent GR test | Kerr ringdowns | **SXS public numerical-relativity catalog** (external simulations — *not* observed black holes) | external simulation | extraction cost ∝ gap^(−1.11), corr 0.96 |
+| Experimental-data reanalysis | superconducting qubit | Murch-lab public measurements | no | task costs decouple through the EP |
+| Hardware experiment | dilated non-Hermitian qubit | IBM ibm_fez QPU (jobs logged) | no | ~4× spectral penalty at the EP; Petz recovery flat |
+
+These are related structures probed in four very different settings — not a single quantity confirmed four times; the quantitative law is established in the benchmark, and the other layers test its distinct facets.
 
 Maicon Esteves (independent researcher, Brazil) · August 2026
 Code, analysis and text produced with heavy AI assistance (Anthropic Claude); all key numbers cross-validated against literature anchors as documented below. Contact: maicon.burn@gmail.com
@@ -45,7 +54,7 @@ Report: `results/RESULTS_V2.md`. Structure behind it: empirical Stahl–Green ra
 - **EP extinction at λ_ext = 0.1091 ± 0.0002** (order-72 verified; the candidate closed form 7/64 is excluded). The EP survives the entire D=5 causality window λ_GB ≤ 9/100 (Brigante–Liu–Myers–Shenker–Yaida) and (2.0 ± 0.2)×10⁻² beyond it — a numerical juxtaposition, with no mechanism claimed; the halving law holds unchanged at λ = 0.095, 0.105 *inside the acausal band*. Open points, stated as such: relation to the eikonal-instability threshold |λ_GB| = 1/8 (Konoplya–Zhidenko), and whether "extinction" is migration of the collision to complex q² (operational definition here: no coalescence at any real q² down to −60)
 - The λ→λ_ext approach shows q²_c diving from −16 to −35 before extinction
 
-### 1.4 Real Kerr ringdowns (SXS catalog)
+### 1.4 Kerr ringdowns from public numerical-relativity simulations (SXS)
 
 Six clean public simulations across the (2,2,5)–(2,2,6) avoided crossing (min gap 0.0667 at a\* ≈ 0.8975; the true EP sits at complex spin):
 
