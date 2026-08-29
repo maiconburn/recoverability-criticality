@@ -68,3 +68,25 @@ floresta: o fator-2 do EP NÃO aparece no estrato fundo; razão fica em
 (não executado): halving num EP fundamental com vizinhança artificialmente
 povoada — separa física (isolamento) de artefato de medida.
 Dados: results/validation_deep_0.117.json.
+
+## CORREÇÃO (mesma sessão, análise canal-separada) — "não-halving" é VOID; teste INDETERMINADO
+
+Separando os canais dos pares salvos (μ = média, ρ = ((ω₁−ω₂)/2)²):
+1. **As razões 0.65–0.83 mediam o canal μ**, não o canal crítico: |δμ| decai
+   com α_μ = 1.15 (λ=0.120) e domina o pair_error dos níveis limpos. O
+   halving da lei é uma afirmação sobre o canal ρ (2α_EP/α_ρ), como na
+   validação original — meu teste simplificado media a coisa errada.
+2. **O canal ρ está sob o piso da âncora**: |δρ| ≈ 8×10⁻¹² plano de N=5 a
+   15 — exatamente (gap_âncora)² = (3.1×10⁻⁶)². δρ verdadeiro é menor que o
+   mensurável já em N=5. Não há evidência de não-halving nem de halving:
+   **INDETERMINADO por piso**. Medir exigiria âncora com gap ≲ 10⁻⁸.
+3. A hipótese de isolamento morreu por dado independente e fica morta:
+   Δω ao vizinho mais próximo é MENOR nos fundamentais que halvam (0.55,
+   0.62) do que nos fundos (2.71, 1.09) — o discriminador proposto está
+   invertido nos dados.
+
+Estado final desta linha: transferência da estrutura exponencial (α_off
+constante em 3 décadas) CONFIRMADA nos dois pontos fundos; halving no
+estrato fundo: ABERTO (limitado por instrumento, não decidido). O ciclo
+claim→refutação→correção desta seção (não-halving → void em horas) é mais
+um caso da regra de quarentena funcionando.
