@@ -1,5 +1,7 @@
 # Critical Reconstruction Cost near Exceptional Points
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22156019.svg)](https://doi.org/10.5281/zenodo.22156019)
+
 **From a Gauss–Bonnet black brane to real Kerr ringdowns and a cloud QPU — one numerical program, six systems.**
 
 Maicon Esteves (independent researcher, Brazil) · August 2026
