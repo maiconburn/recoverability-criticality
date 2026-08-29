@@ -157,3 +157,25 @@ dois pontos críticos:
   ln² uma ordem acima.
 Assinaturas distinguíveis entre si e de qualquer log acidental — par de
 fingerprints fechado para os dois alvos observacionais.
+
+## Adendo 8 — FASE 2 DINÂMICA: relógio do adendo 4 NÃO confirmado (rebaixado)
+
+Dois testes dinâmicos honestos em quase-dS (ε₁=0.005, m²/H² cruzando 5/4 em
+N*=8; modos evoluídos de Bunch-Davies x=50 até superhorizonte profundo,
+scripts p8_phase2_clock.py / p8_phase2_towers.py):
+1. Espectro tardio |σ_k|²k³: índice local liso, resíduos +0.0000 na janela
+   do cruzamento (observável dominado por uma torre — não sonda o log).
+2. Decomposição bi-torre com expoentes adiabáticos rodantes: |B/A|(k)
+   perfeitamente suave através de N* (15.6→6.7 monotônico, resid ~1.3e-3
+   uniforme) — SEM anomalia localizada.
+
+Leitura teórica do nulo: a EDO do modo é analítica em ν; os expoentes
+3/2±ν não colidem durante a evolução de um único k. O termo log do EP vive
+no correlator squeezed (duas escalas comparadas no mesmo tempo tardio) e é
+ATENUADO pela varredura dν/dN ~ ε₁ — a heurística adiabática do adendo 4
+("feição log localizada em k" = relógio) NÃO sobrevive como enunciada.
+Status: adendo 4 REBAIXADO a heurística não confirmada; o enunciado correto
+exige a teoria do squeezed dinâmico (in-in com duas escalas), fora do
+alcance desta fase. As demais partes do P8 (teorema de Γ, metrologia
+estática, assinaturas exatas em dS estrito) não dependem do relógio e ficam
+intactas. Dados: results/p8_phase2_clock.json, results/p8_towers.json.
