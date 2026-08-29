@@ -55,3 +55,16 @@ quarentenado; leitura líder continua a condição de isolamento, agora com o
 vizinho de N=8 como evidência direta de contaminação. Teste discriminador
 lançado: mesmo protocolo no ponto λ=0.117 (agulha mais estreita ⇒ mais
 contaminada ⇒ razão ainda menor, se a leitura 1 estiver certa).
+
+## Segundo ponto (λ=0.117) — replica o não-halving
+
+Âncora espelhada genuína (gap 4.1×10⁻⁵, ω=−10.2945i, espelho a 1.5×10⁻⁶),
+todos os 13 níveis limpos (sem patologia de paridade aqui):
+α_off ≈ 0.74 (d=10⁻¹, N=6→15, 3 décadas); α_EP ≈ 0.89 (N=6→10, antes do
+piso de âncora ~1.1×10⁻⁴ que domina N≥11). **Razão ≈ 0.83 — sem halving**,
+consistente com λ=0.120 (0.65). Duas medições independentes na região da
+floresta: o fator-2 do EP NÃO aparece no estrato fundo; razão fica em
+0.65–0.9. A leitura de isolamento segue líder; discriminador restante
+(não executado): halving num EP fundamental com vizinhança artificialmente
+povoada — separa física (isolamento) de artefato de medida.
+Dados: results/validation_deep_0.117.json.
