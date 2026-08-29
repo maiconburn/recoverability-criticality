@@ -8,3 +8,8 @@ nonlinear-qubit/
 sta-topology/
 dogra-circuits/
 ibmq_setup/.env
+
+# private working artifacts — never commit
+emails/
+graphify-out/
+corpus/
