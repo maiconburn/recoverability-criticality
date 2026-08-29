@@ -5,7 +5,7 @@
 **v1.0–v1.1 claimed:** λ_ext = 0.1091 ± 0.0002, with no mechanism relating it
 to any known threshold.
 
-**Corrected result:** λ_ext = 0.12475 ± 0.00025 — numerically consistent (1σ)
+**Corrected result:** λ_ext = 0.1248 ± 0.0007 — numerically consistent (1σ)
 with the **exact eikonal-instability threshold λ_GB = 1/8** of the D=5
 Gauss–Bonnet black brane (Konoplya–Zhidenko, arXiv:1705.07732). The mirror-EP
 pair annihilation therefore appears to BE the eikonal spectral reorganization,
@@ -30,3 +30,19 @@ survives from the causal window all the way to the eikonal threshold.
 Method lesson, stated plainly: existence scans must resolve the narrowest
 feature they are probing; our own frozen-prediction discipline (F1–F3 of
 `results/FROZEN_META_EP.md`) is what caught the artifact.
+
+### E1 addendum (same date, later runs)
+
+Repeat scans across the boundary show run-to-run scatter (one contradictory
+point at λ=0.1251 in a degraded-tracking run); the quoted bar is widened to
+λ_ext = 0.1248 ± 0.0007 accordingly. Exactness against 1/8 is OPEN: settling
+it needs a method that does not fight the deep-q² tracking (a direct
+eikonal-limit analysis of the radial equation is the planned route). Further
+findings of the same campaign, reported as-is per the frozen protocol
+(results/FROZEN_META_EP.md): the dip HALF-WIDTH is roughly λ-independent
+(~0.05–0.09) rather than shrinking as a fold would predict (F1 exponent ~0.3,
+not 0.5) — the structure is an extended near-marginal band, not a simple
+fold; and the F4 exponent measurement at/inside the band is NOT reliable with
+the current scanning method (multiple mirror pairs defeat identity tracking —
+two failed attempts documented in the session logs). These are open problems,
+not claims.

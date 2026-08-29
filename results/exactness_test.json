@@ -1,0 +1,32 @@
+[
+ {
+  "lam": 0.1246,
+  "rho_min": null,
+  "q2_min": null,
+  "crossings": 0
+ },
+ {
+  "lam": 0.12475,
+  "rho_min": null,
+  "q2_min": null,
+  "crossings": 0
+ },
+ {
+  "lam": 0.1249,
+  "rho_min": null,
+  "q2_min": null,
+  "crossings": 0
+ },
+ {
+  "lam": 0.125,
+  "rho_min": null,
+  "q2_min": null,
+  "crossings": 0
+ },
+ {
+  "lam": 0.1251,
+  "rho_min": -7.6317353321790085e-19,
+  "q2_min": -32.92000000000004,
+  "crossings": 2
+ }
+]
