@@ -103,3 +103,33 @@ by the project's own instrument-arbitration discipline (never let a claim
 rest on the instrument with known pathology in the relevant regime). The
 frozen predictions F1–F4 (`results/FROZEN_META_EP.md`) that E1's picture kept
 failing were the tell.
+
+## E3 (2026-08-30) — the single-threshold concept is retracted: EP extinction is family-by-family
+
+**Corrected statement.** There is no single λ_ext at which "the" mirror EP of
+the EGB scalar family is annihilated. What the shooting solver (trusted
+instrument) shows: (i) the fundamental-pair EP survives at least to
+λ = 0.1155 as a needle of width < 2×10⁻⁴ in q² (micro-grid dq = 2×10⁻⁴:
+ρ_min = −2×10⁻¹², two sign crossings) — the E2 value λ_ext = 0.1150(5)
+measured the instrument's resolution, the third consecutive number to fall
+this way (0.1091 in v1.0–1.1; 0.1248 in v1.2; 0.1150 in v1.3); (ii) deeper
+overdamped families carry GENUINE mirror EPs beyond every published value —
+confirmed with full walls (ρ excursion ≈ 4, |Re ω| up to 2.0) and a zero
+touch at λ = 0.120 (ω_c = −9.73i, q² ∈ [−32.300, −32.285]), with a near
+touch at λ = 0.1245; (iii) at λ = 1/8 an identity-free census (16 ω-seeds ×
+dq = 0.1, micro-refined at 2×10⁻⁴) found only trivial structures.
+
+**Classification criterion (method lesson).** A ρ sign crossing is an EP
+only if the profile has walls (ρ excursion ≳ 10⁻²) and real splitting
+outside the collided band. Flat profiles (|ρ| ~ 10⁻⁷⁻¹⁰ over wide windows)
+are near-parallel purely-imaginary towers crossing ON the axis — diabolic,
+not exceptional. Naive censuses conflate the two.
+
+**Final statement.** Genuine mirror EPs exist at least to λ = 0.120
+(wall-classified) and nearly touch at 0.1245; none was found at 1/8 (finite
+census — not an exhaustiveness proof). The deep spacelike sector is a
+stratified forest of mirror families, each with its own EP curve and its own
+termination. Nothing built on individual EPs (the cost law, the halving, the
+zero-parameter rate, the two saddles) depends on where the last family ends.
+Data: results/micro_needle.json, results/forest_scan.json,
+results/wide_profile.json, results/deep_family.json.
