@@ -47,3 +47,19 @@ MORTE: um cruzamento com deficiência de posto 2.
   fingerprint de cadeia.
 - Pendente: varredura full-text mais ampla (follow-ups de QSF/collider
   2016–2026) antes de claim público.
+
+## Emenda A1 (2026-08-30, ANTES de qualquer teste externo)
+
+P8.3 como escrita era mal-posta: exatamente em ν_c a verossimilhança em ν é
+chata (é o conteúdo de P8.1), então "viés em ν̂" não é o observável certo.
+Operacionalização corrigida (o texto original acima permanece para
+auditoria):
+
+**P8.3':** dados gerados em ν=1 com o termo log físico presente rejeitam o
+modelo de dois power laws SEM log por qualidade de ajuste — medido:
+χ²/dof = 12.3 (ruído 1e-3), 1.1×10³ (1e-4), 1.1×10⁵ (1e-5), janela
+fiducial r∈[0.05,0.6], 80 modos — enquanto o modelo com canal log dá
+χ²/dof = 1.00 e recupera o coeficiente da cadeia sem viés
+(C = −0.3500 ± 0.0001 a ruído 1e-5, verdade −0.35).
+MORTE: χ²/dof do modelo sem log compatível com 1 em dados com log físico,
+ou C recuperado com viés > 3σ.
