@@ -90,3 +90,24 @@ constante em 3 décadas) CONFIRMADA nos dois pontos fundos; halving no
 estrato fundo: ABERTO (limitado por instrumento, não decidido). O ciclo
 claim→refutação→correção desta seção (não-halving → void em horas) é mais
 um caso da regra de quarentena funcionando.
+
+## Kernel do estrato fundo — cota de desacoplamento (fecho da linha)
+
+Bumps de Bernstein em três regimes de ε (1e-6, 1e-3, 1e-9), gates de espelho
+e identidade (`scripts/kernel_compare.py`, `results/kernel_compare_*.json`):
+- Fundamental (λ=0.105): kernel horizonte-dominado reproduzido
+  (K = 50–483 em z ≥ 0.5, centroide 0.752 — bate com P4). Ferramenta
+  validada.
+- Fundo (λ=0.120): TODA resposta ρ mensurável fica no piso da âncora
+  (δρ ~ 1e-11) em qualquer ε do regime linear; os picos aparentes
+  (z=0.5/0.875 no run sem gate) não reproduzem entre ε's — artefatos de
+  identidade. Resultado à prova de piso: **K_fundo < 10⁻² em todo z
+  acessível ⇒ o canal crítico fundo é ≥4 ordens menos acoplado ao dado
+  métrico interior que o fundamental.**
+
+Estado final da linha nesta máquina: (i) estrutura exponencial transfere
+(α_off constante, 2 pontos); (ii) halving: indeterminado por piso;
+(iii) canal ρ fundo metricamente desacoplado (cota); (iv) hipótese de
+isolamento morta; (v) endereço do canal fundo: não-resolvível com o solver
+atual (exigiria piso ≲ 1e-16). Medições futuras exigem instrumento com
+precisão de ρ além de rtol 1e-10.
