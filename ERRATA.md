@@ -1,5 +1,7 @@
 # ERRATA
 
+**Current status: E3 supersedes E1 and E2. No single extinction threshold exists; see E3 for the current statement.**
+
 ## E1 (2026-08-29, corrected in v1.2): EP-extinction threshold
 
 **v1.0–v1.1 claimed:** λ_ext = 0.1091 ± 0.0002, with no mechanism relating it
