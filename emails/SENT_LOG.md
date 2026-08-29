@@ -8,3 +8,6 @@ Nota: Motohashi não foi contatado — endereço não verificável com as ferram
 da sessão (cota de busca esgotada; página pessoal atrás de login). O e-mail 2
 foi retargetado para os autores do forecast de Fisher, contato mais direto.
 Ofertas de teste em laboratório removidas de todos os textos a pedido do autor.
+
+4. Correção 1 (λ_ext 0.1091→0.12475≈1/8) no thread Lu+Ran+Wu: id 1a04c91ccf62259f
+5. Correção 2 — DEFINITIVA (λ_ext = 0.1150(5) por shooting; retrata 1/8) no mesmo thread: id 1a04cbc59c6e5251 (2026-08-29)
