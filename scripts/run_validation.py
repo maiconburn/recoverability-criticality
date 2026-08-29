@@ -72,7 +72,7 @@ def falsi(rho_at, low, rho_low, high, rho_high):
     return root
 
 
-def find_ep_global(geometry, n_factor, seed_pair, q2_start=WALK_START):
+def find_ep_global(geometry, n_factor, seed_pair, q2_start=WALK_START, floor=-55.0):
     """Adaptive downward march (steps ~0.1 rho) plus a regula-falsi polish."""
 
     state = {"pair": np.asarray(seed_pair, dtype=complex)}
@@ -94,8 +94,8 @@ def find_ep_global(geometry, n_factor, seed_pair, q2_start=WALK_START):
         if rho_next <= 0:
             break
         q2, rho_here = q2_next, rho_next
-        if q2 < -55:
-            raise RuntimeError("no collision found before q2=-55")
+        if q2 < floor:
+            raise RuntimeError(f"no collision found before q2={floor}")
 
     root = falsi(rho_at, q2_next, rho_next, q2, rho_here)
     solver = make_solver(geometry, n_factor, root)
