@@ -1,0 +1,47 @@
+[
+ {
+  "lam": 0.1235,
+  "rho_min": Infinity,
+  "q2_min": null,
+  "im_omega": NaN,
+  "re_omega": NaN,
+  "crossings": 0,
+  "valid": 0.0
+ },
+ {
+  "lam": 0.1245,
+  "rho_min": -8.866911293437641e-19,
+  "q2_min": -32.9,
+  "im_omega": -6.684415330752437,
+  "re_omega": 1.6365935248386295e-11,
+  "crossings": 1,
+  "valid": 0.6705882352941176
+ },
+ {
+  "lam": 0.125,
+  "rho_min": 1.173934184407457e-16,
+  "q2_min": -33.900000000000155,
+  "im_omega": -5.99310233355798,
+  "re_omega": 1.4896838747311149e-08,
+  "crossings": 0,
+  "valid": 0.6823529411764706
+ },
+ {
+  "lam": 0.1255,
+  "rho_min": 0.0043390085914814915,
+  "q2_min": -33.16000000000004,
+  "im_omega": -7.265900279942521,
+  "re_omega": 0.06585677826969463,
+  "crossings": 0,
+  "valid": 0.8117647058823529
+ },
+ {
+  "lam": 0.1265,
+  "rho_min": Infinity,
+  "q2_min": null,
+  "im_omega": NaN,
+  "re_omega": NaN,
+  "crossings": 0,
+  "valid": 0.0
+ }
+]
