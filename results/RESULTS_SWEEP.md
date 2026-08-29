@@ -33,3 +33,14 @@ Estrutura analítica derivada: sob o kernel de Abel, 𝒥 herda singularidades d
 | +0.080 | 0.851±0.130 | 1.450±0.019 | 1.353 | 1.029 | 1.49 |
 
 Reprodução: `scripts/sweep_predictions.py` (congela) → `scripts/run_sweep.py` (~15 min) → `scripts/analyze_sweep.py`. Dados: `results/sweep.json`, `results/sweep_fits.json`.
+
+## Adendo (2026-08-29) — reconciliação de expoentes: a escada 1/2/3
+
+Experimento único (mesmo setup sintético de Kerr, par (2,2,5)/(2,2,6)) medindo
+três tarefas: amplitudes com frequências fixas → expoente **1.03** (explica
+nosso −1.11 em SXS); Cramér–Rao de frequências livres → **2.12** (explica o −2
+de Imafuku–Oshita–Takeda, arXiv:2605.16199); amplitudes com frequências livres
+→ **3.12** (bate com super-resolução de Prony, Batenkov 2p−1, p=2). O aparente
+conflito de expoentes é uma HIERARQUIA POR TAREFA: cada nível de
+desconhecimento adiciona uma potência de 1/gap. Dados:
+`results/reconcile_exponents.json`.
