@@ -95,6 +95,10 @@ Every ingredient has lineage; the claims are the syntheses.
 
 ## 3. What we do **not** claim
 
+The full list of hypotheses we proposed and killed — including the founding one — is curated with pride in [`GRAVEYARD.md`](GRAVEYARD.md).
+
+
+
 - Nothing here proves or refutes string theory or any quantum-gravity proposal. The EGB brane at finite λ_GB is a bottom-up laboratory (finite λ_GB requires a higher-spin tower; controlled string vacua give λ ~ 1/N).
 - The λ_ext ≠ 9/100 result is an *independence* statement inside a model.
 - The "no-locking" results retire a speculative informational ontology *in the systems tested*; they are consistency checks, not discoveries about nature beyond standard QM.
