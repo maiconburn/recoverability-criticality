@@ -38,12 +38,13 @@ from recoverability_ep.shooting import (
     pair_invariants,
 )
 
-COUPLING = 0.120
+import sys as _sys
+COUPLING = float(_sys.argv[1]) if len(_sys.argv) > 1 else 0.120
 SEED_COLLOCATION_ORDER = 56
 CANDIDATE_LEVELS = range(3, 16)
 DISTANCES = [10.0 ** (-exponent / 2.0) for exponent in range(2, 9)]  # 1e-1 .. 1e-4
 WALK_START = -12.0
-OUTPUT = Path(__file__).resolve().parent.parent / "results" / "validation_deep.json"
+OUTPUT = Path(__file__).resolve().parent.parent / "results" / f"validation_deep_{_sys.argv[1] if len(_sys.argv) > 1 else 0.120}.json"
 
 
 def make_solver(geometry, n_factor, q2):
@@ -190,12 +191,17 @@ def main() -> None:
 
     if result is None:
         import json as _json
-        _wp = _json.loads((OUTPUT.parent / "wide_profile.json").read_text())
-        _rows = [r for r in next(e["rows"] for e in _wp if e["lam"] == 0.12)
-                 if r[1] is not None]
-        _rmin = min(_rows, key=lambda r: r[1])
-        q2_ep = _rmin[0]
-        _p0 = np.array([_rmin[2] + 1j * _rmin[3], -_rmin[2] + 1j * _rmin[3]])
+        if abs(COUPLING - 0.120) < 1e-9:
+            _wp = _json.loads((OUTPUT.parent / "wide_profile.json").read_text())
+            _rows = [r for r in next(e["rows"] for e in _wp if e["lam"] == 0.12)
+                     if r[1] is not None]
+            _rmin = min(_rows, key=lambda r: r[1])
+            q2_ep = _rmin[0]
+            _p0 = np.array([_rmin[2] + 1j * _rmin[3], -_rmin[2] + 1j * _rmin[3]])
+        else:
+            # lambda=0.117 needle from forest_scan refine
+            q2_ep = -32.50
+            _p0 = np.array([1e-3 - 10.294j, -1e-3 - 10.294j])
         near_pair = make_solver(exact_geometry, n_factor, q2_ep).pair(_p0)
         from recoverability_ep.shooting import pair_invariants as _pi
         omega_ep, _ = _pi(near_pair)

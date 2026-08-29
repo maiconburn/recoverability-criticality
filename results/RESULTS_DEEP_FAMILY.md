@@ -41,3 +41,17 @@ relocation. Data: `results/validation_deep.json`, `results/deep_ladder_final.jso
 - Diagnose the even-N pathology (pair identity at the reconstructed EP).
 - Repeat at a second deep-family point (λ = 0.117 needle) and at a
   fundamental-family EP with an artificially crowded neighborhood.
+
+## Adendo (mesma sessão) — paridade diagnosticada; anti-halving persiste
+
+Remedição dos N pares com gate espelho e seed correto
+(`results/even_fix.json`): N=6 → 4.9e-3 e N=10 → 6.4e-5 LIMPAM (artefato de
+bacia do secante confirmado); N=8 converge para um par espelho DIFERENTE em
+ω = ±0.226 − 8.91i — um VIZINHO da floresta, contaminação direta observada;
+N=12 sem par espelho perto de −9.73i. Série limpa (N=5,6,7,10,11):
+α_EP ≈ 1.24. Com α_off = 0.80: **razão α_off/α_EP ≈ 0.65 — anti-halving**
+(no EP converge MAIS RÁPIDO; a fundamental halva, razão 2). Segue
+quarentenado; leitura líder continua a condição de isolamento, agora com o
+vizinho de N=8 como evidência direta de contaminação. Teste discriminador
+lançado: mesmo protocolo no ponto λ=0.117 (agulha mais estreita ⇒ mais
+contaminada ⇒ razão ainda menor, se a leitura 1 estiver certa).

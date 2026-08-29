@@ -109,3 +109,51 @@ x⁵ do fator soft é |função de modo com log|² — consistente com EP-2.
 Status final da fase 1: estrutura de EP do escalar no patch estático de dS
 resolvida EXATAMENTE; camada de metrologia (σ = C/(S·d), janela
 √(C/S), resgate pelo canal log) verificada numericamente sobre essa base.
+
+## Adendo 4 — deriva de slow-roll através do EP (pendência 4 fechada, analítico)
+
+Em quase-dS, ν² = 9/4 − m²/H² com H decrescendo (ε₁ = −Ḣ/H²):
+    dν/dN_e = −(m²/H²)·ε₁/ν = −(9/4 − ν²)·ε₁/ν  ⇒  em ν=1: dν/dN = −(5/4)ε₁.
+Um espectador próximo do EP é VARRIDO através dele a (5/4)ε₁ por e-fold. O
+tempo (em e-folds) dentro da janela de irresolubilidade |ν−1| < √(C/S):
+    ΔN = (8/5)·√(C/S)/ε₁ ,
+e como cada modo k congela em um ν(N) diferente, a assinatura log fica
+LOCALIZADA numa banda Δln k = ΔN do espectro. Exemplo: S=10³, ε₁=0.005 →
+janela |δν|<0.10, ΔN ≈ 32 e-folds — banda larga; S=10⁵, ε₁=0.02 → ΔN ≈ 0.8
+e-fold — feição estreita e localizada. A posição da banda mede QUANDO
+m²/H² cruzou 5/4; a largura mede ε₁/√S. Isso transforma o EP num RELÓGIO:
+feição log localizada em k ↔ instante do cruzamento crítico. (Fase 2:
+fazer o matching modo-a-modo honesto em quase-dS; aqui é o limite adiabático.)
+
+## Adendo 5 — forma fechada de C: tentativa refutada
+
+Hipótese natural C = 1/(|A₊−A₋|·√F⊥) (canal r^{3/2}ln r com peso (A₊−A₋)ν
+no limite ν→0): REFUTADA — previa C ∝ 1/|A₊−A₋| (19.7/6.6/3.9 para
+D=0.1/0.3/0.5) e o medido quase não move (1.79/2.0/2.28). A informação
+dominante não vem do canal linear-em-ν; C fica como constante numérica
+dependente de janela (recalibrar por experimento). NÃO publicar a derivação
+ingênua.
+
+## Adendo 6 — universalidade cruzada de famílias (EGB, parcial)
+
+Ladder de reconstrução Padé ancorado no EP da FAMÍLIA FUNDA (λ=0.120,
+ω_c=−9.730063i, q²_c=−32.285, âncora gap 3.1e-6):
+**α_off = 0.805 constante através de 3 décadas de distância**
+(d ∈ [3.2e-4, 1e-1]: 0.8051/0.8051/0.8050/0.8048/0.8041/0.8021) — a
+estrutura exponencial da lei de custo transfere para o segundo estrato do
+espectro. Halving no EP: ABERTO — a medição exige relocação do EP por nível
+N; a versão simplificada mostrou patologia par/ímpar em d=0 (N par: ε~O(1),
+perda de identidade) e relocações que vagam na floresta; driver completo
+adaptado (run_validation_deep.py, guarda |Δq²|<0.5) em execução. d=1e-4
+saturado (piso da âncora). Dados: results/deep_ladder_final.json.
+
+## Adendo 7 — assinatura exata em ν=0 (tabela completa)
+
+(π²/4)·x³·|H₀(x)|² = x³·[ln²x + 2(γ−ln2)·ln x + π²/4+(γ−ln2)²] + O(x⁵ln²)
+— verificado numérico×analítico a 5 casas (resíduo 4e-13). Contraste dos
+dois pontos críticos:
+- ν=0 (m=3H/2): ln² em ORDEM DOMINANTE, coeficiente exato 1.
+- ν=1 (m²=5H²/4): ln simples em ordem RELATIVA (k_L/k_S)², coeficiente −1;
+  ln² uma ordem acima.
+Assinaturas distinguíveis entre si e de qualquer log acidental — par de
+fingerprints fechado para os dois alvos observacionais.
