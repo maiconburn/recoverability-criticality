@@ -63,3 +63,27 @@ fiducial r∈[0.05,0.6], 80 modos — enquanto o modelo com canal log dá
 (C = −0.3500 ± 0.0001 a ruído 1e-5, verdade −0.35).
 MORTE: χ²/dof do modelo sem log compatível com 1 em dados com log físico,
 ou C recuperado com viés > 3σ.
+
+## P8-F2 (congelado 2026-08-30, ANTES de medir) — o log no objeto de duas escalas
+
+Lição das fases anteriores: single-k é analítico em ν e não vê o log; o
+log vive na estrutura de DUAS escalas. Objeto congelado: em quase-dS
+(H = e^{−ε₁N}, m²/H² cruzando 5/4 em N*), o espectro a TEMPO FIXO
+y(k) = k³|σ_k(N_ref)|², N_ref = N* + 6, para uma grade de k cujas saídas
+de horizonte varrem o cruzamento. Em dS estático com ν=1, y(k) tem
+(π²/4)y = k + [−ln k + c]k³ + ¼k⁵ln²k (nosso resultado exato).
+
+P8-F2.1 (sobrevivência): o fit de y(k) na base {k, k³, k³ln k, k⁵, k⁵ln k}
+melhora sobre a base sem logs com Δχ²/dof > 4, e o coeficiente do k³ln k
+tem o sinal do estático (negativo), com amplitude atenuada
+A ≡ |c_log/c_log^{estático}| ∈ (0.05, 1].
+MORTE: sem melhora (log não sobrevive à varredura) ou A ≤ 0.05.
+
+P8-F2.2 (localização): repetindo com m² tal que ν(N_exit da banda de k)
+fique em 1±0.15 sem cruzar 1: |c_log| cai para < 0.3 do valor no
+cruzamento.
+MORTE: log igualmente presente longe do cruzamento (seria artefato de fit).
+
+P8-F2.3 (atenuação pela varredura): A(ε₁) decresce monotonicamente em
+ε₁ ∈ {0.002, 0.005, 0.01}.
+MORTE: não-monotônico além do erro de fit.
