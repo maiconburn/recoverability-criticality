@@ -27,15 +27,29 @@ custo do EP estático.
 
 ## Calibração de novidade (não auditada em full-text)
 
-EPs de Floquet em sistemas não-hermitianos são conhecidos na literatura
-de fotônica/PT. O conteúdo potencialmente novo aqui: (i) a extensão da
-lei de custo de estimação ao EP de réplicas (cegueira à camada, medida);
-(ii) o contraste hermitiano-abre / dissipativo-colide na MESMA
-ressonância de réplicas deste sistema mínimo, com ciclo pré-registrado.
-Auditoria de literatura pendente antes de qualquer claim externo.
+Auditoria (arXiv API, 25 papers, 2026-08-30): EPs de Floquet são bem
+estabelecidos (fotônica, Lindblad com drive periódico 2011.02054/2306.12322,
+acoplamento dissipativo de Floquet 2504.13616, FEPs múltiplos 2509.02556).
+NÃO encontrados: (i) o contraste explícito hermitiano-abre vs
+dissipativo-colide na mesma ressonância de réplicas; (ii) QUALQUER análise
+de Fisher/Cramér-Rao/custo de estimação em EP de Floquet — a camada de
+metrologia permanece não-reivindicada também aqui. Full-text não varrido;
+calibrar claims de mecanismo como "não encontrado em abstracts".
 
 Nota de processo: P10.4 foi declarada "KILLED" pelo refinador fraco
 (coordinate descent, gap 5.6e-3) e confirmada pelo refinador correto
 (Nelder-Mead, gap 7e-10) — os critérios congelados nunca mudaram; a
 busca sim. Scripts: p10_floquet.py, p10_dissipative.py; dados:
 p10_floquet.json, p10_dissipative.json, p10_costlaw.json.
+
+## Adendo — a cunha de EPs (mapa completo)
+
+Duas linhas de EPs genuínos no plano (J, A), 23 pontos com gap ~10⁻⁹
+(Nelder-Mead sobre log-gap, NSTEP=600):
+- ramo inferior: J_EP(A) = 0.4655→0.3987 para A = 0.05→0.60 (dJ/dA ≈ −0.121)
+- ramo superior: J_EP(A) = 0.4843→0.5483 para A = 0.10→0.60 (dJ/dA ≈ +0.128)
+Ambos extrapolam para J* = 0.4717 em A→0: a ressonância estática de
+réplicas é o VÉRTICE da cunha, e o drive dissipativo a abre em duas
+linhas de EPs com uma banda PT-quebrada de Floquet entre elas — o
+análogo dinâmico exato do par de EPs estáticos que flanqueia a banda
+overdamped. Dados: results/p10_ep_line.json, p10_ep_line2.json.
