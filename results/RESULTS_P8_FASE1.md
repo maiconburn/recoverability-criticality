@@ -179,3 +179,26 @@ exige a teoria do squeezed dinâmico (in-in com duas escalas), fora do
 alcance desta fase. As demais partes do P8 (teorema de Γ, metrologia
 estática, assinaturas exatas em dS estrito) não dependem do relógio e ficam
 intactas. Dados: results/p8_phase2_clock.json, results/p8_towers.json.
+
+## Adendo 9 — P8-F2: exclusão do setor livre como portador da assinatura
+
+Dois desenhos congelados e mortos, com diagnóstico:
+- v1 (base de expoentes inteiros no espectro a tempo fixo): morta por
+  artefato de base — com ν ≠ 1 os expoentes não-inteiros fazem o termo log
+  virar compensador espúrio (o controle SEM cruzamento deu Δχ² = 70, o
+  cruzamento deu ~1.7 — inversão diagnóstica).
+- v2 (resíduo por modo contra a forma estática exata de Hankel com ν
+  local): resíduos coletivos são ln + ln²(k) suaves com coeficientes ∝ ε₁
+  (0.0996/−0.0057 → 0.1914/−0.0102 dobrando ε₁), presentes IGUALMENTE com
+  e sem cruzamento (razão ~0.6) — correção adiabática global, sem qualquer
+  estrutura localizada em ν = 1.
+
+**Conclusão (exclusão):** no setor de campo livre, nenhuma
+não-analiticidade do EP sobrevive à varredura de quase-dS — nem no
+single-k (fase 2), nem no objeto de duas escalas a tempo fixo (F2). Se a
+assinatura logarítmica do ponto excepcional existe dinamicamente, ela
+mora exclusivamente no correlator INTERAGENTE (bispectro in-in com
+vértice), que é o cálculo que o programa não pode fazer nesta máquina.
+Isto delimita com precisão o próximo degrau teórico — e protege o paper
+de overclaim: as assinaturas exatas de dS estrito (ln, ln²) valem no
+limite adiabático/estático; a versão varrida é questão aberta de in-in.
