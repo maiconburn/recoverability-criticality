@@ -1,6 +1,6 @@
 # Teste pré-lab #2 — dados reais do transmon (murchlab) · resultado
 
-**Data:** 2026-08-28 · **Fonte:** github.com/murchlab/Nonlinear-quantum-evolution-... (público, linhagem Naghiloo) · **Dataset usado:** `pf_pe_pg_july2nd.pkl` — varredura de 101 amplitudes de drive × 50 tempos, 18000 médias/ponto, observável P_f/(P_e+P_f) do qubit ef pós-selecionado (livre de convenção de fase) · **Previsões congeladas:** `FROZEN_MURCH.md`
+**Data:** 2026-08-28 · **Fonte:** github.com/murchlab/Nonlinear-quantum-evolution-... (público, linhagem Naghiloo) · **Dataset usado:** `pf_pe_pg_july2nd.pkl` (dado de terceiros no repositório público murchlab; citado, não redistribuído aqui) — varredura de 101 amplitudes de drive × 50 tempos, 18000 médias/ponto, observável P_f/(P_e+P_f) do qubit ef pós-selecionado (livre de convenção de fase) · **Previsões congeladas:** `FROZEN_MURCH.md`
 
 ## Setup extraído dos dados
 
