@@ -57,3 +57,24 @@ MORTE: < 40%.
 P14'.3 (robustez à chirp mass): |corr(Ω_res, k)| < 0.9 no Fisher
 marginalizado (a assinatura da nuvem não é absorvível pela taxa de chirp).
 MORTE: ≥ 0.95.
+
+## P14'' (congelado 2026-08-30, ANTES de medir) — multi-cruzamento
+
+Modelo: 3 ressonâncias da mesma nuvem, Ω_res,k = μ·c_k(χ) com
+c_k(χ) = c⁰_k·(1 + d_k·χ), c⁰ = (1.0, 1.35, 1.80), d = (0.05, 0.12, 0.20)
+(dependências de spin distintas por modo, estilo hiperfino); três sistemas
+de dois níveis independentes (η_k = 0.05), backreaction somada
+−β·Σ dP_k/dt; chirp Ω: 0.8 → 2.2; fase com σ_φ = 0.1 rad, 3000 amostras.
+Fisher 9×9: {μ, χ, η₁, η₂, η₃, β, k, Ω₀, φ₀}.
+
+P14''.1 (ganho coerente): σ(μ) conjunto dos 3 cruzamentos supera o melhor
+cruzamento único por fator > √3.
+MORTE: ganho < 0.8·√3.
+
+P14''.2 (spin resolvido pelas razões): com χ desconhecido, σ(μ) degrada
+menos de 2× vs χ conhecido.
+MORTE: degradação > 5×.
+
+P14''.3 (número LISA-grade): com k tal que cada cruzamento acumule ~30+
+ciclos (k = 0.005), σ(μ)/μ < 0.1%.
+MORTE: > 1%.
