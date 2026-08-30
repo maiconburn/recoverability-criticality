@@ -26,3 +26,25 @@ cavidade) antes de congelar de novo.
 
 Dados: results/p11_wormhole.json (v1, void), p11_wormhole_v2.json.
 Scripts: p11_wormhole.py, p11_wormhole_v2.py.
+
+## P11' — vereditos finais (excitação simulada; três lições de modelagem)
+
+Simulação de onda 1+1D honesta (pulso gaussiano, contornos absorventes,
+referência = barreira única). Lição 3: o U0 = 0.15 congelado é
+SUB-CRÍTICO (barreira quase transparente, sem trem de ecos) — regime
+físico documentado: U0 = 0.5.
+
+| Previsão | Veredito | Números (U0=0.5) |
+|---|---|---|
+| P11'.1 trem de ecos, Δt = 2L ± 15% | morta em U0=0.15; **CONFIRMADA L≥12 no regime físico** | Δt = 26.1/34.0/42.0/50.0 vs 2L = 24/32/40/48 (erros 4–9%; offset +2 ≈ travessia das barreiras) |
+| P11'.2 SNR_min cresce com L | **MORTA** | SNR_template(L) PLANO (0.74–0.76): refletividade fixa ⇒ energia de eco constante; L controla resolvibilidade, não detectabilidade |
+| P11'.3 template ≥ 10× melhor | **MORTA** | razão 4.5→5.9× (cresce com L, direção certa, magnitude menor) |
+
+Detectores: autocorrelação crua e de envelope falham (colam na borda da
+janela); peak-finding com altura ≥ 25% do máximo e distância ≥ L/2
+funciona. Dados: results/p11_prime{,_echo,_u05}.json.
+
+Estado da linha: pausada com saldo = trem validado + razão template/
+agnóstico ~5× quantificada com amplitudes físicas. Herdeiras no radar:
+torre ESPACIAL de anéis de fótons (lente/EHT) e atravessabilidade↔Petz
+(ER=EPR) — ver memória do programa.
