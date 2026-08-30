@@ -58,3 +58,15 @@ F_YK ≥ 0.9·F_Petz (YK é quase-ótimo) e ambos caem juntos quando o
 scrambling é enfraquecido (varredura de passos do U: 1, 2, 4, 8):
 corr(F_YK, F_Petz) > 0.9 na varredura.
 MORTE: corr < 0.5 ou F_YK < 0.5·F_Petz em algum ponto.
+
+## Emenda P12''-A1 (2026-08-30, ANTES do re-teste; texto original mantido)
+P12''.2 comparava F_YK com o Petz do canal SEM pós-seleção — que é
+proibido de ter informação por no-signaling (e os dados obedeceram:
+F_Petz = 0.2500 exato, independente do scrambling — verificação acidental
+do teorema). Reformulação: F_Petz do canal CONDICIONADO ao sucesso da
+projeção de Bell (M → Mt | sucesso), que é o objeto que o decodificador
+YK aproxima. Critérios mantidos: corr(F_YK, F_Petz_cond) > 0.9 na
+varredura de scrambling e F_YK ≥ 0.5·F_Petz_cond.
+Também: varredura de passos ∈ {2,3,4,5,6,8,12} para caracterizar o
+revival do scrambler pequeno (P12''.1 avaliada no MÁXIMO da varredura,
+não em 8 fixo — emenda de operacionalização, morte se F_max ≤ 0.5).
