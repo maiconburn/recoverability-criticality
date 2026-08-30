@@ -37,3 +37,21 @@ degenerescência fatal com a chirp mass. Ressalvas: 2 níveis, quadrupolo
 Newtoniano, ruído branco de fase, um único cruzamento, sem spins/PN.
 Candidata a peça externa (nota ou contribuição a código da comunidade
 gravitational-collider) — NADA enviado.
+
+## P14'' — multi-cruzamento: espectroscopia completa do átomo gravitacional
+
+3 ressonâncias da mesma nuvem (razões fixas pelo espectro, dependências de
+spin distintas), Fisher 9×9 na fase, 45 ciclos totais, pinv com rcond
+1e-12 (cond 4.5e14 — direções quase-planas de fase global, normal).
+
+| Previsão | Veredito | Números |
+|---|---|---|
+| P14''.1 ganho coerente > 0.8·√3 | CONFIRMADA (raspão) | ganho 1.42; singles: 0.98%/12.5%/61.7% (cruzamentos tardios varridos rápido pelo chirp Ω^{11/3}) |
+| P14''.2 spin custa < 2× | **CONFIRMADA acima do previsto** | degradação 0.996 — as razões medem χ a 0.1% sozinhas |
+| P14''.3 σ(μ)/μ < 0.1% | inconclusive | 0.689% no fiducial de 45 ciclos; escala ∝1/ciclos² (P14') |
+
+Manchete: um único sistema com 3 cruzamentos entrega **massa do bóson a
+0.7% E spin do buraco negro a 0.1% simultaneamente**, com marginalização
+completa — as razões entre ressonâncias transformam degenerescência em
+medição dupla. Ressalvas: modelo de 3×(2 níveis), Newtoniano, acoplamentos
+iguais, um só evento. Dados: p14_multi.json.

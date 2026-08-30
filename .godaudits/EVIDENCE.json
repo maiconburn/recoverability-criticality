@@ -2,7 +2,7 @@
   "schema_version": "1.2",
   "mode": "static",
   "root": "theory-validation",
-  "commit": "06a69c2",
+  "commit": "6a954d7",
   "archetype": {
     "primary": "library",
     "confidence": "Tentative"
@@ -726,9 +726,9 @@
     },
     {
       "path": "GRAVEYARD.md",
-      "bytes": 5260,
-      "lines": 28,
-      "sha256": "bfe75826ce897fcfc5c6a35a1d080a24be1c5ea2e67ef9bb0b491839ce58d531"
+      "bytes": 5699,
+      "lines": 29,
+      "sha256": "00f7475fb09aabdf57d7c6b7b774166c8b39eb89c8225f8af434df7cf701a2fe"
     },
     {
       "path": "hunt_105.log",
@@ -1734,9 +1734,9 @@
     },
     {
       "path": "results/RESULTS_P12_P13.md",
-      "bytes": 2315,
-      "lines": 44,
-      "sha256": "ed89806e6397cada4f736204cdd4798dfbd322f6cd355e3112e8f1783a7d5248"
+      "bytes": 3546,
+      "lines": 67,
+      "sha256": "51d70ac710fcb02fb81747df879d5c5a403d226cd1e52dd1c4da7eea3fdcb0a2"
     },
     {
       "path": "results/RESULTS_P13_EHT.md",
@@ -2608,5 +2608,5 @@
     "Regex signals are inventory leads, not findings. A domain evaluator must trace and refute them.",
     "Copy signals cover high-confidence phrases on reader-facing paths. They do not establish authorship or a writing defect without contextual review."
   ],
-  "fingerprint_sha256": "7a577784d96309108a8058250804473fcd93819a383262e2c946db119c1baeb8"
+  "fingerprint_sha256": "303fb7ee734a26ea03fdc8e5fa337fa52e0213c14b0a1a33453816be1201a848"
 }
