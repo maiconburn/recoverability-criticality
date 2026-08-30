@@ -27,3 +27,12 @@ quando A → 0⁺, e a largura da região de hibridização cresce
 monotonicamente com A (papel de acoplamento efetivo entre réplicas).
 MORTE: mínimo não conecta a J* no limite A→0, ou largura não-monótona
 em A (fora de erro numérico).
+
+## P10.4 (congelada 2026-08-30, APÓS morte de P10.1 e ANTES de medir)
+Mecanismo aprendido com a morte: drive hermitiano (σ_z real) abre gap
+entre réplicas (anticrossing, splitting ∝ A — P10.3 confirmou o fio).
+Previsão afiada: com drive DISSIPATIVO, γ(t) = γ·(1 + A·cos Ω_d t)
+(acoplamento anti-hermitiano entre réplicas), a mesma ressonância
+J ≈ J* = 0.4717 produz COLISÃO: quasi-gap < 10⁻³ com colinearidade de
+autovetores > 0.99 para algum A ∈ (0, 0.6], J ∈ [0.44, 0.50].
+MORTE: nenhum ponto do plano satisfaz os dois critérios.
