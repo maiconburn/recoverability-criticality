@@ -41,3 +41,26 @@ afirmação EHT-facing da linha.
 Hierarquia qualitativa (1 → 1.7 → 2.4) presente e limpa através de
 décadas de gap. Dados: p13_photon_ring.json, p13_deep.json, p13_a4.json;
 p12_v3_{conj,T}.json.
+
+## P12'' — a ponte fechada (decodificador YK ↔ Petz)
+
+Protocolo Hayden–Preskill/Yoshida–Kitaev completo (8 qubits, projeção de
+Bell pós-selecionada), gates com testes unitários.
+
+- **P12''.2 na formulação original: MORTA POR TEOREMA** — comparava com o
+  Petz do canal SEM pós-seleção, que o no-signaling proíbe de conter
+  informação; os dados obedeceram com F_Petz = 0.2500 exato e
+  independente do scrambling (verificação acidental do teorema).
+  Emenda A1 (antes do re-teste): Petz do canal CONDICIONADO.
+- **P12''.1 CONFIRMADA** (emendada): F_max = 0.9467 em 12 passos de
+  scrambling (p_succ = 0.26); o dip em 8 passos é revival do Ising
+  chutado em sistema pequeno, caracterizado na varredura.
+- **P12''.2 CONFIRMADA** (emendada): corr(F_YK, F_Petz_cond) = 0.979 em 7
+  profundidades, com F_YK ≥ F_Petz_cond sempre (razão mínima 1.05,
+  consistente com a quase-otimalidade do Petz).
+
+Síntese da linha: "atravessar o wormhole = executar a recuperação de
+Petz do canal condicionado", agora medido. Isso solda o eixo Petz do
+programa (no-locking em QPU real; discriminador colapso-vs-decoerência)
+ao lado holográfico (HP/YK) num único objeto operacional.
+Dados: p12_yk.json, p12_yk2.json.
