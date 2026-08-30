@@ -33,3 +33,27 @@ P14.3 (o número de matéria escura): traduzindo para α = μM via
 Ω_res ∝ μ·f(α): erro relativo de μ (massa do bóson) alcançável num
 cruzamento limpo com SNR de fase = 100: σ(μ)/μ < 5%.
 MORTE: > 20%.
+
+## P14' (congelado 2026-08-30, ANTES de medir) — observável de fase de GW
+
+Modelo: binária com chirp quadrupolar dΩ/dt = k·Ω^{11/3} + backreaction
+−β·dP_b/dt; nuvem de dois níveis com Δ(t) = c·(Ω(t) − Ω_res), Ω_res ∝ μ
+(massa do bóson); fase observada Φ(t) = 2∫Ω dt com ruído branco de fase
+σ_φ = 0.1 rad por amostra, 2000 amostras, Ω varrendo 0.8→1.2 (Ω_res = 1).
+Fiducial: k tal que a varredura local perto da ressonância é lenta
+(v_eff ≈ 0.02·c), η = 0.05, c = 5, β = 0.01. Fisher 6×6 nos parâmetros
+{Ω_res, η, β, k, Ω₀, φ₀}, com σ(μ)/μ = σ(Ω_res)/Ω_res marginalizado.
+
+P14'.1 (o forecast honesto): a marginalização sobre os parâmetros da
+binária degrada o σ(μ)/μ ingênuo (0.03%) por fator > 10, mas o resultado
+fica < 5%.
+MORTE: > 20% (cruzamento não mede μ na prática) ou < 0.1% (marginalização
+não custa nada — indicaria erro).
+
+P14'.2 (localização): ≥ 60% da informação de Fisher sobre Ω_res vem da
+janela |Ω − Ω_res| < 5·η (a informação mora no cruzamento).
+MORTE: < 40%.
+
+P14'.3 (robustez à chirp mass): |corr(Ω_res, k)| < 0.9 no Fisher
+marginalizado (a assinatura da nuvem não é absorvível pela taxa de chirp).
+MORTE: ≥ 0.95.
