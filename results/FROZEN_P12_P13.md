@@ -39,3 +39,22 @@ P13.2 (número EHT-like): com SNR=100 por ponto e 200 pontos na banda,
 σ(γ)/γ < 10% para γ = ln(e^π)≈π/… medir para γ=1.0 e reportar o número
 (previsão: < 10%).
 MORTE: σ(γ)/γ > 30%.
+
+## P12'' (congelado 2026-08-30, após morte de P12.1, ANTES de medir)
+Protocolo Hayden–Preskill/Yoshida–Kitaev probabilístico completo, 8
+qubits: Bell(REF,M) ⊗ Bell(L1,R1) ⊗ Bell(L2,R2) ⊗ Bell(M2,Mt); U
+(Ising chutado, 8 passos, semente fixa) em (M,L1,L2); U* em (M2,R1,R2)
+com espelhamento de índices; projeção de Bell pós-selecionada nos pares
+de saída (L1,R1) e (L2,R2); leitura: F = ⟨φ+|ρ(REF,Mt)|φ+⟩.
+
+P12''.1 (o decodificador funciona): F pós-selecionada > 0.8, com
+probabilidade de sucesso da pós-seleção em [1/32, 1/4] (referência
+não-scrambled U=1: F = 0.25).
+MORTE: F ≤ 0.5.
+
+P12''.2 (a ponte Petz): a fidelidade do decodificador YK rastreia a
+recuperabilidade de Petz do canal M→lado-R (sem decodificação):
+F_YK ≥ 0.9·F_Petz (YK é quase-ótimo) e ambos caem juntos quando o
+scrambling é enfraquecido (varredura de passos do U: 1, 2, 4, 8):
+corr(F_YK, F_Petz) > 0.9 na varredura.
+MORTE: corr < 0.5 ou F_YK < 0.5·F_Petz em algum ponto.
