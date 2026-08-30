@@ -20,3 +20,4 @@ the linked reports.
 
 What survived every attack so far is in the README. Nothing enters that
 list without first walking past this page.
+| P10.1: a Hermitian periodic drive creates exceptional points at the Floquet replica resonance | Died by its own frozen criterion: the resonance opens a Rabi-type anticrossing (gap growing with drive amplitude, eigenvectors far from collinear). The death taught the mechanism: Hermitian coupling between frequency layers opens gaps; dissipative coupling makes them collide, which became the sharpened P10.4 and was confirmed at the 1e-10 level. | `results/RESULTS_P10_FLOQUET.md` |
