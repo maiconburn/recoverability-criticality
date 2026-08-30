@@ -1,4 +1,4 @@
-# P8 — previsões congeladas (pré-registro interno, 2026-08-30, LOCAL)
+# P8 — previsões congeladas (pré-registro, 2026-08-30; público desde a release v1.4)
 
 Congeladas ANTES de qualquer verificação externa ou contato. Protocolo padrão
 do repositório: cada previsão com critério de morte.

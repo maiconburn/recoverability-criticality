@@ -1,5 +1,10 @@
 # P1 — varredura de acoplamento: resultado (2026-08-28)
 
+> **AVISO DE SUPERSESSÃO (2026-08-30):** este é um documento HISTÓRICO datado.
+> Os valores de λ_ext aqui citados (0.1091 e derivados) foram RETRATADOS —
+> ver `ERRATA.md` E1–E3: não existe limiar único; a extinção é
+> família-por-família, com EPs genuínos até pelo menos λ = 0.120.
+
 Protocolo: previsões congeladas em `sweep_predictions.json` e `p4_predictions.json` ANTES das medições (λ=−0.1 vista antes do congelamento P4 — flagged). 5 acoplamentos com EP real: λ ∈ {−0.10, −0.05, 0.02, 0.05, 0.08}.
 
 ## O que confirmou (estrutural — as alegações da teoria)

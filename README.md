@@ -76,6 +76,10 @@ The same mirror-EP mathematics governs the de Sitter static patch: the QNM tower
 
 *Status: preregistered (frozen predictions with kill criteria), internally verified in one session, no external scrutiny yet. Quarantined here — not a main result — until it survives the same adversarial cycle that corrected the main-results threshold three times.*
 
+### Further preregistered lines (P9–P14) — same quarantine level as P8
+
+Beyond P8, the repository carries additional preregistered cycles, each with frozen predictions, kill criteria, and honest verdicts (several died; see `GRAVEYARD.md`): P9 entangled probes (`results/RESULTS_P9_ENTANGLED.md`), P10 Floquet-layer EPs (`results/RESULTS_P10_FLOQUET.md`), P11 wormhole echoes (`results/RESULTS_P11_WORMHOLE.md`), P12 traversable-wormhole/Petz bridge and P13 photon-ring CRB on real EHT coverage (`results/RESULTS_P12_P13.md`, `results/RESULTS_P13_EHT.md`), and P14 gravitational-collider dark-matter metrology (`results/RESULTS_P14_GRAVCOLLIDER.md`). None of these is a main result; all are reproducible from `scripts/`.
+
 ## 2. Methods (short)
 
 - **Shooting QNM solver** (`src/recoverability_ep/shooting.py`): Frobenius series at the horizon, Wronskian W = z⁵ψ′ at a boundary cutoff; near-degenerate pairs via a local quadratic model of W (error linear in W-noise, not √). Built because Chebyshev collocation has eigenvalue condition numbers ~10¹⁰ at the relevant spacelike momenta. Anchor validations: AdS₅ fundamental 3.119452 − 2.746676i reproduced to 1e-8; collocation cross-checks throughout.
@@ -110,6 +114,8 @@ Produced in a single day of AI-assisted work by an independent researcher; no ex
 
 ## 5. Reproduce
 
+Note: the SXS/QPU layers need extra packages not in the core lockfile; install them with `uv pip install sxs qnm qiskit qiskit-aer` (or `pip install -e .[layers]`).
+
 ```bash
 uv sync            # or: pip install -e . plus qnm sxs qiskit qiskit-aer
 uv run pytest      # 13 tests
@@ -122,7 +128,7 @@ uv run python scripts/run_sxs_layer.py      # real SXS waveforms (downloads)
 
 Third-party data (not re-hosted): Murch-lab repositories (github.com/murchlab), SXS catalog (sxs-collaboration), Kerr QNM tables (duetosymmetry/qnm). IBM jobs: da904i9qtnsc73d10u30, da904ihqtnsc73d10u3g (ibm_fez, 2026-08-28).
 
-## 7. Where this could be used today (direct → indirect)
+## 6. Where this could be used today (direct → indirect)
 
 1. **EP-sensor design** (photonic gyros/nanoparticle sensing): a third, noise-independent quantity for the enhancement debate — inverse-reconstruction cost, with a testable zero-parameter α recipe.
 2. **LVK ringdown pipelines / black-hole spectroscopy**: gap-dependent priors for overtone model selection; spin bands where posteriors are structurally ill-conditioned (with the n=5/6 vs n=0/1 caveat above).
@@ -131,6 +137,6 @@ Third-party data (not re-hosted): Murch-lab repositories (github.com/murchlab), 
 5. **Petz-based error mitigation**: recovery does not inherit the ill-conditioning of channel identification near spectral degeneracy.
 6. **Hamiltonian/Lindbladian learning**: an a-priori sample-budget law and a falsifiable EP-limited vs noise-limited diagnostic (residuals in the collapse variable).
 
-## 8. License
+## 7. License
 
 Code: MIT. Text and figures: CC-BY 4.0.

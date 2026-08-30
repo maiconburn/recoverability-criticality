@@ -1,5 +1,10 @@
 # "Roda tudo que dá pra rodar nesta máquina" — fechamento (2026-08-28, madrugada)
 
+> **AVISO DE SUPERSESSÃO (2026-08-30):** este é um documento HISTÓRICO datado.
+> Os valores de λ_ext aqui citados (0.1091 e derivados) foram RETRATADOS —
+> ver `ERRATA.md` E1–E3: não existe limiar único; a extinção é
+> família-por-família, com EPs genuínos até pelo menos λ = 0.120.
+
 ## Executado nesta rodada final
 
 | Item | Resultado |

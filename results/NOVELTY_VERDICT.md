@@ -1,5 +1,10 @@
 # Verificação pré-publicação — veredicto de novidade, aplicações e recomendação final
 
+> **AVISO DE SUPERSESSÃO (2026-08-30):** este é um documento HISTÓRICO datado.
+> Os valores de λ_ext aqui citados (0.1091 e derivados) foram RETRATADOS —
+> ver `ERRATA.md` E1–E3: não existe limiar único; a extinção é
+> família-por-família, com EPs genuínos até pelo menos λ = 0.120.
+
 ## 1. Veredicto de novidade por alegação
 
 | Alegação | Veredicto | Trabalho anterior mais próximo | Ajuste de fraseado recomendado para o README |

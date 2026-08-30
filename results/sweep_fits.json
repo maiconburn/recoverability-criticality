@@ -109,5 +109,5 @@
  ],
  "p4_z_metric": 1.7927386632653293,
  "p4_z_cmi": 3.3180390807837883,
- "ep_extinction": "no real-q2 mirror collision found down to q2=-40 for lambda >= 0.12 (EP extinct or complex)"
+ "ep_extinction": "no real-q2 mirror collision found down to q2=-40 for lambda >= 0.12 (EP extinct or complex) [SUPERSEDED 2026-08-30: see ERRATA.md E3 - genuine deep-family EPs exist to at least lambda=0.120]"
 }

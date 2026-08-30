@@ -1,5 +1,6 @@
 """Assemble the validation report artifact (inlines figures as data URIs)."""
 
+import sys
 import base64
 import json
 from pathlib import Path
@@ -7,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FIGURES = ROOT / "results" / "figures"
 OUT = Path(
-    "/private/tmp/claude-501/-Users-maiconesteves-fisica/"
+    sys.argv[1] if len(sys.argv) > 1 else "lei-complexidade-critica.html"
     "0f1bdd7e-c08f-4678-b0c9-cdfea8c8af0d/scratchpad/lei-complexidade-critica.html"
 )
 

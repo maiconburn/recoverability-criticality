@@ -23,3 +23,5 @@ packages = ["src/recoverability_ep"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
+[project.optional-dependencies]
+layers = ["sxs", "qnm", "qiskit", "qiskit-aer"]

@@ -6,7 +6,7 @@ authors:
   - family-names: Esteves
     given-names: Maicon
     email: maicon.burn@gmail.com
-date-released: 2026-08-28
+date-released: 2026-08-30
 abstract: >
   Universal information-cost law for parameter reconstruction near
   second-order exceptional points, validated across a 5D Einstein-Gauss-Bonnet
@@ -17,3 +17,6 @@ abstract: >
   spectroscopy of the EGB family, and a two-task (spectral vs Petz-recovery)
   no-locking measurement.
 license: MIT
+version: v1.6
+doi: 10.5281/zenodo.22156019
+repository-code: https://github.com/maiconburn/recoverability-criticality

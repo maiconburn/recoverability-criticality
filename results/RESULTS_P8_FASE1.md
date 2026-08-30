@@ -1,4 +1,4 @@
-# P8 fase 1 — o ponto excepcional cosmológico (LOCAL, NÃO COMMITADO)
+# P8 fase 1 — o ponto excepcional cosmológico
 
 Data: 2026-08-29/30. Status: cadeia interna completa; NOVIDADE NÃO AUDITADA
 — proibido claim externo antes da auditoria de literatura (cosmological

@@ -1,5 +1,10 @@
 # Nosso trabalho e as "11 dimensões" — um mapa honesto
 
+> **AVISO DE SUPERSESSÃO (2026-08-30):** este é um documento HISTÓRICO datado.
+> Os valores de λ_ext aqui citados (0.1091 e derivados) foram RETRATADOS —
+> ver `ERRATA.md` E1–E3: não existe limiar único; a extinção é
+> família-por-família, com EPs genuínos até pelo menos λ = 0.120.
+
 Pergunta curta: **o nosso trabalho toca a teoria de cordas? E as teorias que unificam o quântico com o macroscópico?** Resposta curta: toca a teoria de cordas num ponto técnico real e bem delimitado (e acabamos de obter um resultado *negativo* interessante exatamente nesse ponto); sobre "unificação quântico–macro", nossos resultados dizem coisas concretas sobre **modelos de colapso** e sobre **programas de gravidade emergente** — mas quase sempre na forma de restrições e independências, não de confirmações. Abaixo, o mapa sem exageros.
 
 ---
@@ -12,7 +17,7 @@ Pergunta curta: **o nosso trabalho toca a teoria de cordas? E as teorias que uni
 
 **A janela de causalidade.** A consistência causal restringe −7/36 ≤ λ_GB ≤ 9/100 em 5D (Brigante–Liu–Myers–Shenker–Yaida 2008; Buchel et al. 2010). Acima de 9/100 = 0,09, a teoria de fronteira dual propaga sinais mais rápido que a luz — deixa de existir uma teoria consistente.
 
-**O que descobrimos ali — e o que isso significa e não significa.** Nossa transição nova (o ponto excepcional espelhado do QNM escalar existe no eixo real de momento tipo-espaço para λ ≤ 0,08 e está extinto para λ ≥ 0,12) inicialmente colocava o limiar num intervalo que continha 0,09. **Se** o limiar convergisse para exatamente 9/100, teríamos a primeira afirmação de que uma transição de ponto excepcional do espectro *detecta* a fronteira de causalidade das cordas — previsão de zero parâmetros, testável num laptop. Isso **não** significaria "prova da teoria de cordas": seria um vínculo estrutural dentro de um modelo, entre duas propriedades de consistência. Pois bem: o refinamento numérico já decidiu. O log local (`/Users/maiconesteves/fisica/theory-validation/extinction_hunt.log`) fecha o limiar em **λ_ext ∈ [0,10875, 0,11000]** — estritamente *acima* de 0,09, cerca de 20% além da última teoria de fronteira consistente. O ponto excepcional, e com ele a lei de complexidade com taxa pela metade, **sobrevive à morte da causalidade da fronteira**. Isso é um resultado negativo com conteúdo: a estrutura espectral-informacional do bulk é *indiferente* à consistência da teoria de fronteira (ver seção 3). Nota de rodapé especulativa, devidamente rotulada como numerologia até que alguém a derive: 7/64 = 0,109375 cai dentro do intervalo atual; o limiar de instabilidade eikonal de Konoplya–Zhidenko, 1/8 = 0,125, parece excluído.
+**O que descobrimos ali — e o que isso significa e não significa.** Nossa transição nova (o ponto excepcional espelhado do QNM escalar existe no eixo real de momento tipo-espaço para λ ≤ 0,08 e está extinto para λ ≥ 0,12) inicialmente colocava o limiar num intervalo que continha 0,09. **Se** o limiar convergisse para exatamente 9/100, teríamos a primeira afirmação de que uma transição de ponto excepcional do espectro *detecta* a fronteira de causalidade das cordas — previsão de zero parâmetros, testável num laptop. Isso **não** significaria "prova da teoria de cordas": seria um vínculo estrutural dentro de um modelo, entre duas propriedades de consistência. Pois bem: o refinamento numérico já decidiu. O log local (`extinction_hunt.log (log de sessão local, não distribuído)`) fecha o limiar em **λ_ext ∈ [0,10875, 0,11000]** — estritamente *acima* de 0,09, cerca de 20% além da última teoria de fronteira consistente. O ponto excepcional, e com ele a lei de complexidade com taxa pela metade, **sobrevive à morte da causalidade da fronteira**. Isso é um resultado negativo com conteúdo: a estrutura espectral-informacional do bulk é *indiferente* à consistência da teoria de fronteira (ver seção 3). Nota de rodapé especulativa, devidamente rotulada como numerologia até que alguém a derive: 7/64 = 0,109375 cai dentro do intervalo atual; o limiar de instabilidade eikonal de Konoplya–Zhidenko, 1/8 = 0,125, parece excluído.
 
 ---
 
@@ -48,4 +53,4 @@ Ressalva sem hype: tudo isso é em sistemas-modelo (brane holográfico, qubits, 
 6. **corr(α_ρ, custo de Petz) com IC de bootstrap** sobre `results/sweep_fits.json`: o "sem locking" vira um único número citável.
 7. **Demo-teorema numérica**: mesmo canal como dilatação unitária vs desdobramento estocástico com registro descartado — espectros idênticos, Petz maximamente diferente. É a ponte limpa entre nossos resultados e a discriminação colapso/decoerência da seção 2.
 
-Arquivos relevantes: `/Users/maiconesteves/fisica/theory-validation/extinction_hunt.log`, `/Users/maiconesteves/fisica/theory-validation/results/RESULTS_SWEEP.md`, `/Users/maiconesteves/fisica/theory-validation/results/sweep_fits.json`.
+Arquivos relevantes: `extinction_hunt.log (log de sessão local, não distribuído)`, `/Users/maiconesteves/fisica/theory-validation/results/RESULTS_SWEEP.md`, `/Users/maiconesteves/fisica/theory-validation/results/sweep_fits.json`.
