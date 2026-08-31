@@ -35,3 +35,20 @@ No mesmo sintético, a RESPOSTA do splitting ao parâmetro físico segue
 com os custos da tabela: o "debate do sensing" em ordem N é resolvido
 pela separação de tarefas, como no EP-2.
 MORTE: resposta não-consistente com 1/3 (±0.1) no regime pequeno-ε.
+
+## P15.4 (congelado 2026-08-31, ANTES de calcular) — anisotropia ao longo da linha de EP
+
+Hipótese: o custo de estimação NO EP, ao longo da linha de LEP3, é
+controlado pela não-ortogonalidade local dos autovetores (fator de
+Petermann). Medida operacional congelada: κ_V(α) = número de condição da
+matriz de autovetores do LH do experimento, avaliado num offset relativo
+fixo δ=10⁻³ da linha (γ = γ_LEP3(α)·(1+δ), ω=1) — comparável entre α's.
+Observável: σ_γ/γ̄ dos bootstraps públicos (normalizado por escala; σ_γ
+cru reportado como secundário).
+
+Previsão: corr[ln(σ_γ/γ̄), ln κ_V] > 0.8 nas ≥9 configurações utilizáveis,
+com lei de potência σ/γ ∝ κ_V^q, q ∈ (0, 1.5].
+MORTE: corr < 0.5.
+Controle congelado: se σ_γ/γ̄ correlacionar melhor com γ̄ puro do que com
+κ_V (|corr_γ| > |corr_κ| + 0.1), a hipótese Petermann NÃO é suportada
+mesmo com corr alta — reportar como confundida por escala.
