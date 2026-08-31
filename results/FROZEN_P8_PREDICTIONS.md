@@ -86,3 +86,37 @@ KILL: log equally present far from the crossing (it would be a fit artifact).
 P8-F2.3 (attenuation by the sweep): A(ε₁) decreases monotonically over
 ε₁ ∈ {0.002, 0.005, 0.01}.
 KILL: non-monotonic beyond the fit error.
+
+## P8-F3 (frozen 2026-08-31, BEFORE any measurement): the log channel in the INTERACTING squeezed limit
+
+Instrument: CosmoFlow PiSigma (validated to 3.8e-4 against the exact dS
+spectrum, results/p18_cosmoflow_validation.json; 1.1 s per bispectrum
+call). Single-exchange collider configuration: quadratic mixing
+rho = 0.1 H plus one cubic vertex kappa2 (dot-pi^2 sigma), all other
+cubics zero. Shape-normalized squeezed data S(k_L) at fixed late N_ref,
+k_S = 1, k_L over >= 1.5 decades.
+
+INSTRUMENT GATE (before the physics runs): in STATIC dS at nu = 1
+(m^2 = 5H^2/4), the squeezed tower collides at relative order
+(k_L/k_S)^2 and the fit basis {x^{1/2}, x^{5/2}, x^{5/2} ln x} must
+beat the log-less basis by dchi2/dof > 4 with a stable log coefficient
+(this is the known degenerate-dimension statement; if CosmoFlow cannot
+see it, the tool cannot test F3 and the cycle stops there).
+
+P8-F3.1 (control, no crossing): quasi-dS with epsilon_1 = 0.005 and the
+k band exiting with nu(N_exit) fixed near 0.7 (no crossing of 1): the
+log term adds nothing (dchi2/dof < 1).
+KILL: log improvement without a crossing (fit artifact).
+
+P8-F3.2 (the survival question): same epsilon_1, mass chosen so
+nu(N_exit) crosses 1 inside the k band: the log channel survives with
+dchi2/dof > 4 and amplitude ratio A = |c_log / c_log^static| in
+(0.05, 1], sign matching the static case.
+KILL: no improvement, or A <= 0.05. Declared risk: P8-F2 killed the
+free-sector version of this claim (adiabatic laundering); if the
+interacting channel also launders, the honest verdict is "tree-level
+cosmological clock fully excluded", which is a result, not a failure.
+
+P8-F3.3 (sweep attenuation): A(epsilon_1) decreases monotonically over
+epsilon_1 in {0.002, 0.005, 0.01}.
+KILL: non-monotonic beyond fit error.
