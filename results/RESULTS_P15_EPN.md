@@ -1,61 +1,62 @@
-# P15 — a hierarquia em ordem N (congelada antes; sintético confirmado)
+# P15, the hierarchy at order N (frozen before; synthetic confirmed)
 
-## P15.1 CONFIRMADA — a escada do cluster {p−1, 2p−2, 2p−1}
+## P15.1 CONFIRMED: the cluster ladder {p−1, 2p−2, 2p−1}
 
-EP-3 sintético (padrão de Puiseux cúbico, aritmética de 60 dígitos com
-gate de condicionamento — a v1 em double era piso de pinv abaixo de
-g=0.03, artefato conhecido da casa):
+Synthetic EP-3 (cubic Puiseux pattern, 60-digit arithmetic with a
+conditioning gate: the v1 in double precision was a pinv floor below
+g=0.03, a known house artifact):
 
-| tarefa | previsto (p=3) | expoentes locais finais |
+| task | predicted (p=3) | final local exponents |
 |---|---|---|
-| amplitudes, frequências fixas | 2 | −2.05 → −2.01 |
-| pior direção de frequência, tudo livre | 4 | −3.70 → −3.98 |
-| amplitude, tudo livre | 5 | −5.05 → −5.01 |
+| amplitudes, fixed frequencies | 2 | −2.05 → −2.01 |
+| worst frequency direction, everything free | 4 | −3.70 → −3.98 |
+| amplitude, everything free | 5 | −5.05 → −5.01 |
 
-Com o caso p=2 já medido no programa (1, 2, 3), a hierarquia é
-**{p−1, 2p−2, 2p−1} na ordem p da degenerescência** — a lei de custo
-ganha generalidade em N.
+With the p=2 case already measured in the program (1, 2, 3), the
+hierarchy is **{p−1, 2p−2, 2p−1} in the order p of the degeneracy**:
+the cost law gains generality in N.
 
-## P15.3 CONFIRMADA — coexistência com o ganho de resposta
-Resposta do splitting ao parâmetro físico: expoente 0.3333 (= 1/3 exato).
-O "debate do sensing EP-N" se resolve como no EP-2: o ganho de resposta
-ε^{1/N} é real E os custos espectrais da escada são reais — são TAREFAS
-diferentes sobre o mesmo sistema.
+## P15.3 CONFIRMED: coexistence with the response gain
+Response of the splitting to the physical parameter: exponent 0.3333
+(= 1/3 exact). The "EP-N sensing debate" resolves as in the EP-2: the
+response gain ε^{1/N} is real AND the spectral costs of the ladder are
+real: they are different TASKS on the same system.
 
-## P15.2 — dados reais: em andamento
-Fontes catalogadas: NV EP-3 (Nat. Nanotech 19, 160) e íons aprisionados
-LEP3 (figshare). Pré-registro em FROZEN_P15_EPN.md; janela ±0.75.
+## P15.2, real data: in progress
+Cataloged sources: NV EP-3 (Nat. Nanotech 19, 160) and trapped-ion
+LEP3 (figshare). Preregistration in FROZEN_P15_EPN.md; window ±0.75.
 
-## P15.2 — dados de íons (LEP3): VOID por desenho, com um brinde
+## P15.2, ion data (LEP3): VOID by design, with a bonus
 
-Dataset público analisado (figshare 10.6084/m9.figshare.30343429,
-CC BY 4.0; 120 amostras de bootstrap de fits (α, γ) por configuração):
-engenharia reversa das configurações mostra que TODAS obedecem
-γ = 4ω/|1 − 2α| (6/6 pares exatos) — o experimento senta SOBRE a linha
-de LEP3 e varre a POSIÇÃO ao longo dela, nunca a distância ao EP. Sem
-varredura de gap, o expoente da escada não é testável: **VOID pelo
-critério congelado**, e o pré-registro P15.2 permanece aberto para
-qualquer laboratório com varredura transversal (a previsão pública:
+Public dataset analyzed (figshare 10.6084/m9.figshare.30343429,
+CC BY 4.0; 120 bootstrap samples of (α, γ) fits per configuration):
+reverse engineering of the configurations shows that ALL of them obey
+γ = 4ω/|1 − 2α| (6/6 exact pairs): the experiment sits ON the LEP3
+line and sweeps the POSITION along it, never the distance to the EP.
+Without a gap sweep, the ladder exponent is not testable: **VOID by
+the frozen criterion**, and the P15.2 preregistration remains open for
+any laboratory with a transverse sweep (the public prediction:
 {2, 4, 5} ± 0.75).
 
-Brinde: os σ de bootstrap variam ~5× ao longo da linha
-(σ_γ: 0.05 → 0.26), medindo a ANISOTROPIA do custo de estimação ao longo
-de uma linha de EP-3 — observável que nossa teoria ainda não prevê;
-anotado como questão aberta.
+Bonus: the bootstrap σ's vary ~5× along the line (σ_γ: 0.05 → 0.26),
+measuring the ANISOTROPY of the estimation cost along an EP-3 line: an
+observable our theory does not yet predict; noted as an open question.
 
-Estado final da linha P15: teoria da escada em ordem N CONFIRMADA em
-sintético de alta precisão ({p−1, 2p−2, 2p−1}; locais −2.01/−3.98/−5.01);
-resposta ε^{1/3} exata; dados públicos disponíveis não testam a escada
-por desenho experimental. Dados: p15_ep3_v2.json, p15_lep3_data.json.
+Final state of the P15 line: ladder theory at order N CONFIRMED on
+high-precision synthetic ({p−1, 2p−2, 2p−1}; locals −2.01/−3.98/−5.01);
+response ε^{1/3} exact; the available public data do not test the
+ladder because of the experimental design. Data: p15_ep3_v2.json,
+p15_lep3_data.json.
 
-## P15.4 — hipótese Petermann: MORTA pelo controle congelado
+## P15.4, Petermann hypothesis: KILLED by the frozen control
 
-corr[ln(σ/γ), ln κ_V] = −0.27 (fraca, sinal oposto ao previsto);
-controle de escala congelado disparou (γ puro correlaciona 0.525 > κ_V).
-Veredito: CONFOUNDED-BY-SCALE. A anisotropia ao longo da linha de LEP3 é
-dominada, ao menos em parte, por física experimental mundana (γ maior =
-menos oscilações na janela de medição = fit pior) e por uma diferença
-sistemática entre os ramos α < ½ e α > ½ que κ_V local não captura.
-Questão aberta REFINADA: separar o confundidor exigiria os records crus
-(não os bootstraps agregados) ou dados com janela ∝ 1/γ. A "segunda lei"
-(custo paralelo geométrico) segue sem candidato vivo. Dados: p15_4.json.
+corr[ln(σ/γ), ln κ_V] = −0.27 (weak, opposite sign to the prediction);
+the frozen scale control fired (pure γ correlates 0.525 > κ_V).
+Verdict: CONFOUNDED-BY-SCALE. The anisotropy along the LEP3 line is
+dominated, at least in part, by mundane experimental physics (larger
+γ = fewer oscillations in the measurement window = worse fit) and by a
+systematic difference between the α < ½ and α > ½ branches that local
+κ_V does not capture. REFINED open question: separating the confounder
+would require the raw records (not the aggregated bootstraps) or data
+with window ∝ 1/γ. The "second law" (geometric parallel cost) remains
+without a live candidate. Data: p15_4.json.

@@ -1,89 +1,88 @@
-# P8 — previsões congeladas (pré-registro, 2026-08-30; público desde a release v1.4)
+# P8: frozen predictions (preregistration, 2026-08-30; public since release v1.4)
 
-Congeladas ANTES de qualquer verificação externa ou contato. Protocolo padrão
-do repositório: cada previsão com critério de morte.
+Frozen BEFORE any external verification or contact. Standard repository
+protocol: each prediction with a kill criterion.
 
-## Contexto
-Rede de EP-2 provada na torre do patch estático de dS (ν ∈ ℤ; ponto físico
-ν=1 ⇔ m² = 5/4·H²; ponto de fronteira ν=0 ⇔ m = 3/2·H = AHM logarithmic
-operator). Camada de metrologia nossa; mecânica do log em ν=0 é prior art
-(Arkani-Hamed–Maldacena 1503.08043, eq. 3.15 e nota 9).
+## Context
+EP-2 network proved in the static-patch tower of dS (ν ∈ ℤ; physical point
+ν=1 ⇔ m² = 5/4·H²; boundary point ν=0 ⇔ m = 3/2·H = AHM logarithmic
+operator). The metrology layer is ours; the log mechanics at ν=0 is prior
+art (Arkani-Hamed-Maldacena 1503.08043, eq. 3.15 and footnote 9).
 
-## P8.1 — divergência universal do custo de estimação
-Qualquer forecast de massa de espectador que inclua AMBAS as torres
-(k_L/k_S)^{Δ±} com amplitudes livres exibirá σ(ν̂) = C/(S·|ν−ν_c|) perto de
-ν_c ∈ {0, 1}, expoente −1.00 ± 0.05. Medido aqui: −1.002 (ν=0, C=2.0 exato
-na janela r∈[0.05,0.6], 80 modos) e −1.022→−1.001 (ν=1, C=10.2).
-MORTE: expoente fora de [−1.15, −0.85] em reanálise independente.
+## P8.1: universal divergence of the estimation cost
+Any spectator-mass forecast that includes BOTH towers (k_L/k_S)^{Δ±} with
+free amplitudes will exhibit σ(ν̂) = C/(S·|ν−ν_c|) near ν_c ∈ {0, 1},
+exponent −1.00 ± 0.05. Measured here: −1.002 (ν=0, C=2.0 exact in the
+window r∈[0.05,0.6], 80 modes) and −1.022→−1.001 (ν=1, C=10.2).
+KILL: exponent outside [−1.15, −0.85] in an independent reanalysis.
 
-## P8.2 — resgate pelo canal logarítmico
-Exatamente em ν_c, a informação de massa sobrevive apenas no coeficiente do
-termo log (cadeia de Jordan; coeficientes exatos: soft factor ν=1 tem
-−ln x·x³ com coef −1 e ¼ln²x·x⁵). Estimador com vínculo de cadeia:
-σ_log = 2.7/S (nossa janela), FINITO.
-MORTE: informação finita em ν_c sem usar o canal log (num modelo com ambas
-amplitudes livres), ou canal log com informação nula.
+## P8.2: rescue through the logarithmic channel
+Exactly at ν_c, the mass information survives only in the coefficient of
+the log term (Jordan chain; exact coefficients: the ν=1 soft factor has
+−ln x·x³ with coef −1 and ¼ln²x·x⁵). Estimator with the chain constraint:
+σ_log = 2.7/S (our window), FINITE.
+KILL: finite information at ν_c without using the log channel (in a model
+with both amplitudes free), or a log channel with zero information.
 
-## P8.3 — viés de pipelines sem log
-Ajustar dados gerados em ν=1 (com o log físico presente) usando modelo de
-dois power laws SEM log produz viés sistemático em ν̂ (empilhamento
-observado em MC: viés +0.3 → estimativas colapsam para ν≈1 de longe;
-quantificação fina pendente).
-MORTE: MC bem calibrado sem viés.
+## P8.3: bias of pipelines without the log
+Fitting data generated at ν=1 (with the physical log present) using a
+two power-law model WITHOUT the log produces a systematic bias in ν̂
+(piling observed in MC: bias +0.3 → estimates collapse to ν≈1 from far
+away; fine quantification pending).
+KILL: a well-calibrated MC with no bias.
 
-## P8.4 — rede
-Todo cruzamento de torre em ν ∈ ℤ é EP-2 (verificado ν=1,2,3 × 5 pontos,
-posto-1 + Jordan ~1e-12). Previsão: nenhum cruzamento diabólico existe na
-torre escalar do patch estático.
-MORTE: um cruzamento com deficiência de posto 2.
+## P8.4: network
+Every tower crossing at ν ∈ ℤ is an EP-2 (verified ν=1,2,3 × 5 points,
+rank-1 + Jordan ~1e-12). Prediction: no diabolical crossing exists in the
+static-patch scalar tower.
+KILL: a crossing with rank deficiency 2.
 
-## Status de novidade (auditado nesta sessão)
-- Conhecido: log/Jordan em ν=0 (AHM 2015); EPs em QNMs Kerr-dS/SdS/RN-dS
-  (2503.21276, 2512.06903, 2608.16521, 2601.00704); logs de Bessel inteiro.
-- Não encontrado em abstracts nem nos full-texts checados (AHM 1503.08043;
-  Chen–Wang 0911.3380; Moradinezhad Dizgah et al. 1801.07265): a REDE ν∈ℤ
-  como EP-2 provado, a lei de custo σ = C/(S·d) nos pontos críticos, a
-  janela de irresolubilidade, o resgate pelo canal log, o ln² como
-  fingerprint de cadeia.
-- Pendente: varredura full-text mais ampla (follow-ups de QSF/collider
-  2016–2026) antes de claim público.
+## Novelty status (audited this session)
+- Known: log/Jordan at ν=0 (AHM 2015); EPs in Kerr-dS/SdS/RN-dS QNMs
+  (2503.21276, 2512.06903, 2608.16521, 2601.00704); integer Bessel logs.
+- Not found in abstracts nor in the full texts checked (AHM 1503.08043;
+  Chen-Wang 0911.3380; Moradinezhad Dizgah et al. 1801.07265): the ν∈ℤ
+  NETWORK as proven EP-2, the cost law σ = C/(S·d) at the critical points,
+  the irresolvability window, the rescue through the log channel, the ln²
+  as chain fingerprint.
+- Pending: a broader full-text sweep (QSF/collider follow-ups 2016–2026)
+  before any public claim.
 
-## Emenda A1 (2026-08-30, ANTES de qualquer teste externo)
+## Amendment A1 (2026-08-30, BEFORE any external test)
 
-P8.3 como escrita era mal-posta: exatamente em ν_c a verossimilhança em ν é
-chata (é o conteúdo de P8.1), então "viés em ν̂" não é o observável certo.
-Operacionalização corrigida (o texto original acima permanece para
-auditoria):
+P8.3 as written was ill-posed: exactly at ν_c the likelihood in ν is flat
+(that is the content of P8.1), so "bias in ν̂" is not the right observable.
+Corrected operationalization (the original text above remains for audit):
 
-**P8.3':** dados gerados em ν=1 com o termo log físico presente rejeitam o
-modelo de dois power laws SEM log por qualidade de ajuste — medido:
-χ²/dof = 12.3 (ruído 1e-3), 1.1×10³ (1e-4), 1.1×10⁵ (1e-5), janela
-fiducial r∈[0.05,0.6], 80 modos — enquanto o modelo com canal log dá
-χ²/dof = 1.00 e recupera o coeficiente da cadeia sem viés
-(C = −0.3500 ± 0.0001 a ruído 1e-5, verdade −0.35).
-MORTE: χ²/dof do modelo sem log compatível com 1 em dados com log físico,
-ou C recuperado com viés > 3σ.
+**P8.3':** data generated at ν=1 with the physical log term present reject
+the two power-law model WITHOUT the log by goodness of fit. Measured:
+χ²/dof = 12.3 (noise 1e-3), 1.1×10³ (1e-4), 1.1×10⁵ (1e-5), fiducial
+window r∈[0.05,0.6], 80 modes, while the model with the log channel gives
+χ²/dof = 1.00 and recovers the chain coefficient without bias
+(C = −0.3500 ± 0.0001 at noise 1e-5, truth −0.35).
+KILL: χ²/dof of the no-log model compatible with 1 on data with the
+physical log, or recovered C with bias > 3σ.
 
-## P8-F2 (congelado 2026-08-30, ANTES de medir) — o log no objeto de duas escalas
+## P8-F2 (frozen 2026-08-30, BEFORE measuring): the log in the two-scale object
 
-Lição das fases anteriores: single-k é analítico em ν e não vê o log; o
-log vive na estrutura de DUAS escalas. Objeto congelado: em quase-dS
-(H = e^{−ε₁N}, m²/H² cruzando 5/4 em N*), o espectro a TEMPO FIXO
-y(k) = k³|σ_k(N_ref)|², N_ref = N* + 6, para uma grade de k cujas saídas
-de horizonte varrem o cruzamento. Em dS estático com ν=1, y(k) tem
-(π²/4)y = k + [−ln k + c]k³ + ¼k⁵ln²k (nosso resultado exato).
+Lesson from the earlier phases: single-k is analytic in ν and does not see
+the log; the log lives in the TWO-scale structure. Frozen object: in
+quasi-dS (H = e^{−ε₁N}, m²/H² crossing 5/4 at N*), the FIXED-TIME spectrum
+y(k) = k³|σ_k(N_ref)|², N_ref = N* + 6, for a grid of k whose horizon
+exits sweep the crossing. In static dS with ν=1, y(k) has
+(π²/4)y = k + [−ln k + c]k³ + ¼k⁵ln²k (our exact result).
 
-P8-F2.1 (sobrevivência): o fit de y(k) na base {k, k³, k³ln k, k⁵, k⁵ln k}
-melhora sobre a base sem logs com Δχ²/dof > 4, e o coeficiente do k³ln k
-tem o sinal do estático (negativo), com amplitude atenuada
-A ≡ |c_log/c_log^{estático}| ∈ (0.05, 1].
-MORTE: sem melhora (log não sobrevive à varredura) ou A ≤ 0.05.
+P8-F2.1 (survival): the fit of y(k) in the basis {k, k³, k³ln k, k⁵, k⁵ln k}
+improves over the no-log basis with Δχ²/dof > 4, and the coefficient of
+k³ln k has the sign of the static case (negative), with attenuated
+amplitude A ≡ |c_log/c_log^{static}| ∈ (0.05, 1].
+KILL: no improvement (the log does not survive the sweep) or A ≤ 0.05.
 
-P8-F2.2 (localização): repetindo com m² tal que ν(N_exit da banda de k)
-fique em 1±0.15 sem cruzar 1: |c_log| cai para < 0.3 do valor no
-cruzamento.
-MORTE: log igualmente presente longe do cruzamento (seria artefato de fit).
+P8-F2.2 (localization): repeating with m² such that ν(N_exit of the k band)
+stays at 1±0.15 without crossing 1: |c_log| drops to < 0.3 of the value at
+the crossing.
+KILL: log equally present far from the crossing (it would be a fit artifact).
 
-P8-F2.3 (atenuação pela varredura): A(ε₁) decresce monotonicamente em
+P8-F2.3 (attenuation by the sweep): A(ε₁) decreases monotonically over
 ε₁ ∈ {0.002, 0.005, 0.01}.
-MORTE: não-monotônico além do erro de fit.
+KILL: non-monotonic beyond the fit error.

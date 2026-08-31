@@ -1,38 +1,37 @@
-# P10 — congelado ANTES de qualquer medição (pergunta do autor: "camadas
-# que vibram na mesma frequência e se influenciam")
+# P10: frozen BEFORE any measurement (author's question: "layers
+# that vibrate at the same frequency and influence each other")
 
-Data do congelamento: 2026-08-30. Sistema: qubit PT pós-selecionado com
-drive periódico, H(t) = [[0, J], [J, -iγ/2]] + (A/2)·cos(Ω_d t)·σ_z,
-γ = 1, Ω_d = 0.8. Propagador de um período U(T), quase-energias
-λ_± = (i/T)·ln eig U(T), definidas mod Ω_d (as "camadas"/réplicas).
+Freeze date: 2026-08-30. System: post-selected PT qubit with periodic
+drive, H(t) = [[0, J], [J, -iγ/2]] + (A/2)·cos(Ω_d t)·σ_z,
+γ = 1, Ω_d = 0.8. One-period propagator U(T), quasi-energies
+λ_± = (i/T)·ln eig U(T), defined mod Ω_d (the "layers"/replicas).
 
-## P10.1 — EPs de camada (ressonância entre réplicas)
-No sistema ESTÁTICO, gap real 2√(J²−1/16) = Ω_d ocorre em J* = 0.4717.
-Previsão: com A > 0, surge estrutura de EP (colisão de quase-energias com
-coalescência de autovetores) numa vizinhança de J*, ONDE O SISTEMA
-ESTÁTICO NÃO TEM EP — camadas distintas se influenciando por ressonância.
-MORTE: nenhuma quase-degenerescência com caráter de EP (gap de
-quase-energia < 0.01 com colinearidade de autovetores > 0.99) encontrada
-em J ∈ [0.35, 0.60], A ∈ (0, 0.6].
+## P10.1: layer EPs (resonance between replicas)
+In the STATIC system, the real gap 2√(J²−1/16) = Ω_d occurs at J* = 0.4717.
+Prediction: with A > 0, EP structure appears (quasi-energy collision with
+eigenvector coalescence) in a neighborhood of J*, WHERE THE STATIC SYSTEM
+HAS NO EP: distinct layers influencing each other through resonance.
+KILL: no quasi-degeneracy with EP character (quasi-energy gap < 0.01 with
+eigenvector collinearity > 0.99) found in J ∈ [0.35, 0.60], A ∈ (0, 0.6].
 
-## P10.2 — a lei de custo é cega à camada
-Perto do EP de Floquet, o CRB do splitting de quase-energia (amplitudes
-livres, record estroboscópico c₁(nT)) diverge com o MESMO expoente da
-tarefa análoga no EP estático medido na mesma janela de gaps.
-MORTE: |expoente_Floquet − expoente_estático| > 0.5.
+## P10.2: the cost law is blind to the layer
+Near the Floquet EP, the CRB of the quasi-energy splitting (free
+amplitudes, stroboscopic record c₁(nT)) diverges with the SAME exponent
+as the analogous task at the static EP measured in the same gap window.
+KILL: |exponent_Floquet − exponent_static| > 0.5.
 
-## P10.3 — o drive é o acoplamento entre camadas
-A localização do quase-gap mínimo em J desloca-se continuamente de J*
-quando A → 0⁺, e a largura da região de hibridização cresce
-monotonicamente com A (papel de acoplamento efetivo entre réplicas).
-MORTE: mínimo não conecta a J* no limite A→0, ou largura não-monótona
-em A (fora de erro numérico).
+## P10.3: the drive is the coupling between layers
+The location of the minimum quasi-gap in J shifts continuously from J*
+as A → 0⁺, and the width of the hybridization region grows monotonically
+with A (role of effective coupling between replicas).
+KILL: minimum does not connect to J* in the A→0 limit, or width
+non-monotonic in A (beyond numerical error).
 
-## P10.4 (congelada 2026-08-30, APÓS morte de P10.1 e ANTES de medir)
-Mecanismo aprendido com a morte: drive hermitiano (σ_z real) abre gap
-entre réplicas (anticrossing, splitting ∝ A — P10.3 confirmou o fio).
-Previsão afiada: com drive DISSIPATIVO, γ(t) = γ·(1 + A·cos Ω_d t)
-(acoplamento anti-hermitiano entre réplicas), a mesma ressonância
-J ≈ J* = 0.4717 produz COLISÃO: quasi-gap < 10⁻³ com colinearidade de
-autovetores > 0.99 para algum A ∈ (0, 0.6], J ∈ [0.44, 0.50].
-MORTE: nenhum ponto do plano satisfaz os dois critérios.
+## P10.4 (frozen 2026-08-30, AFTER the kill of P10.1 and BEFORE measuring)
+Mechanism learned from the kill: a Hermitian drive (real σ_z) opens a gap
+between replicas (anticrossing, splitting ∝ A: P10.3 confirmed the wire).
+Sharpened prediction: with a DISSIPATIVE drive, γ(t) = γ·(1 + A·cos Ω_d t)
+(anti-Hermitian coupling between replicas), the same resonance
+J ≈ J* = 0.4717 produces a COLLISION: quasi-gap < 10⁻³ with eigenvector
+collinearity > 0.99 for some A ∈ (0, 0.6], J ∈ [0.44, 0.50].
+KILL: no point of the plane satisfies both criteria.

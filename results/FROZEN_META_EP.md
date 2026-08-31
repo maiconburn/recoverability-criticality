@@ -1,41 +1,41 @@
-# Previsão congelada — ponto de aniquilação de EPs (2026-08-29, antes das medições)
+# Frozen prediction: EP annihilation point (2026-08-29, before the measurements)
 
-Hipótese estrutural: λ_ext é uma ANIQUILAÇÃO DE PAR de EP-2 (fold de ρ(q²)):
-ρ(q²,λ) ≈ (ρ''/2)(q²−q²_m)² + μ·(λ−λ_ext) localmente.
+Structural hypothesis: λ_ext is a PAIR ANNIHILATION of EP-2 (fold of ρ(q²)):
+ρ(q²,λ) ≈ (ρ''/2)(q²−q²_m)² + μ·(λ−λ_ext) locally.
 
-Previsões (a medir em seguida):
-- F1: para λ<λ_ext, DOIS cruzamentos reais de ρ próximos, colapsando em λ_ext;
-  separação dos dois EPs ∝ (λ_ext−λ)^{1/2}.
-- F2: ρ_min(λ) linear em λ através de λ_ext.
-- F3: para λ>λ_ext, par de zeros complexos conjugados com Im q²_c ∝ (λ−λ_ext)^{1/2}.
-- F4 (a consequência para a LEI DE CUSTO — o teste central): no ponto de
-  aniquilação (λ_ext, q²_m), o gap fecha linearmente em |q²−q²_m|, logo o
-  expoente de amplificação do canal crítico DOBRA: γ_meta = 1.0 (vs 0.5 no
-  EP-2 ordinário), ENQUANTO o halving em N (resposta √ em δρ) PERMANECE:
-  ε(N, d=0) ~ e^{−αN/2} ainda.
-Critérios: F1–F3 com expoentes 0.5±0.1; F4 com γ_meta = 1.0±0.15 e razão de
-halving 1.0±0.2. Qualquer outra coisa: estrutura diferente — reportar como está.
+Predictions (to be measured next):
+- F1: for λ<λ_ext, TWO nearby real crossings of ρ, collapsing at λ_ext;
+  separation of the two EPs ∝ (λ_ext−λ)^{1/2}.
+- F2: ρ_min(λ) linear in λ through λ_ext.
+- F3: for λ>λ_ext, a pair of complex-conjugate zeros with Im q²_c ∝ (λ−λ_ext)^{1/2}.
+- F4 (the consequence for the COST LAW, the central test): at the
+  annihilation point (λ_ext, q²_m), the gap closes linearly in |q²−q²_m|,
+  so the amplification exponent of the critical channel DOUBLES:
+  γ_meta = 1.0 (vs 0.5 at the ordinary EP-2), WHILE the halving in N
+  (√ response in δρ) REMAINS: ε(N, d=0) ~ e^{−αN/2} still.
+Criteria: F1–F3 with exponents 0.5±0.1; F4 with γ_meta = 1.0±0.15 and a
+halving ratio 1.0±0.2. Anything else: different structure; report as is.
 
-## VEREDITO FINAL (2026-08-30, fechamento documentado — auditoria)
+## FINAL VERDICT (2026-08-30, documented closure: audit)
 
-O objeto destas previsões (o "meta-EP": aniquilação em um λ_ext único) foi
-dissolvido pela ERRATA E3: a extinção é família-por-família e não há
-limiar único. Consequência para cada previsão congelada:
-- F1 (expoente de meia-largura 0.5): medições E1-era deram ~0.3 e foram
-  VOIDADAS pela E2 (artefatos de colocação); com a E3, a própria grandeza
-  "meia-largura do λ_ext" deixou de ser bem definida. **Void por conceito.**
-- F2 (linearidade de ρ_min(λ)): mesma sorte — os dados shooting
-  (rho_profile.json) mostram ρ_min com estrutura de agulha não capturada
-  por fit linear; nunca recebeu fit formal porque a premissa caiu. **Void
-  por conceito.**
-- F3 (migração para q² complexo): segue genuinamente ABERTA
-  (complex_migration.json foi inconclusivo perto da fronteira; README §1.3
-  a lista como não determinada). **Aberta.**
-- F4 (γ_meta = 1.0 na aniquilação): duas tentativas de medição falharam
-  por identidade/piso (documentado em ERRATA E2 e RESULTS_DEEP_FAMILY);
-  sem ponto de aniquilação único, a definição precisa ser refeita
-  por família. **Void por conceito.**
+The object of these predictions (the "meta-EP": annihilation at a single
+λ_ext) was dissolved by ERRATA E3: extinction is family-by-family and
+there is no single threshold. Consequence for each frozen prediction:
+- F1 (half-width exponent 0.5): E1-era measurements gave ~0.3 and were
+  VOIDED by E2 (collocation artifacts); with E3, the very quantity
+  "half-width of λ_ext" stopped being well defined. **Void by concept.**
+- F2 (linearity of ρ_min(λ)): same fate: the shooting data
+  (rho_profile.json) show ρ_min with a needle structure not captured by
+  a linear fit; it never received a formal fit because the premise fell.
+  **Void by concept.**
+- F3 (migration to complex q²): remains genuinely OPEN
+  (complex_migration.json was inconclusive near the boundary; README
+  §1.3 lists it as not determined). **Open.**
+- F4 (γ_meta = 1.0 at the annihilation): two measurement attempts failed
+  due to identity/floor (documented in ERRATA E2 and
+  RESULTS_DEEP_FAMILY); without a single annihilation point, the
+  definition needs to be redone per family. **Void by concept.**
 
-Nada aqui altera os textos congelados acima (mantidos para auditoria);
-este adendo só fecha o registro que a auditoria de 2026-08-30 apontou
-como pendente.
+Nothing here changes the frozen texts above (kept for audit); this
+addendum only closes the record that the 2026-08-30 audit flagged as
+pending.

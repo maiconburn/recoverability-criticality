@@ -1,50 +1,49 @@
-# P11 — dupletos de buraco de minhoca: morte instrutiva por má modelagem
+# P11: wormhole doublets, an instructive death from bad modeling
 
-Previsões congeladas em FROZEN_P11_WORMHOLE.md; duas rodadas:
-- v1 (shooting bilateral): VOID por instrumento (raízes com Im ω > 0,
-  não-físicas; crescimento exponencial nas regiões proibidas engoliu a
-  integração). Distinção instrumento≠física mantida.
-- v2 (matriz de transferência analítica da barreira sech², r/t validados
-  contra integração numérica a 10⁻¹⁰; modos todos físicos):
-  **P11.1 MORTA como formulada** — o "splitting" medido CRESCE e satura
-  (0.046→0.098 para L=6→16), consistente com espaçamento de torre de
-  cavidade (~π/2L_eff), não com dupleto exponencial.
+Predictions frozen in FROZEN_P11_WORMHOLE.md; two rounds:
+- v1 (bilateral shooting): VOID due to instrument (roots with Im ω > 0,
+  non-physical; exponential growth in the forbidden regions swallowed
+  the integration). The instrument-vs-physics distinction was kept.
+- v2 (analytic transfer matrix of the sech² barrier, r/t validated
+  against numerical integration at 10⁻¹⁰; all modes physical):
+  **P11.1 KILLED as formulated**: the measured "splitting" GROWS and
+  saturates (0.046→0.098 for L=6→16), consistent with a cavity tower
+  spacing (~π/2L_eff), not with an exponential doublet.
 
-Diagnóstico: erro de modelagem no congelamento. O dupleto
-simétrico/antissimétrico com splitting e^{-κL} pertence ao poço duplo
-LIGADO; o buraco de minhoca é uma cavidade ABERTA entre duas barreiras,
-cuja assinatura é a TORRE de modos de cavidade (os "ecos") sob o modo de
-barreira — estrutura multi-modo, não dupleto fino. P11.2/P11.3: void por
-premissa.
+Diagnosis: a modeling error in the freeze. The symmetric/antisymmetric
+doublet with splitting e^{-κL} belongs to the BOUND double well; the
+wormhole is an OPEN cavity between two barriers, whose signature is the
+TOWER of cavity modes (the "echoes") under the barrier mode: a
+multi-mode structure, not a fine doublet. P11.2/P11.3: void by premise.
 
-O que a morte ensina (candidata a P11' — NÃO congelada ainda): a
-detectabilidade de buraco de minhoca é a tarefa de detectar modos de
-cavidade de amplitude pequena sob o ringdown de barreira — "amplitudes
-com frequências livres" da hierarquia, aplicada a uma torre. Exige
-modelagem honesta da excitação (amplitudes relativas dos modos de
-cavidade) antes de congelar de novo.
+What the death teaches (candidate for P11', NOT frozen yet): wormhole
+detectability is the task of detecting small-amplitude cavity modes
+under the barrier ringdown: "amplitudes with free frequencies" from the
+hierarchy, applied to a tower. It requires honest modeling of the
+excitation (relative amplitudes of the cavity modes) before freezing
+again.
 
-Dados: results/p11_wormhole.json (v1, void), p11_wormhole_v2.json.
+Data: results/p11_wormhole.json (v1, void), p11_wormhole_v2.json.
 Scripts: p11_wormhole.py, p11_wormhole_v2.py.
 
-## P11' — vereditos finais (excitação simulada; três lições de modelagem)
+## P11': final verdicts (simulated excitation; three modeling lessons)
 
-Simulação de onda 1+1D honesta (pulso gaussiano, contornos absorventes,
-referência = barreira única). Lição 3: o U0 = 0.15 congelado é
-SUB-CRÍTICO (barreira quase transparente, sem trem de ecos) — regime
-físico documentado: U0 = 0.5.
+Honest 1+1D wave simulation (Gaussian pulse, absorbing boundaries,
+reference = single barrier). Lesson 3: the frozen U0 = 0.15 is
+SUB-CRITICAL (nearly transparent barrier, no echo train): documented
+physical regime: U0 = 0.5.
 
-| Previsão | Veredito | Números (U0=0.5) |
+| Prediction | Verdict | Numbers (U0=0.5) |
 |---|---|---|
-| P11'.1 trem de ecos, Δt = 2L ± 15% | morta em U0=0.15; **CONFIRMADA L≥12 no regime físico** | Δt = 26.1/34.0/42.0/50.0 vs 2L = 24/32/40/48 (erros 4–9%; offset +2 ≈ travessia das barreiras) |
-| P11'.2 SNR_min cresce com L | **MORTA** | SNR_template(L) PLANO (0.74–0.76): refletividade fixa ⇒ energia de eco constante; L controla resolvibilidade, não detectabilidade |
-| P11'.3 template ≥ 10× melhor | **MORTA** | razão 4.5→5.9× (cresce com L, direção certa, magnitude menor) |
+| P11'.1 echo train, Δt = 2L ± 15% | killed at U0=0.15; **CONFIRMED for L≥12 in the physical regime** | Δt = 26.1/34.0/42.0/50.0 vs 2L = 24/32/40/48 (errors 4–9%; offset +2 ≈ crossing of the barriers) |
+| P11'.2 SNR_min grows with L | **KILLED** | SNR_template(L) FLAT (0.74–0.76): fixed reflectivity ⇒ constant echo energy; L controls resolvability, not detectability |
+| P11'.3 template ≥ 10× better | **KILLED** | ratio 4.5→5.9× (grows with L, right direction, smaller magnitude) |
 
-Detectores: autocorrelação crua e de envelope falham (colam na borda da
-janela); peak-finding com altura ≥ 25% do máximo e distância ≥ L/2
-funciona. Dados: results/p11_prime{,_echo,_u05}.json.
+Detectors: raw and envelope autocorrelation fail (they stick to the
+edge of the window); peak-finding with height ≥ 25% of the maximum and
+distance ≥ L/2 works. Data: results/p11_prime{,_echo,_u05}.json.
 
-Estado da linha: pausada com saldo = trem validado + razão template/
-agnóstico ~5× quantificada com amplitudes físicas. Herdeiras no radar:
-torre ESPACIAL de anéis de fótons (lente/EHT) e atravessabilidade↔Petz
-(ER=EPR) — ver memória do programa.
+State of the line: paused with a balance = validated train + template/
+agnostic ratio ~5× quantified with physical amplitudes. Heirs on the
+radar: SPATIAL tower of photon rings (lensing/EHT) and
+traversability↔Petz (ER=EPR): see the program memory.

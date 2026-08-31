@@ -1,19 +1,20 @@
-# P13-EHT — CRB do Lyapunov sobre cobertura interferométrica real
+# P13-EHT: CRB of the Lyapunov exponent over real interferometric coverage
 
-Extensão do P13 com dados reais (example enviado ao eht-imaging, PR #332).
+Extension of P13 with real data (example sent to eht-imaging, PR #332).
 
-- Cobertura EHT 2017 M87 (hops lo, 5877 visibilidades, σ mediana 24.3 mJy):
-  σ(γ)/γ = 148% (γ=1.1) e 101% (γ=π) — **a campanha 2017 não constrange o
-  expoente de Lyapunov** (quantificado pela primeira vez sobre a cobertura
-  real com amplitudes de sub-anel livres).
-- Curva de projeto (ruído 2017, cobertura densa): γ=1.1 atinge 10% em
-  u_max ≈ 60 Gλ (28% em 40; 1.1% em 120). γ=π (Schwarzschild) é ordens de
-  magnitude pior em toda a faixa (2067% em 60 Gλ): w=e^{−π} colapsa a torre
-  na curva crítica — **a criticalidade de torre do programa aparece na
-  régua interferométrica**: quanto mais Schwarzschild, mais caro medir γ
-  com amplitudes livres.
-- Auditoria (API arXiv): Fisher para SPIN no BHEX existe (2608.23672);
-  pisos sistemáticos por ordem de anel (2512.16983); CRB explícito de γ de
-  visibilidades + lei de degenerescência: não encontrados.
-- Caveats: anéis finos, amplitudes livres, d_∞ fixo, cobertura sintética
-  densa na curva de projeto, só ruído térmico. Best-case bounds.
+- EHT 2017 M87 coverage (hops lo, 5877 visibilities, median σ 24.3 mJy):
+  σ(γ)/γ = 148% (γ=1.1) and 101% (γ=π): **the 2017 campaign does not
+  constrain the Lyapunov exponent** (quantified for the first time over
+  the real coverage with free sub-ring amplitudes).
+- Design curve (2017 noise, dense coverage): γ=1.1 reaches 10% at
+  u_max ≈ 60 Gλ (28% at 40; 1.1% at 120). γ=π (Schwarzschild) is orders
+  of magnitude worse over the whole range (2067% at 60 Gλ): w=e^{−π}
+  collapses the tower onto the critical curve: **the program's tower
+  criticality shows up in the interferometric ruler**: the more
+  Schwarzschild, the more expensive it is to measure γ with free
+  amplitudes.
+- Audit (arXiv API): Fisher for SPIN in BHEX exists (2608.23672);
+  systematic floors per ring order (2512.16983); an explicit CRB of γ
+  from visibilities + a degeneracy law: not found.
+- Caveats: thin rings, free amplitudes, fixed d_∞, dense synthetic
+  coverage in the design curve, thermal noise only. Best-case bounds.

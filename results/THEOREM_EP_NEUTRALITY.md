@@ -1,160 +1,164 @@
-# Teorema da neutralidade do parâmetro de controle no EP (2026-08-31)
+# Theorem of control parameter neutrality at the EP (2026-08-31)
 
-Motivação: três medições independentes deram custo CHAPADO para estimar o
-parâmetro de controle no EP — P14-LZ (σ(μ)/μ = 0.03%), o desenho da LEP3
-(todas as configs sobre a linha do EP), P16.2 (p = −0.07 em 1.5 décadas
-de gap). Aqui a explicação analítica, com verificação numérica de alta
-precisão (script `p17_theorem_check.py`, previsões declaradas ANTES de
-rodar — seção "Verificações").
+Motivation: three independent measurements gave a FLAT cost for
+estimating the control parameter at the EP: P14-LZ (σ(μ)/μ = 0.03%),
+the LEP3 design (all configs sitting on the EP line), P16.2 (p = −0.07
+over 1.5 decades of gap). Here is the analytic explanation, with
+high-precision numerical verification (script `p17_theorem_check.py`,
+predictions declared BEFORE running: section "Verifications").
 
-## Enunciado
+## Statement
 
-Seja H(θ) família analítica de matrizes N×N com EP de ordem N em θ = 0,
-e sejam os dados y(t) = Re[A·g(t; θ)] + ruído branco, com A ∈ ℂ nuisance
-e g uma função SIMÉTRICA analítica do espectro {ω_j(θ)} — o que inclui
-todo canal de resposta linear: a função de Green escalar é a diferença
-dividida de ordem N−1 de e^{−iωt} sobre o espectro,
+Let H(θ) be an analytic family of N×N matrices with an EP of order N at
+θ = 0, and let the data be y(t) = Re[A·g(t; θ)] + white noise, with
+A ∈ ℂ a nuisance and g an analytic SYMMETRIC function of the spectrum
+{ω_j(θ)}, which includes every linear response channel: the scalar
+Green's function is the divided difference of order N−1 of e^{−iωt}
+over the spectrum,
 
   g(t; θ) = Σ_j e^{−iω_j t} / Π_{k≠j}(ω_j − ω_k) = Δ^{N−1}[e^{−iω·t}],
 
-simétrica por construção e INTEIRA nos invariantes. Então a informação
-de Fisher marginalizada para θ é analítica em θ = 0 e, sob as condições
-de genericidade abaixo, σ(θ̂) → constante positiva finita no EP:
-**o expoente crítico do parâmetro de controle é exatamente 0.**
+symmetric by construction and ENTIRE in the invariants. Then the Fisher
+information marginalized for θ is analytic at θ = 0 and, under the
+genericity conditions below, σ(θ̂) → a finite positive constant at the
+EP: **the critical exponent of the control parameter is exactly 0.**
 
-## Prova (EP-2; o caso geral é idêntico com e₁…e_N)
+## Proof (EP-2; the general case is identical with e₁…e_N)
 
-1. (Simetria ⇒ analiticidade.) Autovalores ω± = μ ± √ρ com μ = tr H/2,
-   ρ = μ² − det H, ambos analíticos em θ. Função simétrica analítica dos
-   autovalores é função analítica dos polinômios simétricos elementares
-   (teorema clássico), logo g(t; θ) = ĝ(t; μ(θ), ρ(θ)) é analítica em θ
-   ATRAVÉS do EP. Exemplo explícito (canal de Green):
+1. (Symmetry ⇒ analyticity.) Eigenvalues ω± = μ ± √ρ with μ = tr H/2,
+   ρ = μ² − det H, both analytic in θ. An analytic symmetric function
+   of the eigenvalues is an analytic function of the elementary
+   symmetric polynomials (classical theorem), so
+   g(t; θ) = ĝ(t; μ(θ), ρ(θ)) is analytic in θ THROUGH the EP.
+   Explicit example (Green channel):
    ĝ = −i e^{−iμt} · sin(√ρ t)/√ρ = −i e^{−iμt} (t − ρt³/6 + ρ²t⁵/120 − …),
-   série par em √ρ ⇒ inteira em ρ. A raiz quadrada do unfolding
-   simplesmente não aparece.
+   an even series in √ρ ⇒ entire in ρ. The square root of the
+   unfolding simply does not appear.
 
-2. (Fisher analítica.) As colunas do design J são ∂y/∂θ e as 2 colunas
-   de amplitude — todas analíticas em θ. I(θ) = JᵀJ/σ² analítica;
-   a marginalizada I_eff = I_θθ − I_θA I_AA⁻¹ I_Aθ (complemento de
-   Schur) é analítica onde I_AA é invertível.
+2. (Analytic Fisher.) The columns of the design J are ∂y/∂θ and the 2
+   amplitude columns, all analytic in θ. I(θ) = JᵀJ/σ² is analytic;
+   the marginalized I_eff = I_θθ − I_θA I_AA⁻¹ I_Aθ (Schur complement)
+   is analytic wherever I_AA is invertible.
 
-3. (Genericidade.) (i) transversalidade: ρ'(0) ≠ 0 (o controle de fato
-   desdobra o EP); (ii) a direção ∂g/∂θ|₀ ∉ span das colunas de
-   amplitude — para o canal de Green, ∂ĝ/∂ρ|₀ ∝ t³e^{−iμt}, que é
-   linearmente independente de e^{−iμt} e t e^{−iμt}: vale; (iii) I_AA
-   invertível no espaço de nuisance de posto correto (lição P16.2: com
-   par espelho o posto cai para 2 — reparametrizar antes).
-   Sob (i)–(iii), I_eff(0) > 0 e σ(θ̂) é finita e contínua. ∎
+3. (Genericity.) (i) transversality: ρ'(0) ≠ 0 (the control actually
+   unfolds the EP); (ii) the direction ∂g/∂θ|₀ ∉ span of the amplitude
+   columns: for the Green channel, ∂ĝ/∂ρ|₀ ∝ t³e^{−iμt}, which is
+   linearly independent of e^{−iμt} and t e^{−iμt}: holds; (iii) I_AA
+   invertible on the nuisance space of correct rank (lesson from
+   P16.2: with a mirror pair the rank drops to 2, reparametrize
+   first). Under (i)-(iii), I_eff(0) > 0 and σ(θ̂) is finite and
+   continuous. ∎
 
-## Corolário A — a escada de Jacobianos (de onde vêm os expoentes)
+## Corollary A: the Jacobian ladder (where the exponents come from)
 
-Toda a divergência espectral é contabilidade de mudança de variável em
-cima de uma Fisher analítica. CRB transforma como I_η = I_ρ·(dρ/dη)²:
+All the spectral divergence is change-of-variable bookkeeping on top of
+an analytic Fisher. The CRB transforms as I_η = I_ρ·(dρ/dη)²:
 
-- gap s = 2√ρ: σ(ŝ) = σ(ρ̂)·|ds/dρ| ∝ s⁻¹ — expoente 1.
-  (Kerr medido: custo de extração ∝ gap^−1.11.)
-- EP-N: coeficiente simétrico c ∝ s^N ⇒ σ(ŝ) ∝ s^{−(N−1)} — o PRIMEIRO
-  degrau {p−1} da escada P15 {p−1, 2p−2, 2p−1}, agora derivado.
-- Quantidades rotuladas (autovalor individual, resíduo, autovetor) não
-  são simétricas ⇒ pagam o custo crítico. Físico: nenhum aparelho mede
-  rótulo; aparelhos medem resposta (simétrica). O custo crítico é
-  propriedade da PERGUNTA, não do sinal.
+- gap s = 2√ρ: σ(ŝ) = σ(ρ̂)·|ds/dρ| ∝ s⁻¹: exponent 1.
+  (Measured Kerr: extraction cost ∝ gap^−1.11.)
+- EP-N: symmetric coefficient c ∝ s^N ⇒ σ(ŝ) ∝ s^{−(N−1)}: the FIRST
+  step {p−1} of the P15 ladder {p−1, 2p−2, 2p−1}, now derived.
+- Labeled quantities (individual eigenvalue, residue, eigenvector) are
+  not symmetric ⇒ they pay the critical cost. Physical: no apparatus
+  measures a label; apparatuses measure response (symmetric). The
+  critical cost is a property of the QUESTION, not of the signal.
 
-## Corolário B — degrau de amplitudes livres (heurístico, verificação C3)
+## Corollary B: free-amplitude step (heuristic, verification C3)
 
-Com amplitudes POR MODO livres (observador agnóstico, sem o vínculo de
-Green), as funções-base e^{−iω₁t}, e^{−iω₂t} degeneram linearmente em s
-e a marginalização da direção quase-nula custa um Jacobiano extra:
-previsão σ(ŝ) ∝ s⁻² — o segundo expoente da hierarquia medida
-(task 2 = 2.12). A hierarquia de tarefas é uma escada de CONHECIMENTO
-sobre amplitudes: vínculo de Green ⇒ s⁻¹; amplitudes livres ⇒ s⁻².
+With PER-MODE free amplitudes (agnostic observer, without the Green
+constraint), the basis functions e^{−iω₁t}, e^{−iω₂t} degenerate
+linearly in s and marginalizing the near-null direction costs one extra
+Jacobian: prediction σ(ŝ) ∝ s⁻²: the second exponent of the measured
+hierarchy (task 2 = 2.12). The task hierarchy is a ladder of KNOWLEDGE
+about amplitudes: Green constraint ⇒ s⁻¹; free amplitudes ⇒ s⁻².
 
-## Fronteira de validade (honesta)
+## Validity boundary (honest)
 
-- Movimento AO LONGO da variedade do EP (ρ ≡ 0): o canal só informa via
-  μ(θ); anisotropia de custo ali é variação mundana de I_μμ — consistente
-  com o veredito de P15.4 (anisotropia da LEP3 dominada por escala γ).
-- Falha de genericidade (iii) exige redução de posto do nuisance antes
-  da marginalização (P16.2 v1 vs v2).
-- Ruído não-branco ou amostragem que mate ∂ĝ/∂ρ|₀ muda constantes, não
-  o expoente 0 (a analiticidade é estrutural).
+- Motion ALONG the EP manifold (ρ ≡ 0): the channel only informs
+  through μ(θ); cost anisotropy there is mundane variation of I_μμ,
+  consistent with the P15.4 verdict (LEP3 anisotropy dominated by γ
+  scale).
+- Failure of genericity (iii) requires rank reduction of the nuisance
+  before marginalization (P16.2 v1 vs v2).
+- Non-white noise or sampling that kills ∂ĝ/∂ρ|₀ changes constants,
+  not the exponent 0 (the analyticity is structural).
 
-## Verificações numéricas (previsões declaradas antes de rodar)
+## Numerical verifications (predictions declared before running)
 
-Modelo EP-2: ω± = (a − i)θ_μ-drift + … concretamente μ = −i + 0.3θ,
-ρ = θ; canal de Green amortecido, t ∈ [0, 4], 200 pontos, mpmath 50 dps.
-- C1: σ(θ̂) marginalizada em θ = 10⁻¹…10⁻⁸: slope log-log local → 0
-  (|slope| < 0.05 em θ ≤ 10⁻⁴) e σ → constante positiva.
-- C2: parametrização direta em s (nuisance μ, A): slope → −1.00 ± 0.05.
-- C3: modelo de amplitudes livres por modo (8 parâmetros reais):
-  slope de σ(ŝ) → −2.00 ± 0.15 (corolário B).
-- C4: EP-3 (μ = −i, ω_j = μ + ε_j s, s = θ^{1/3}, canal = diferença
-  dividida de 2ª ordem): σ(θ̂) slope → 0; σ(ŝ) slope → −2.00 ± 0.15
+EP-2 model: ω± = (a − i)θ_μ-drift + … concretely μ = −i + 0.3θ,
+ρ = θ; damped Green channel, t ∈ [0, 4], 200 points, mpmath 50 dps.
+- C1: marginalized σ(θ̂) at θ = 10⁻¹…10⁻⁸: local log-log slope → 0
+  (|slope| < 0.05 for θ ≤ 10⁻⁴) and σ → positive constant.
+- C2: direct parametrization in s (nuisance μ, A): slope → −1.00 ± 0.05.
+- C3: per-mode free-amplitude model (8 real parameters):
+  σ(ŝ) slope → −2.00 ± 0.15 (corollary B).
+- C4: EP-3 (μ = −i, ω_j = μ + ε_j s, s = θ^{1/3}, channel = 2nd-order
+  divided difference): σ(θ̂) slope → 0; σ(ŝ) slope → −2.00 ± 0.15
   (= −(N−1)).
-MORTE do teorema: C1 ou C4-controle com slope fora de ±0.05 (a
-analiticidade é exata — não há margem). C2/C3/C4-gap fora das faixas
-mata o corolário correspondente, não o teorema.
+KILL of the theorem: C1 or C4-control with slope outside ±0.05 (the
+analyticity is exact: there is no margin). C2/C3/C4-gap outside the
+ranges kills the corresponding corollary, not the theorem.
 
-## Vereditos (2026-08-31, `p17_theorem_check.json`)
+## Verdicts (2026-08-31, `p17_theorem_check.json`)
 
-| check | previsão congelada | medido (últimos slopes) | veredito |
+| check | frozen prediction | measured (last slopes) | verdict |
 |---|---|---|---|
-| C1 σ(controle), EP-2 | slope 0, σ → const | 0.0000; σ → 0.77958 | CONFIRMADO |
-| C2 σ(gap), vínculo de Green | −1.00 | −1.0000 | CONFIRMADO |
-| C3 σ(gap), amplitudes livres | −2.00 | −2.0000 | CONFIRMADO |
-| C4 σ(controle), EP-3 | slope 0 | −0.0000 | CONFIRMADO |
-| C4 σ(gap), EP-3 | −2.00 (= −(N−1)) | −2.0000 | CONFIRMADO |
+| C1 σ(control), EP-2 | slope 0, σ → const | 0.0000; σ → 0.77958 | CONFIRMED |
+| C2 σ(gap), Green constraint | −1.00 | −1.0000 | CONFIRMED |
+| C3 σ(gap), free amplitudes | −2.00 | −2.0000 | CONFIRMED |
+| C4 σ(control), EP-3 | slope 0 | −0.0000 | CONFIRMED |
+| C4 σ(gap), EP-3 | −2.00 (= −(N−1)) | −2.0000 | CONFIRMED |
 
-Precisão de 4 casas em todos — como deve ser para um enunciado exato.
-Escopo do C3: verdade antissimétrica (A₁ = −A₂, tipo Green), como
-congelado no cabeçalho do script; verdade simétrica cai no degrau −1
-(a escada de conhecimento de amplitudes depende da configuração da
-fonte — refinamento aberto, não afeta o teorema).
+4-digit precision on all of them, as it should be for an exact
+statement. Scope of C3: antisymmetric truth (A₁ = −A₂, Green-like), as
+frozen in the script header; symmetric truth falls on the −1 step (the
+amplitude-knowledge ladder depends on the source configuration: an
+open refinement, does not affect the theorem).
 
-Nota de instrumento: a primeira rodada usou μ puramente imaginário
-(modo sem parte oscilante); com essa fase, o canal de Green é puramente
-imaginário e Re[A·g] com A real projeta fora o canal ρ inteiro —
-matriz de Fisher exatamente singular, σ espúrio ∝ 1/θ da inversão de
-resíduos 1e-60. Terceira aparição do colapso de posto por fase/simetria
-(P16.2 espelho, aqui fase); guarda de resíduo de inversão adicionada e
-fases genéricas (μ = 0.7 − i) usadas na rodada final.
+Instrument note: the first run used a purely imaginary μ (mode with no
+oscillating part); with that phase, the Green channel is purely
+imaginary and Re[A·g] with real A projects out the entire ρ channel:
+exactly singular Fisher matrix, spurious σ ∝ 1/θ from inverting 1e-60
+residuals. Third appearance of rank collapse by phase/symmetry (P16.2
+mirror, here phase); an inversion-residual guard was added and generic
+phases (μ = 0.7 − i) were used in the final run.
 
-Consequências no programa: P14-LZ, o desenho da LEP3 e P16.2 são o
-mesmo fato — expoente crítico 0 do parâmetro de controle.
+Consequences for the program: P14-LZ, the LEP3 design and P16.2 are
+the same fact: critical exponent 0 of the control parameter.
 
-## A escada completa (2026-08-31, mesma sessão)
+## The complete ladder (2026-08-31, same session)
 
-Os três degraus {p−1, 2p−2, 2p−1} derivam de um único objeto: normas de
-linha da inversa de Vandermonde. Tangentes do modelo na base de
-monômios t^k e^{−iμt}: direção de amplitude do nó j = coluna
-(δ_j^k/k!); direção de frequência = A_j × coluna deslocada uma ordem.
-Com Gram genérica positiva-definida nos monômios,
-CRB(parâmetro) ≍ ‖linha correspondente de V⁻¹‖, e o expoente é a ordem
-dominante em s dessa linha:
+The three steps {p−1, 2p−2, 2p−1} derive from a single object: row
+norms of the inverse Vandermonde. Model tangents in the monomial basis
+t^k e^{−iμt}: amplitude direction of node j = column (δ_j^k/k!);
+frequency direction = A_j × column shifted by one order. With a
+generic positive-definite Gram on the monomials,
+CRB(parameter) ≍ ‖corresponding row of V⁻¹‖, and the exponent is the
+dominant order in s of that row:
 
-- Tarefa A (amplitudes, frequências conhecidas): Vandermonde SIMPLES
-  p×p ⇒ linhas ~ s^{−(p−1)}.
-- Tarefas B e C (tudo livre): sistema CONFLUENTE 2p×2p (nós duplos — a
-  mesma estrutura confluente do EP) ⇒ linhas de amplitude ~ s^{−(2p−1)},
-  linhas de frequência ~ s^{−(2p−2)} (o fator A_j·t da coluna de
-  frequência custa exatamente um grau).
+- Task A (amplitudes, known frequencies): SIMPLE p×p Vandermonde
+  ⇒ rows ~ s^{−(p−1)}.
+- Tasks B and C (everything free): CONFLUENT 2p×2p system (double
+  nodes: the same confluent structure as the EP) ⇒ amplitude rows
+  ~ s^{−(2p−1)}, frequency rows ~ s^{−(2p−2)} (the A_j·t factor of the
+  frequency column costs exactly one degree).
 
-Verificação simbólica exata (sympy, `p17b_ladder_symbolic.py`):
-p=2 → {−1, −2, −3}; p=3 → {−2, −4, −5}. Seis de seis, ordens inteiras
-exatas. Bate com todo o histórico numérico do programa: hierarquia
-EP-2 medida {1.03, 2.12, 3.12}, P15.1 em EP-3 {−2.01, −3.98, −5.01},
-C2/C3 deste documento.
+Exact symbolic verification (sympy, `p17b_ladder_symbolic.py`):
+p=2 → {−1, −2, −3}; p=3 → {−2, −4, −5}. Six out of six, exact integer
+orders. Matches the program's entire numerical history: measured EP-2
+hierarchy {1.03, 2.12, 3.12}, P15.1 at EP-3 {−2.01, −3.98, −5.01},
+C2/C3 of this document.
 
-Prior art (verificado na API do arXiv): os degraus 2p−2 e 2p−1 são os
-teoremas de super-resolução de Batenkov–Goldman–Yomdin
-(arXiv:1904.09186) e o condicionamento de matrizes de Fourier com nós
-aglomerados de Batenkov–Demanet–Goldman–Yomdin (arXiv:1809.00658) —
-citados no congelamento do P15. Nosso: a identificação EP ⇄ cluster
-confluente, o degrau A, o expoente 0 do controle, e a unificação dos
-três degraus numa única matriz.
+Prior art (verified on the arXiv API): the 2p−2 and 2p−1 steps are the
+super-resolution theorems of Batenkov–Goldman–Yomdin
+(arXiv:1904.09186) and the conditioning of Fourier matrices with
+clustered nodes of Batenkov–Demanet–Goldman–Yomdin (arXiv:1809.00658),
+cited in the P15 freeze. Ours: the EP ⇄ confluent cluster
+identification, step A, the exponent 0 of the control, and the
+unification of the three steps in a single matrix.
 
-Coluna vertebral analítica do programa (hierarquia CRB) COMPLETA:
-expoente 0 (controle, teorema), p−1 / 2p−2 / 2p−1 (Vandermonde),
-N−1 (Jacobiano simétrico). A lei de custo de RECONSTRUÇÃO
-(ε ~ e^{−αN}/√d, halving no EP) é lei separada e segue com sua própria
-validação EGB — não coberta por este documento.
+The program's analytic backbone (CRB hierarchy) is COMPLETE:
+exponent 0 (control, theorem), p−1 / 2p−2 / 2p−1 (Vandermonde),
+N−1 (symmetric Jacobian). The RECONSTRUCTION cost law
+(ε ~ e^{−αN}/√d, halving at the EP) is a separate law and proceeds
+with its own EGB validation: not covered by this document.

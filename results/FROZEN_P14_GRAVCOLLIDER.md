@@ -1,80 +1,82 @@
-# P14 — collider gravitacional (matéria escura ultraleve) — congelado
-# antes de medir, 2026-08-30
+# P14, gravitational collider (ultralight dark matter), frozen
+# before measuring, 2026-08-30
 
-Contexto: nuvens de bósons ultraleves (candidatos a matéria escura) em
-torno de buracos negros ("átomos gravitacionais") evoluem por
-superradiância e atravessam CRUZAMENTOS DE NÍVEIS durante inspirais de
-binárias (programa "gravitational collider", Baumann–Chia–Porto). Medir
-os parâmetros da nuvem (massa do bóson α = μM, números quânticos) a
-partir do sinal de GW perto de um cruzamento é tarefa de estimação
-espectral perto de degenerescência — nossa metrologia.
+Context: clouds of ultralight bosons (dark matter candidates) around
+black holes ("gravitational atoms") evolve by superradiance and go
+through LEVEL CROSSINGS during binary inspirals (the "gravitational
+collider" program, Baumann–Chia–Porto). Measuring the cloud parameters
+(boson mass α = μM, quantum numbers) from the GW signal near a
+crossing is a spectral estimation task near degeneracy: our metrology.
 
-Modelo mínimo congelado: dois níveis da nuvem |a⟩,|b⟩ com energias
-E_a(t), E_b(t) varridas linearmente pela frequência orbital Ω(t) da
-binária (Landau–Zener): H(t) = [[−Δ(t)/2, η],[η, +Δ(t)/2]],
-Δ(t) = c₁(Ω(t) − Ω_res), acoplamento η fixado pela perturbação de maré.
-Observável: fase/frequência de GW carregando a "backreaction" da nuvem
-(proxy congelado: população transferida P_LZ e sua derivada em relação
-aos parâmetros). Parâmetros a estimar: (η, Ω_res) de um registro com
-ruído branco na fase.
+Frozen minimal model: two cloud levels |a⟩,|b⟩ with energies
+E_a(t), E_b(t) swept linearly by the binary's orbital frequency Ω(t)
+(Landau–Zener): H(t) = [[−Δ(t)/2, η],[η, +Δ(t)/2]],
+Δ(t) = c₁(Ω(t) − Ω_res), coupling η fixed by the tidal perturbation.
+Observable: GW phase/frequency carrying the cloud's "backreaction"
+(frozen proxy: transferred population P_LZ and its derivative with
+respect to the parameters). Parameters to estimate: (η, Ω_res) from a
+record with white noise in the phase.
 
-P14.1 (hierarquia no cruzamento): CRB de η com Ω_res livre escala como
-gap⁻ᵖ com p ∈ [1.5, 2.5] quando o cruzamento é atravessado devagar
-(regime adiabático, gap = 2η), medido variando η.
-MORTE: fora da janela.
+P14.1 (hierarchy at the crossing): the CRB of η with Ω_res free scales
+as gap⁻ᵖ with p ∈ [1.5, 2.5] when the crossing is traversed slowly
+(adiabatic regime, gap = 2η), measured by varying η.
+KILL: outside the window.
 
-P14.2 (assinatura de velocidade): a informação total sobre η é
-NÃO-MONOTÔNICA na taxa de varredura (máxima perto do regime
-Landau–Zener crítico v ~ η², onde a transição é mais sensível), com
-razão máx/assintótico > 3.
-MORTE: monotônica ou razão ≤ 3.
+P14.2 (speed signature): the total information about η is
+NON-MONOTONIC in the sweep rate (maximal near the critical
+Landau–Zener regime v ~ η², where the transition is most sensitive),
+with max/asymptotic ratio > 3.
+KILL: monotonic or ratio ≤ 3.
 
-P14.3 (o número de matéria escura): traduzindo para α = μM via
-Ω_res ∝ μ·f(α): erro relativo de μ (massa do bóson) alcançável num
-cruzamento limpo com SNR de fase = 100: σ(μ)/μ < 5%.
-MORTE: > 20%.
+P14.3 (the dark matter number): translating to α = μM via
+Ω_res ∝ μ·f(α): the relative error of μ (boson mass) achievable in a
+clean crossing with phase SNR = 100: σ(μ)/μ < 5%.
+KILL: > 20%.
 
-## P14' (congelado 2026-08-30, ANTES de medir) — observável de fase de GW
+## P14' (frozen 2026-08-30, BEFORE measuring): GW phase observable
 
-Modelo: binária com chirp quadrupolar dΩ/dt = k·Ω^{11/3} + backreaction
-−β·dP_b/dt; nuvem de dois níveis com Δ(t) = c·(Ω(t) − Ω_res), Ω_res ∝ μ
-(massa do bóson); fase observada Φ(t) = 2∫Ω dt com ruído branco de fase
-σ_φ = 0.1 rad por amostra, 2000 amostras, Ω varrendo 0.8→1.2 (Ω_res = 1).
-Fiducial: k tal que a varredura local perto da ressonância é lenta
-(v_eff ≈ 0.02·c), η = 0.05, c = 5, β = 0.01. Fisher 6×6 nos parâmetros
-{Ω_res, η, β, k, Ω₀, φ₀}, com σ(μ)/μ = σ(Ω_res)/Ω_res marginalizado.
+Model: binary with quadrupolar chirp dΩ/dt = k·Ω^{11/3} + backreaction
+−β·dP_b/dt; two-level cloud with Δ(t) = c·(Ω(t) − Ω_res), Ω_res ∝ μ
+(boson mass); observed phase Φ(t) = 2∫Ω dt with white phase noise
+σ_φ = 0.1 rad per sample, 2000 samples, Ω sweeping 0.8→1.2 (Ω_res = 1).
+Fiducial: k such that the local sweep near the resonance is slow
+(v_eff ≈ 0.02·c), η = 0.05, c = 5, β = 0.01. 6×6 Fisher on the
+parameters {Ω_res, η, β, k, Ω₀, φ₀}, with σ(μ)/μ = σ(Ω_res)/Ω_res
+marginalized.
 
-P14'.1 (o forecast honesto): a marginalização sobre os parâmetros da
-binária degrada o σ(μ)/μ ingênuo (0.03%) por fator > 10, mas o resultado
-fica < 5%.
-MORTE: > 20% (cruzamento não mede μ na prática) ou < 0.1% (marginalização
-não custa nada — indicaria erro).
+P14'.1 (the honest forecast): marginalization over the binary
+parameters degrades the naive σ(μ)/μ (0.03%) by a factor > 10, but the
+result stays < 5%.
+KILL: > 20% (the crossing does not measure μ in practice) or < 0.1%
+(marginalization costs nothing: would indicate an error).
 
-P14'.2 (localização): ≥ 60% da informação de Fisher sobre Ω_res vem da
-janela |Ω − Ω_res| < 5·η (a informação mora no cruzamento).
-MORTE: < 40%.
+P14'.2 (localization): ≥ 60% of the Fisher information about Ω_res
+comes from the window |Ω − Ω_res| < 5·η (the information lives in the
+crossing).
+KILL: < 40%.
 
-P14'.3 (robustez à chirp mass): |corr(Ω_res, k)| < 0.9 no Fisher
-marginalizado (a assinatura da nuvem não é absorvível pela taxa de chirp).
-MORTE: ≥ 0.95.
+P14'.3 (robustness to the chirp mass): |corr(Ω_res, k)| < 0.9 in the
+marginalized Fisher (the cloud signature is not absorbable by the
+chirp rate).
+KILL: ≥ 0.95.
 
-## P14'' (congelado 2026-08-30, ANTES de medir) — multi-cruzamento
+## P14'' (frozen 2026-08-30, BEFORE measuring): multi-crossing
 
-Modelo: 3 ressonâncias da mesma nuvem, Ω_res,k = μ·c_k(χ) com
+Model: 3 resonances of the same cloud, Ω_res,k = μ·c_k(χ) with
 c_k(χ) = c⁰_k·(1 + d_k·χ), c⁰ = (1.0, 1.35, 1.80), d = (0.05, 0.12, 0.20)
-(dependências de spin distintas por modo, estilo hiperfino); três sistemas
-de dois níveis independentes (η_k = 0.05), backreaction somada
-−β·Σ dP_k/dt; chirp Ω: 0.8 → 2.2; fase com σ_φ = 0.1 rad, 3000 amostras.
-Fisher 9×9: {μ, χ, η₁, η₂, η₃, β, k, Ω₀, φ₀}.
+(distinct spin dependencies per mode, hyperfine style); three
+independent two-level systems (η_k = 0.05), summed backreaction
+−β·Σ dP_k/dt; chirp Ω: 0.8 → 2.2; phase with σ_φ = 0.1 rad, 3000
+samples. 9×9 Fisher: {μ, χ, η₁, η₂, η₃, β, k, Ω₀, φ₀}.
 
-P14''.1 (ganho coerente): σ(μ) conjunto dos 3 cruzamentos supera o melhor
-cruzamento único por fator > √3.
-MORTE: ganho < 0.8·√3.
+P14''.1 (coherent gain): the joint σ(μ) of the 3 crossings beats the
+best single crossing by a factor > √3.
+KILL: gain < 0.8·√3.
 
-P14''.2 (spin resolvido pelas razões): com χ desconhecido, σ(μ) degrada
-menos de 2× vs χ conhecido.
-MORTE: degradação > 5×.
+P14''.2 (spin resolved by the ratios): with χ unknown, σ(μ) degrades
+less than 2× vs known χ.
+KILL: degradation > 5×.
 
-P14''.3 (número LISA-grade): com k tal que cada cruzamento acumule ~30+
-ciclos (k = 0.005), σ(μ)/μ < 0.1%.
-MORTE: > 1%.
+P14''.3 (LISA-grade number): with k such that each crossing
+accumulates ~30+ cycles (k = 0.005), σ(μ)/μ < 0.1%.
+KILL: > 1%.

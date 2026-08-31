@@ -1,70 +1,75 @@
-# P16 — decoerência como quarta tarefa: previsões congeladas (pré-registro, 2026-08-31)
+# P16, decoherence as the fourth task: frozen predictions (preregistration, 2026-08-31)
 
-Congeladas ANTES de qualquer medida. Protocolo padrão: cada previsão com
-critério de morte.
+Frozen BEFORE any measurement. Standard protocol: each prediction with
+a kill criterion.
 
-## Contexto e motivação
+## Context and motivation
 
-A conjectura fundadora (lápide 1: "curvatura forte pode suprimir
-decoerência?") está morta na forma original: Danielson–Satishchandran–Wald
-provaram que todo horizonte de Killing decoere superposições
-(arXiv:2205.06279, arXiv:2301.00026 — títulos verificados na API do arXiv
-em 2026-08-31). Reburial refinado e testável: a taxa de decoerência não é
-suprimida pela curvatura — ela HERDA a estrutura crítica espectral do
-fundo. Decoerência = quarta tarefa na hierarquia de expoentes.
+The founding conjecture (tombstone 1: "can strong curvature suppress
+decoherence?") is dead in its original form:
+Danielson–Satishchandran–Wald proved that every Killing horizon
+decoheres superpositions (arXiv:2205.06279, arXiv:2301.00026, titles
+verified on the arXiv API on 2026-08-31). Refined and testable
+reburial: the decoherence rate is not suppressed by curvature, it
+INHERITS the spectral critical structure of the background.
+Decoherence = fourth task in the exponent hierarchy.
 
-Sonda: qubit em dephasing puro acoplado ao campo no fundo EGB; o que a
-sonda vê é a função de Green do par fundamental de QNMs. Estrutura exata
-do canal: r(t) = Im[(e^{−iω₁t} − e^{−iω₂t})/(ω₁ − ω₂)] — oscilador
-amortecido; no EP espelho vira o canal secular t·e^{−γt} (bloco de
-Jordan), o mesmo canal log/polinomial de P8.
+Probe: a qubit in pure dephasing coupled to the field on the EGB
+background; what the probe sees is the Green's function of the
+fundamental QNM pair. Exact channel structure:
+r(t) = Im[(e^{−iω₁t} − e^{−iω₂t})/(ω₁ − ω₂)]: a damped oscillator; at
+the mirror EP it becomes the secular channel t·e^{−γt} (Jordan block),
+the same log/polynomial channel as P8.
 
-## Instrumento (congelado)
+## Instrument (frozen)
 
-Família fundamental, λ = 0.105, EP espelho ancorado em q² ≈ −34.386
-(par-semente [0.02−7.1641i, −0.02−7.1641i], kernel_compare). Shooting com
-continuação sequencial; refino do EP por zoom em |ω₁−ω₂|; varredura
-log-espaçada de δ = q² − q²_c nos dois lados. Ruído sintético congelado:
-branco, σ = 1e-3 do máximo do sinal, rng seed 16. Grade t ∈ [0, 4/γ_EP],
-400 pontos.
+Fundamental family, λ = 0.105, mirror EP anchored at q² ≈ −34.386
+(seed pair [0.02−7.1641i, −0.02−7.1641i], kernel_compare). Shooting
+with sequential continuation; EP refinement by zooming on |ω₁−ω₂|;
+log-spaced sweep of δ = q² − q²_c on both sides. Frozen synthetic
+noise: white, σ = 1e-3 of the signal maximum, rng seed 16. Grid
+t ∈ [0, 4/γ_EP], 400 points.
 
-## P16.1 — resgate pelo canal secular (gêmeo aberto do P8.2)
+## P16.1, rescue by the secular channel (open twin of P8.2)
 
-Fit do sinal ruidoso com M_sec = Re[(a + bt)e^{−iwt}] vs
-M_nosec = Re[A₁e^{−iω₁t} + A₂e^{−iω₂t}] com AMPLITUDES LIMITADAS
-(|A| ≤ 10·max|r|; lição do P8-F2 v1: sem o limite, amplitudes ±1/gap
-divergentes compensam o secular e o teste é cego — armadilha conhecida,
-neutralizada no congelamento).
-PREVISÃO: Δχ²/dof(nosec − sec) > 4 em gap/γ_EP ≤ 0.01 e < 1 em
-gap/γ_EP ≥ 0.5 (localização no EP, como P8-F2.2).
-MORTE: sem rejeição no EP, ou rejeição igual longe do EP (artefato).
+Fit of the noisy signal with M_sec = Re[(a + bt)e^{−iwt}] vs
+M_nosec = Re[A₁e^{−iω₁t} + A₂e^{−iω₂t}] with BOUNDED AMPLITUDES
+(|A| ≤ 10·max|r|; lesson from P8-F2 v1: without the bound, divergent
+±1/gap amplitudes compensate the secular term and the test is blind: a
+known trap, neutralized in the freeze).
+PREDICTION: Δχ²/dof(nosec − sec) > 4 at gap/γ_EP ≤ 0.01 and < 1 at
+gap/γ_EP ≥ 0.5 (localization at the EP, like P8-F2.2).
+KILL: no rejection at the EP, or equal rejection far from the EP
+(artifact).
 
-## P16.2 — expoente da tarefa de estimação por decoerência
+## P16.2, exponent of the decoherence estimation task
 
-CRB para δq² estimado do sinal r(t) com as 2 amplitudes complexas livres
-(nuisance, marginalizadas). Derivação congelada: tarefa de splitting tem
-expoente 2 no gap (hierarquia {1,2,3} do EP-2); o unfolding √ dá
-Jacobiano |dδω/dδq²| ∝ gap⁻¹; composição: σ(δq²) ∝ gap^(−1.0).
-PREVISÃO: expoente p ∈ [0.6, 1.5] no fit log-log de σ(δq²) vs gap
-(lado subamortecido).
-MORTE: p fora da faixa (nova classe — informativo, mas mata ESTA
-previsão). Portões de condicionamento: inversão explícita, cond(I)
-reportado, mpmath se cond > 1e12 (regra da casa pós-P14/P15).
+CRB for δq² estimated from the signal r(t) with the 2 complex
+amplitudes free (nuisance, marginalized). Frozen derivation: the
+splitting task has exponent 2 in the gap (EP-2 hierarchy {1,2,3}); the
+√ unfolding gives a Jacobian |dδω/dδq²| ∝ gap⁻¹; composition:
+σ(δq²) ∝ gap^(−1.0).
+PREDICTION: exponent p ∈ [0.6, 1.5] in the log-log fit of σ(δq²) vs
+gap (underdamped side).
+KILL: p outside the range (new class: informative, but kills THIS
+prediction). Conditioning gates: explicit inversion, cond(I) reported,
+mpmath if cond > 1e12 (house rule post-P14/P15).
 
-## P16.3 — proteção pós-EP com kink de raiz quadrada (a nova)
+## P16.3, post-EP protection with a square-root kink (the new one)
 
-No lado sobreamortecido, um dos canais fica MAIS longevo:
-Γ_slow(δ) = γ_EP − B·|δ|^h. O fantasma digno da conjectura fundadora:
-atravessar o ponto crítico protege parcialmente a coerência de um canal.
-PREVISÃO: h ∈ [0.4, 0.6] (kink de raiz quadrada, dΓ/dδ → −∞ no EP);
-lado subamortecido com Γ_slow plano (|slope|/γ_EP < 0.05 na mesma
-janela); splitting dos dois lados com expoente 0.5 ± 0.1.
-MORTE: sem proteção (Γ_slow ≥ γ_EP), ou expoente fora de [0.4, 0.6].
+On the overdamped side, one of the channels becomes LONGER lived:
+Γ_slow(δ) = γ_EP − B·|δ|^h. The ghost worthy of the founding
+conjecture: crossing the critical point partially protects the
+coherence of one channel.
+PREDICTION: h ∈ [0.4, 0.6] (square-root kink, dΓ/dδ → −∞ at the EP);
+underdamped side with flat Γ_slow (|slope|/γ_EP < 0.05 in the same
+window); splitting on both sides with exponent 0.5 ± 0.1.
+KILL: no protection (Γ_slow ≥ γ_EP), or exponent outside [0.4, 0.6].
 
-## Risco de sobreposição (declarado antes de medir)
+## Overlap risk (declared before measuring)
 
-P16.2 pode reduzir-se a confirmação da hierarquia já medida em outro
-observável (valor: universalidade entre classes de observável, não
-descoberta). P16.3 é a afirmação nova. Se TUDO se reduzir a reanálise de
-ringdown já publicada por nós, veredito honesto = "confirmação
-cross-observável", não descoberta.
+P16.2 may reduce to a confirmation of the hierarchy already measured
+in another observable (value: universality across observable classes,
+not discovery). P16.3 is the new claim. If EVERYTHING reduces to a
+reanalysis of ringdown already published by us, the honest verdict =
+"cross-observable confirmation", not discovery.

@@ -7,7 +7,7 @@ Analytic spectrum at eps=0: omega = -i(2n + Delta_pm), Delta_pm = 3/2 +- nu,
 nu = sqrt(9/4 - m^2).  At nu = 1 the (n=0, +) and (n=1, -) modes coincide at
 omega = -2.5i.  Test: perturb with eps*x^2(1-x^2) and measure the splitting
 s(eps).  s ~ sqrt(eps) => EP-2 (Jordan); s ~ eps => diabolic.
-Preregistered kill criterion (results/DIRECAO_P8_BIGBANG.md): no mirror-EP
+Preregistered kill criterion (results/DIRECTION_P8_BIGBANG.md): no mirror-EP
 structure => the cosmology bridge is analogy only.
 """
 import json
