@@ -208,3 +208,35 @@ computation this program cannot do on this machine. This delimits the next
 theoretical step precisely, and protects the paper from overclaim: the
 exact strict-dS signatures (ln, ln²) hold in the adiabatic/static limit;
 the swept version is an open in-in question.
+
+## P8-F3 gate verdict (2026-08-31): NOT TESTABLE with this instrument; cycle stopped
+
+The interacting squeezed-limit cycle (FROZEN P8-F3 with amendments
+F3-A1, F3-A2) never reached its physics predictions: the final
+instrument gate failed and, per the declared-final amendment, the cycle
+stops here. Record:
+
+- CosmoFlow itself is healthy: 2-pt validated to 3.8e-4 against the
+  exact Hankel spectrum including the nu = 0 log point
+  (p18_cosmoflow_validation.json), coupling linearity 3.73 vs 4
+  expected in the perturbative regime, smooth squeezed scans after
+  adopting the tool's own adiabatic i-epsilon prescription.
+- The amended tower basis {x^{1/2-nu}, x^{3/2}} fits the nu = 1
+  squeezed shape to 0.6% and the x^{3/2} ln x channel improves the
+  residual 28-32x with the negative sign the static analysis predicts.
+- BUT the localization test kills it: R = chi2_nolog/chi2_log is 32.3
+  at nu = 1 and 23.1 at nu = 0.85, where no collision exists
+  (ratio 1.4, gate required > 10). The log improvement is generic
+  basis slack (at nu = 0.85 the subleading tower term x^{1.65} is
+  quasi-collinear with x^{1.5} ln x over 1.7 decades), not the Jordan
+  channel.
+- What would reopen this as a NEW frozen cycle (P8-F4): squeezing to
+  k_L ~ 1e-4 (lever arm to separate ln x from nearby power laws),
+  which at current tolerances costs roughly a day of compute, the
+  first concrete cloud-scale use case of the program alongside the
+  EGB rho-floor instrument; or an analytic-subtraction analysis that
+  removes the known non-degenerate tower exactly.
+
+Verdict class: "not testable with this instrument configuration"
+(precedent: P15.2 VOID). No physics prediction of F3 was evaluated;
+none is claimed. Gate data: results/p8f3_gate.json.
