@@ -120,3 +120,20 @@ cosmological clock fully excluded", which is a result, not a failure.
 P8-F3.3 (sweep attenuation): A(epsilon_1) decreases monotonically over
 epsilon_1 in {0.002, 0.005, 0.01}.
 KILL: non-monotonic beyond fit error.
+
+### Amendment F3-A1 (2026-08-31, before any physics run; gate iterations documented)
+
+The gate basis frozen above was derived incorrectly: {x^{1/2}, x^{5/2}}
+are the soft exponents of the sigma two-point factor, not of the
+shape-normalized bispectrum. For S = (k1 k2 k3)^2 B with k_S = 1, the
+nu = 1 tower is {x^{-1/2}, x^{3/2}} (branches x^{1/2 -/+ nu}), the
+degenerate collision sits at x^{3/2}, and the gate basis becomes
+{x^{-1/2}, x^{3/2}, x^{3/2} ln x}. Two instrument fixes recorded at the
+same time: fits minimize RELATIVE residuals (weighted least squares),
+and the coupling-linearity subgate runs in the perturbative regime
+(rho: 0.05 -> 0.10 with kappa2: 0.005 -> 0.010, expected B ratio 4);
+the first attempt at rho = 0.2 landed in the strong-mixing regime where
+the transport resummation legitimately breaks single-exchange scaling.
+Gate v1 also lacked CosmoFlow's own adiabatic i-epsilon prescription
+(couplings must ramp on about one e-fold AFTER the initial conditions);
+v2 fixed that and the raw S(k_L) became smooth and monotonic.
