@@ -95,6 +95,33 @@ MORTE do teorema: C1 ou C4-controle com slope fora de ±0.05 (a
 analiticidade é exata — não há margem). C2/C3/C4-gap fora das faixas
 mata o corolário correspondente, não o teorema.
 
-## Vereditos
+## Vereditos (2026-08-31, `p17_theorem_check.json`)
 
-(preenchido após a rodada — ver seção homônima ao fim)
+| check | previsão congelada | medido (últimos slopes) | veredito |
+|---|---|---|---|
+| C1 σ(controle), EP-2 | slope 0, σ → const | 0.0000; σ → 0.77958 | CONFIRMADO |
+| C2 σ(gap), vínculo de Green | −1.00 | −1.0000 | CONFIRMADO |
+| C3 σ(gap), amplitudes livres | −2.00 | −2.0000 | CONFIRMADO |
+| C4 σ(controle), EP-3 | slope 0 | −0.0000 | CONFIRMADO |
+| C4 σ(gap), EP-3 | −2.00 (= −(N−1)) | −2.0000 | CONFIRMADO |
+
+Precisão de 4 casas em todos — como deve ser para um enunciado exato.
+Escopo do C3: verdade antissimétrica (A₁ = −A₂, tipo Green), como
+congelado no cabeçalho do script; verdade simétrica cai no degrau −1
+(a escada de conhecimento de amplitudes depende da configuração da
+fonte — refinamento aberto, não afeta o teorema).
+
+Nota de instrumento: a primeira rodada usou μ puramente imaginário
+(modo sem parte oscilante); com essa fase, o canal de Green é puramente
+imaginário e Re[A·g] com A real projeta fora o canal ρ inteiro —
+matriz de Fisher exatamente singular, σ espúrio ∝ 1/θ da inversão de
+resíduos 1e-60. Terceira aparição do colapso de posto por fase/simetria
+(P16.2 espelho, aqui fase); guarda de resíduo de inversão adicionada e
+fases genéricas (μ = 0.7 − i) usadas na rodada final.
+
+Consequências no programa: os expoentes medidos da hierarquia
+{1.03, 2.12, 3.12} ganham derivação para os degraus 1 (Jacobiano puro,
+Kerr 1.11) e 2 (amplitudes livres); o degrau 3 segue aberto. P14-LZ,
+o desenho da LEP3 e P16.2 são o mesmo fato: expoente crítico 0 do
+parâmetro de controle. O primeiro degrau {p−1} da escada P15 está
+derivado; {2p−2, 2p−1} seguem abertos.

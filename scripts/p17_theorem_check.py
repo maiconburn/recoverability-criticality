@@ -17,7 +17,7 @@ import mpmath as mp
 mp.mp.dps = 60
 T = [mp.mpf(4) * k / 199 for k in range(200)]
 H = mp.mpf("1e-15")
-MU = mp.mpc(0, -1)
+MU = mp.mpc(mp.mpf('0.7'), -1)
 I1 = mp.mpc(0, 1)
 
 
@@ -80,6 +80,9 @@ def fisher_sigma(yfun, p0, comb=None):
             I[a, b] = v
             I[b, a] = v
     C = I ** -1
+    resid = mp.mnorm(I * C - mp.eye(n))
+    if resid > mp.mpf('1e-20'):
+        raise RuntimeError(f"inverse residual {mp.nstr(resid)}")
     if comb is None:
         return mp.sqrt(C[0, 0])
     v = mp.matrix(comb)
@@ -103,7 +106,7 @@ def y_c1(p):
     return [mp.re(A * g) for g in green2(th)]
 
 thetas = [mp.mpf(10) ** (-k) for k in range(1, 9)]
-sig = [fisher_sigma(y_c1, [th, mp.mpf(1), mp.mpf(0)]) for th in thetas]
+sig = [fisher_sigma(y_c1, [th, mp.mpf(1), mp.mpf('0.3')]) for th in thetas]
 sl = slopes(thetas, sig)
 results["C1"] = {"sigma_last": float(sig[-1]), "slopes": sl}
 print(f"C1 sigma(theta): {[f'{float(s):.4e}' for s in sig]}", flush=True)
@@ -116,7 +119,7 @@ def y_c2(p):
     return [mp.re(A * g) for g in green2_musrho(mp.mpc(mr, mi), s)]
 
 gaps = [mp.mpf(10) ** (-k / mp.mpf(2)) for k in range(1, 9)]
-sig = [fisher_sigma(y_c2, [s, mp.mpf(0), mp.mpf(-1), mp.mpf(1), mp.mpf(0)])
+sig = [fisher_sigma(y_c2, [s, mp.mpf('0.7'), mp.mpf(-1), mp.mpf(1), mp.mpf('0.3')])
        for s in gaps]
 sl = slopes(gaps, sig)
 results["C2"] = {"slopes": sl}
@@ -133,8 +136,8 @@ def y_c3(p):
 
 sig = []
 for s in gaps:
-    p0 = [s, mp.mpf(-1), -s, mp.mpf(-1),
-          mp.mpf(1), mp.mpf(0), mp.mpf(-1), mp.mpf(0)]
+    p0 = [mp.mpf('0.7') + s, mp.mpf(-1), mp.mpf('0.7') - s, mp.mpf(-1),
+          mp.mpf(1), mp.mpf('0.3'), mp.mpf(-1), mp.mpf('-0.3')]
     comb = [mp.mpf("0.5"), 0, mp.mpf("-0.5"), 0, 0, 0, 0, 0]
     sig.append(fisher_sigma(y_c3, p0, comb=comb))
 sl = slopes(gaps, sig)
@@ -148,7 +151,7 @@ def y_c4(p):
     return [mp.re(A * g) for g in green3(th)]
 
 thetas3 = [mp.mpf(10) ** (-k) for k in range(1, 10)]
-sig = [fisher_sigma(y_c4, [th, mp.mpf(1), mp.mpf(0)]) for th in thetas3]
+sig = [fisher_sigma(y_c4, [th, mp.mpf(1), mp.mpf('0.3')]) for th in thetas3]
 sl = slopes(thetas3, sig)
 results["C4_control"] = {"sigma_last": float(sig[-1]), "slopes": sl}
 print(f"C4 control slopes: {[f'{x:.4f}' for x in sl]}", flush=True)
@@ -159,7 +162,7 @@ def y_c4s(p):
     return [mp.re(A * g) for g in green3_s(s)]
 
 gaps3 = [mp.mpf(10) ** (-k / mp.mpf(2)) for k in range(1, 7)]
-sig = [fisher_sigma(y_c4s, [s, mp.mpf(1), mp.mpf(0)]) for s in gaps3]
+sig = [fisher_sigma(y_c4s, [s, mp.mpf(1), mp.mpf('0.3')]) for s in gaps3]
 sl = slopes(gaps3, sig)
 results["C4_gap"] = {"slopes": sl}
 print(f"C4 gap slopes: {[f'{x:.4f}' for x in sl]}", flush=True)
