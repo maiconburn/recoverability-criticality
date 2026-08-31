@@ -25,3 +25,25 @@ diferentes sobre o mesmo sistema.
 ## P15.2 — dados reais: em andamento
 Fontes catalogadas: NV EP-3 (Nat. Nanotech 19, 160) e íons aprisionados
 LEP3 (figshare). Pré-registro em FROZEN_P15_EPN.md; janela ±0.75.
+
+## P15.2 — dados de íons (LEP3): VOID por desenho, com um brinde
+
+Dataset público analisado (figshare 10.6084/m9.figshare.30343429,
+CC BY 4.0; 120 amostras de bootstrap de fits (α, γ) por configuração):
+engenharia reversa das configurações mostra que TODAS obedecem
+γ = 4ω/|1 − 2α| (6/6 pares exatos) — o experimento senta SOBRE a linha
+de LEP3 e varre a POSIÇÃO ao longo dela, nunca a distância ao EP. Sem
+varredura de gap, o expoente da escada não é testável: **VOID pelo
+critério congelado**, e o pré-registro P15.2 permanece aberto para
+qualquer laboratório com varredura transversal (a previsão pública:
+{2, 4, 5} ± 0.75).
+
+Brinde: os σ de bootstrap variam ~5× ao longo da linha
+(σ_γ: 0.05 → 0.26), medindo a ANISOTROPIA do custo de estimação ao longo
+de uma linha de EP-3 — observável que nossa teoria ainda não prevê;
+anotado como questão aberta.
+
+Estado final da linha P15: teoria da escada em ordem N CONFIRMADA em
+sintético de alta precisão ({p−1, 2p−2, 2p−1}; locais −2.01/−3.98/−5.01);
+resposta ε^{1/3} exata; dados públicos disponíveis não testam a escada
+por desenho experimental. Dados: p15_ep3_v2.json, p15_lep3_data.json.
