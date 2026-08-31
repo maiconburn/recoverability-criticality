@@ -47,3 +47,15 @@ Estado final da linha P15: teoria da escada em ordem N CONFIRMADA em
 sintético de alta precisão ({p−1, 2p−2, 2p−1}; locais −2.01/−3.98/−5.01);
 resposta ε^{1/3} exata; dados públicos disponíveis não testam a escada
 por desenho experimental. Dados: p15_ep3_v2.json, p15_lep3_data.json.
+
+## P15.4 — hipótese Petermann: MORTA pelo controle congelado
+
+corr[ln(σ/γ), ln κ_V] = −0.27 (fraca, sinal oposto ao previsto);
+controle de escala congelado disparou (γ puro correlaciona 0.525 > κ_V).
+Veredito: CONFOUNDED-BY-SCALE. A anisotropia ao longo da linha de LEP3 é
+dominada, ao menos em parte, por física experimental mundana (γ maior =
+menos oscilações na janela de medição = fit pior) e por uma diferença
+sistemática entre os ramos α < ½ e α > ½ que κ_V local não captura.
+Questão aberta REFINADA: separar o confundidor exigiria os records crus
+(não os bootstraps agregados) ou dados com janela ∝ 1/γ. A "segunda lei"
+(custo paralelo geométrico) segue sem candidato vivo. Dados: p15_4.json.

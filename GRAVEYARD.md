@@ -27,3 +27,4 @@ the linked reports.
 
 What survived every attack so far is in the README. Nothing enters that
 list without first walking past this page.
+| P15.4: the cost anisotropy along an EP-3 line is set by the local Petermann factor | Killed by its own frozen scale control on real trapped-ion data: the eigenvector condition number anti-correlates with the measured cost (-0.27, wrong sign) while the bare damping rate correlates better (0.525), flagging the mundane confounder the freeze anticipated - stronger damping means fewer observable oscillations in a fixed window. The geometric second law, if any, needs raw records rather than aggregated bootstraps. | `results/RESULTS_P15_EPN.md` |
