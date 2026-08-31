@@ -119,9 +119,42 @@ resíduos 1e-60. Terceira aparição do colapso de posto por fase/simetria
 (P16.2 espelho, aqui fase); guarda de resíduo de inversão adicionada e
 fases genéricas (μ = 0.7 − i) usadas na rodada final.
 
-Consequências no programa: os expoentes medidos da hierarquia
-{1.03, 2.12, 3.12} ganham derivação para os degraus 1 (Jacobiano puro,
-Kerr 1.11) e 2 (amplitudes livres); o degrau 3 segue aberto. P14-LZ,
-o desenho da LEP3 e P16.2 são o mesmo fato: expoente crítico 0 do
-parâmetro de controle. O primeiro degrau {p−1} da escada P15 está
-derivado; {2p−2, 2p−1} seguem abertos.
+Consequências no programa: P14-LZ, o desenho da LEP3 e P16.2 são o
+mesmo fato — expoente crítico 0 do parâmetro de controle.
+
+## A escada completa (2026-08-31, mesma sessão)
+
+Os três degraus {p−1, 2p−2, 2p−1} derivam de um único objeto: normas de
+linha da inversa de Vandermonde. Tangentes do modelo na base de
+monômios t^k e^{−iμt}: direção de amplitude do nó j = coluna
+(δ_j^k/k!); direção de frequência = A_j × coluna deslocada uma ordem.
+Com Gram genérica positiva-definida nos monômios,
+CRB(parâmetro) ≍ ‖linha correspondente de V⁻¹‖, e o expoente é a ordem
+dominante em s dessa linha:
+
+- Tarefa A (amplitudes, frequências conhecidas): Vandermonde SIMPLES
+  p×p ⇒ linhas ~ s^{−(p−1)}.
+- Tarefas B e C (tudo livre): sistema CONFLUENTE 2p×2p (nós duplos — a
+  mesma estrutura confluente do EP) ⇒ linhas de amplitude ~ s^{−(2p−1)},
+  linhas de frequência ~ s^{−(2p−2)} (o fator A_j·t da coluna de
+  frequência custa exatamente um grau).
+
+Verificação simbólica exata (sympy, `p17b_ladder_symbolic.py`):
+p=2 → {−1, −2, −3}; p=3 → {−2, −4, −5}. Seis de seis, ordens inteiras
+exatas. Bate com todo o histórico numérico do programa: hierarquia
+EP-2 medida {1.03, 2.12, 3.12}, P15.1 em EP-3 {−2.01, −3.98, −5.01},
+C2/C3 deste documento.
+
+Prior art (verificado na API do arXiv): os degraus 2p−2 e 2p−1 são os
+teoremas de super-resolução de Batenkov–Goldman–Yomdin
+(arXiv:1904.09186) e o condicionamento de matrizes de Fourier com nós
+aglomerados de Batenkov–Demanet–Goldman–Yomdin (arXiv:1809.00658) —
+citados no congelamento do P15. Nosso: a identificação EP ⇄ cluster
+confluente, o degrau A, o expoente 0 do controle, e a unificação dos
+três degraus numa única matriz.
+
+Coluna vertebral analítica do programa (hierarquia CRB) COMPLETA:
+expoente 0 (controle, teorema), p−1 / 2p−2 / 2p−1 (Vandermonde),
+N−1 (Jacobiano simétrico). A lei de custo de RECONSTRUÇÃO
+(ε ~ e^{−αN}/√d, halving no EP) é lei separada e segue com sua própria
+validação EGB — não coberta por este documento.
