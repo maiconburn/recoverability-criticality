@@ -76,9 +76,9 @@ The same mirror-EP mathematics governs the de Sitter static patch: the QNM tower
 
 *Status: preregistered (frozen predictions with kill criteria), internally verified in one session, no external scrutiny yet. Quarantined here — not a main result — until it survives the same adversarial cycle that corrected the main-results threshold three times.*
 
-### Further preregistered lines (P9–P14) — same quarantine level as P8
+### Further preregistered lines (P9–P16) — same quarantine level as P8
 
-Beyond P8, the repository carries additional preregistered cycles, each with frozen predictions, kill criteria, and honest verdicts (several died; see `GRAVEYARD.md`): P9 entangled probes (`results/RESULTS_P9_ENTANGLED.md`), P10 Floquet-layer EPs (`results/RESULTS_P10_FLOQUET.md`), P11 wormhole echoes (`results/RESULTS_P11_WORMHOLE.md`), P12 traversable-wormhole/Petz bridge and P13 photon-ring CRB on real EHT coverage (`results/RESULTS_P12_P13.md`, `results/RESULTS_P13_EHT.md`), and P14 gravitational-collider dark-matter metrology (`results/RESULTS_P14_GRAVCOLLIDER.md`). None of these is a main result; all are reproducible from `scripts/`.
+Beyond P8, the repository carries additional preregistered cycles, each with frozen predictions, kill criteria, and honest verdicts (several died; see `GRAVEYARD.md`): P9 entangled probes (`results/RESULTS_P9_ENTANGLED.md`), P10 Floquet-layer EPs (`results/RESULTS_P10_FLOQUET.md`), P11 wormhole echoes (`results/RESULTS_P11_WORMHOLE.md`), P12 traversable-wormhole/Petz bridge and P13 photon-ring CRB on real EHT coverage (`results/RESULTS_P12_P13.md`, `results/RESULTS_P13_EHT.md`), P14 gravitational-collider dark-matter metrology (`results/RESULTS_P14_GRAVCOLLIDER.md`), P15 EP-N ladder generalization (`results/RESULTS_P15_EPN.md`), and P16 decoherence as a task class, including the past-EP partial coherence protection (`results/RESULTS_P16_DECOHERENCE.md`). None of these is a main result; all are reproducible from `scripts/`.
 
 ## 2. Methods (short)
 
