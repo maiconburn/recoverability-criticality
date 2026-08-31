@@ -137,3 +137,18 @@ the transport resummation legitimately breaks single-exchange scaling.
 Gate v1 also lacked CosmoFlow's own adiabatic i-epsilon prescription
 (couplings must ramp on about one e-fold AFTER the initial conditions);
 v2 fixed that and the raw S(k_L) became smooth and monotonic.
+
+### Amendment F3-A2 (2026-08-31, before the deciding run; LAST instrument amendment, declared)
+
+The v3 gate metric (dchi2/dof > 4) was specified for noisy data; the
+gate data is deterministic, so chi2 is uncalibrated and the threshold
+meaningless (v3 measured: no-log relative chi2/dof 4.1e-3, log 1.4e-4,
+improvement factor 28, c_log negative as the static analysis predicts).
+Replacement criterion, frozen BEFORE the deciding run and final (no
+further gate amendments; if this fails the cycle stops):
+LOCALIZATION AT THE DEGENERACY. Improvement factor
+R(nu) = chi2_nolog/chi2_log on the same kL grid and basis
+{x^{1/2-nu}, x^{3/2}, x^{3/2} ln x} (collision exists only at nu = 1):
+GATE PASSES iff R(nu=1) / R(nu=0.85) > 10 and c_log at nu=1 keeps its
+negative sign. Secondary check (reported, not gating): coupling
+linearity ratio at rho 0.025 -> 0.05, kappa2 0.0025 -> 0.005.
