@@ -74,4 +74,4 @@ Uma confirmação nova (P16.3, a proteção pós-EP), duas lápides (P16.1,
 P16.2 — nº 16 e 17 do cemitério), e dois subprodutos conceituais: a
 dependência de classe de observável na detectabilidade do canal de
 Jordan, e a neutralidade ao EP da estimação do parâmetro de controle
-(padrão agora visto 3×, candidato a teorema).
+(padrão agora visto 3×, candidato a teorema — PROVADO no mesmo dia: ver `THEOREM_EP_NEUTRALITY.md`, expoente 0 exato).
