@@ -240,3 +240,32 @@ stops here. Record:
 Verdict class: "not testable with this instrument configuration"
 (precedent: P15.2 VOID). No physics prediction of F3 was evaluated;
 none is claimed. Gate data: results/p8f3_gate.json.
+
+## P8 design curve: what a CMB survey needs to detect the log channel
+
+Anchor (measured, not assumed): Planck T-only via CMB-BEST gives
+sigma(A_log) = 29.5 single-shape, 37.2 marginalized jointly with
+S(nu=1), the first observational constraint on the Jordan log channel
+(delivered in the CMB-BEST pull request). Scaling assumption stated
+explicitly: cosmic-variance-limited bispectrum sensitivity improves as
+1/l_max, Planck anchor l_max = 2000, polarization gain 2x.
+
+| A_log signal | sigma needed (2 sigma) | gain over Planck | l_max (T+E) |
+|---|---|---|---|
+| 1 | 0.5 | 74x | 74000 |
+| 5 | 2.5 | 15x | 15000 |
+| 10 | 5.0 | 7.4x | 7400 |
+| 20 | 10.0 | 3.7x | 3700 |
+| 50 | 25.0 | 1.5x | 1500 |
+
+A CMB-S4 style survey (l_max ~ 5000 with polarization, gain ~5x) reaches
+sigma(A_log) ~ 7.4 and detects |A_log| > 15. A cosmic-variance-limited
+T+E analysis to l_max = 10000 reaches sigma ~ 3.7 and detects
+|A_log| > 7.4.
+
+Honest reading: the Jordan log channel is reachable in the CMB only for
+a strongly non-Gaussian universe. For |A_log| of order 1 no planned
+survey gets there, and the detection would have to come from a different
+observable. This is a scaling forecast anchored on a measured
+constraint, not a full survey Fisher forecast. Script:
+scripts/p8_s4_forecast.py.
