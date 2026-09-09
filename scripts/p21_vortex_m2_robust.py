@@ -31,12 +31,26 @@ SEEDS = {-1: [(0.406832619667, -0.341236118126), (0.197485919888, -1.23279178598
               (0.58230954, -2.0623411), (0.45138674, -3.078413)]}
 
 
-def robust_find(seed, m, B, n_pref, kmax=600):
-    """Find the root nearest the seed that at least two inversions agree
-    on (within 1e-6). Bug fixed 2026-09-09: the first version returned
-    the first agreeing pair, which near B ~ 1.2 for m = -2 was the
-    fundamental found by the n = 0 and n = 1 inversions, far from the
-    seed, so the tracker stalled."""
+def _small_count(r, m, B, kmax):
+    from recoverability_ep.dbt import leaver_function
+    small = 0
+    for k in range(6):
+        try:
+            if abs(leaver_function(r, m, B, k, kmax)) < 1e-3:
+                small += 1
+        except ZeroDivisionError:  # exact pole of that inversion
+            pass
+    return small
+
+
+def robust_find(seed, m, B, n_pref, kmax=600, near=None):
+    """Root near the seed accepted if two inversions agree on it (1e-6) or
+    if it is a zero of nearly every inversion (>= 5 of 6). Early exit: if
+    the preferred inversion returns a root within `near` of the seed and
+    one other inversion confirms it, stop there (cost ~2 finds instead of
+    6). Bug history 2026-09-09: v1 returned the first agreeing pair (the
+    fundamental, far from the seed); v2-v4 lost the fundamental at small B
+    (only its own inversion finds it); v5 guards inversion poles."""
     order = [n_pref] + [n for n in range(6) if n != n_pref]
     found = []
     for n in order:
@@ -47,13 +61,21 @@ def robust_find(seed, m, B, n_pref, kmax=600):
         for item in found:
             if abs(r - item[0]) < 1e-6:
                 item[1].append(n)
+                if near is not None and abs(r - seed) < near and len(item[1]) >= 2:
+                    return r
                 break
         else:
             found.append([r, [n]])
-    agreed = [r for r, ns in found if len(ns) >= 2]
-    if not agreed:
+            if near is not None and abs(r - seed) < near and len(found) == 1 and n == n_pref:
+                if _small_count(r, m, B, kmax) >= 5:
+                    return r
+    accepted = []
+    for r, ns in sorted(found, key=lambda t: abs(t[0] - seed)):
+        if len(ns) >= 2 or _small_count(r, m, B, kmax) >= 5:
+            accepted.append(r)
+    if not accepted:
         return None
-    return min(agreed, key=lambda r: abs(r - seed))
+    return min(accepted, key=lambda r: abs(r - seed))
 
 
 def seeds_at_B0(m, nmax=5):
@@ -76,7 +98,7 @@ def seeds_at_B0(m, nmax=5):
     return [(float(mp.re(w)), float(mp.im(w))) if w else None for w in out]
 
 
-def track(m, n, w0, B_end, dB=0.01, max_jump=0.08, min_dB=1e-5):
+def track(m, n, w0, B_end, dB=0.02, max_jump=0.08, min_dB=1e-5):
     path = [(mp.mpf(0), mp.mpc(*w0))]
     B, w = mp.mpf(0), mp.mpc(*w0)
     step = mp.mpf(dB)
@@ -87,7 +109,8 @@ def track(m, n, w0, B_end, dB=0.01, max_jump=0.08, min_dB=1e-5):
             seed = w2 + (w2 - w1) * (Bn - B2) / (B2 - B1)
         else:
             seed = w
-        wn = robust_find(seed, m, Bn, n)
+        guard = max(max_jump * min(1, abs(w) / mp.mpf("0.3")), mp.mpf("0.25") * abs(w))
+        wn = robust_find(seed, m, Bn, n, near=guard)
         if wn is None or abs(wn - w) > max(max_jump * min(1, abs(w) / mp.mpf("0.3")), mp.mpf("0.25") * abs(w)) or mp.re(wn) * mp.re(w) < 0:
             step /= 2
             if step < min_dB:
@@ -95,7 +118,8 @@ def track(m, n, w0, B_end, dB=0.01, max_jump=0.08, min_dB=1e-5):
             continue
         B, w = Bn, wn
         path.append((B, w))
-        step = min(step * mp.mpf("1.5"), mp.mpf(dB))
+        # step cap grows with B (modes collapsing as 1/B move slowly in absolute terms)
+        step = min(step * mp.mpf("1.5"), max(mp.mpf(dB), mp.mpf("0.05") * B))
         if mp.re(w) < 1e-7:
             break
     return path
