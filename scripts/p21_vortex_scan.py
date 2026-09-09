@@ -152,56 +152,36 @@ def seeds_for(m):
 
 
 def main():
-    # ---- P21.1 / P21.4 / P21.5: counter-rotating branch (m < 0, Re > 0)
+    # ---- P21.1 / P21.5: counter-rotating overtones n >= 1 first (cheap, decisive)
     for m in (-1, -2):
         base = seeds_for(m)
-        RES[f"counter_m{m}"] = {}
+        RES[f"counter_m{m}"] = RES.get(f"counter_m{m}", {})
+        RES[f"seeds_m{m}"] = [cplx(w) if w is not None else None for w in base]
         for n, w0 in enumerate(base):
-            if w0 is None:
+            if w0 is None or n == 0:
                 continue
             w0 = mp.mpc(abs(mp.re(w0)), mp.im(w0))  # Re > 0 member for m < 0
-            if n == 0:
-                path = track(m, n, w0, 0.0, 100.0, 0.05, kmax=500, label="counter n0")
-                Bs = [float(b) for b, _ in path]
-                Rs = [float(mp.re(w)) for _, w in path]
-                import math
-                sel = [(b, r) for b, r in zip(Bs, Rs) if b >= 10 and r > 0]
-                expo = None
-                if len(sel) > 3:
-                    xs = [math.log(b) for b, _ in sel]
-                    ys = [math.log(r) for _, r in sel]
-                    mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
-                    expo = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs)
-                RES[f"counter_m{m}"][f"n{n}"] = {
-                    "path": [[float(b)] + cplx(w) for b, w in path],
-                    "largeB_exponent_Re": expo,
-                    "last_B": Bs[-1],
-                }
-                print(f"  m={m} n=0 large-B exponent of Re: {expo}", flush=True)
-            else:
-                path = track(m, n, w0, 0.0, 5.0, 0.01, kmax=600, label="counter")
-                B_last, w_last = path[-1]
-                p, Bc_fit, Bc_lin = approach_exponent(path)
-                # refine near the cut with higher kmax and smaller steps
-                path2 = track(m, n, w_last, float(B_last), float(B_last) + 0.05, 0.002,
-                              kmax=1200, min_dB=1e-6, label="counter-refine")
-                B_last2, w_last2 = path2[-1]
-                p2, Bc_fit2, Bc_lin2 = approach_exponent(path + path2[1:])
-                # beyond: search at Bc + 0.02 and Bc + 0.1
-                beyond = {}
-                for dB in (0.02, 0.1):
-                    Bq = (Bc_lin2 or float(B_last2)) + dB
-                    roots = beyond_search(m, mp.mpf(Bq), w_last2)
-                    beyond[str(dB)] = [cplx(r) for r in roots]
-                    print(f"  beyond search m={m} n={n} B={Bq:.4f}: {[mp.nstr(r, 8) for r in roots]}", flush=True)
-                RES[f"counter_m{m}"][f"n{n}"] = {
-                    "path": [[float(b)] + cplx(w) for b, w in path + path2[1:]],
-                    "arrival_B_last": float(B_last2), "omega_last": cplx(w_last2),
-                    "approach_exponent_coarse": p, "Bc_fit_coarse": Bc_fit,
-                    "approach_exponent": p2, "Bc_fit": Bc_fit2, "Bc_linear_extrap": Bc_lin2,
-                    "beyond_principal_sheet_roots": beyond,
-                }
-                print(f"  m={m} n={n}: arrival B~{Bc_lin2} exponent {p2:.3f} (Bc_fit {Bc_fit2:.4f})", flush=True)
+            path = track(m, n, w0, 0.0, 5.0, 0.01, kmax=600, label="counter")
+            B_last, w_last = path[-1]
+            p, Bc_fit, Bc_lin = approach_exponent(path)
+            path2 = track(m, n, w_last, float(B_last), float(B_last) + 0.05, 0.002,
+                          kmax=1200, min_dB=1e-6, label="counter-refine")
+            B_last2, w_last2 = path2[-1]
+            p2, Bc_fit2, Bc_lin2 = approach_exponent(path + path2[1:])
+            beyond = {}
+            for dB in (0.02, 0.1):
+                Bq = (Bc_lin2 or float(B_last2)) + dB
+                roots = beyond_search(m, mp.mpf(Bq), w_last2)
+                beyond[str(dB)] = [cplx(r) for r in roots]
+                print(f"  beyond search m={m} n={n} B={Bq:.4f}: {[mp.nstr(r, 8) for r in roots]}", flush=True)
+            RES[f"counter_m{m}"][f"n{n}"] = {
+                "path": [[float(b)] + cplx(w) for b, w in path + path2[1:]],
+                "arrival_B_last": float(B_last2), "omega_last": cplx(w_last2),
+                "approach_exponent_coarse": p, "Bc_fit_coarse": Bc_fit,
+                "approach_exponent": p2, "Bc_fit": Bc_fit2, "Bc_linear_extrap": Bc_lin2,
+                "beyond_principal_sheet_roots": beyond,
+            }
+            print(f"  m={m} n={n}: arrival B~{Bc_lin2} exponent {p2:.3f} (Bc_fit {Bc_fit2:.4f})", flush=True)
             save()
 
     # ---- P21.2: co-rotating branch (m > 0, Re > 0), gaps between adjacent overtones
@@ -214,7 +194,7 @@ def main():
                 continue
             w0 = mp.mpc(abs(mp.re(w0)), mp.im(w0))
             paths.append(track(m, n, w0, 0.0, 10.0, 0.02, kmax=500, label="co"))
-        # gaps on a common B grid (interpolate by nearest B)
+            save()
         gaps = {}
         for n in range(len(paths) - 1):
             pa, pb = paths[n], paths[n + 1]
@@ -222,7 +202,6 @@ def main():
                 continue
             rows = []
             for B, wa in pa:
-                # nearest in pb
                 j = min(range(len(pb)), key=lambda k: abs(pb[k][0] - B))
                 if abs(pb[j][0] - B) < 0.011:
                     wb = pb[j][1]
@@ -232,6 +211,43 @@ def main():
             gaps[f"n{n}_n{n+1}"] = {"rows": rows, "min_gap": gmin}
             print(f"  co m={m} pair {n},{n+1}: min gap {gmin[1] if gmin else None} at B={gmin[0] if gmin else None}", flush=True)
         RES[f"co_m{m}"] = {"paths": [[[float(b)] + cplx(w) for b, w in p] for p in paths], "gaps": gaps}
+        save()
+
+    # ---- P21.4: counter-rotating fundamental to large B on a geometric grid (last: slowest)
+    import math
+    for m in (-1, -2):
+        base = seeds_for(m)
+        w0 = base[0]
+        if w0 is None:
+            continue
+        w = mp.mpc(abs(mp.re(w0)), mp.im(w0))
+        path = [(mp.mpf(0), w)]
+        B = mp.mpf("0.05")
+        while B <= 100:
+            wn = safe_find(w, m, B, 0, 500)
+            if wn is None or abs(wn - w) > 0.5 * abs(w) + 0.05:
+                # fall back to a short fine continuation from the last point
+                sub = track(m, 0, w, float(path[-1][0]), float(B), float(B - path[-1][0]) / 8, kmax=500, label="n0-fine")
+                if len(sub) < 2:
+                    break
+                wn = sub[-1][1]
+                if abs(sub[-1][0] - B) > 1e-9:
+                    break
+            w = wn
+            path.append((B, w))
+            B = B * mp.mpf("1.15")
+        Bs = [float(b) for b, _ in path]
+        Rs = [float(mp.re(w)) for _, w in path]
+        sel = [(b, r) for b, r in zip(Bs, Rs) if b >= 10 and r > 0]
+        expo = None
+        if len(sel) > 3:
+            xs = [math.log(b) for b, _ in sel]
+            ys = [math.log(r) for _, r in sel]
+            mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
+            expo = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs)
+        RES[f"counter_m{m}"]["n0"] = {"path": [[float(b)] + cplx(w) for b, w in path],
+                                      "largeB_exponent_Re": expo, "last_B": Bs[-1]}
+        print(f"  m={m} n=0: last B={Bs[-1]:.2f} large-B exponent of Re: {expo}", flush=True)
         save()
     RES["meta"]["finished"] = time.strftime("%Y-%m-%d %H:%M:%S")
     save()

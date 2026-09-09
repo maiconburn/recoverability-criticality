@@ -253,5 +253,18 @@
    "seconds": 304.19940209388733
   },
   "converged": null
+ },
+ "1.4": {
+  "10000": {
+   "roots": [],
+   "agreed": null,
+   "seconds": 121.02503871917725
+  },
+  "20000": {
+   "roots": [],
+   "agreed": null,
+   "seconds": 246.0115168094635
+  },
+  "converged": null
  }
 }
