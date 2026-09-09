@@ -286,3 +286,56 @@ Nottingham size. That is the experiment the tower predicts: N(m) =
 1, 2, 2, 3, 4 counter-rotating modes for |m| = 1..5 with damping
 rates in the ratio 1 : 3 : 5 : ... and the fundamental at
 f_0 = |m| c_s^2 / (8 pi C) (0.62 |m| Hz for those parameters).
+
+## Theory addendum (2026-09-10): the action in closed form and the analytic tower
+
+The symbolic expansion of the barrier action about the light ring
+(`p23_action_series.py`, x-series to order 10, turning points as
+series in h, the smooth part of the integrand integrated in the
+angle variable) gives
+
+    J(h)/(pi h) = 2 + 3 h + (15/2) h^2 + (175/8) h^3 + (2205/32) h^4 + ...,
+
+which is, term by term, 2 * 2F1(1/2, 3/2; 2; 4h). With
+2F1(1/2, 3/2; 2; z) = (4/(pi z)) [K - E] at parameter z, this is the
+identity
+
+    J(gamma) = 2 [ K(k) - E(k) ],   k^2 = 1 - 4 gamma,
+
+verified against the quadrature to 1e-31 at real and complex gamma.
+The pure-vortex tower is therefore the solution set of a closed
+transcendental equation in complete elliptic integrals,
+
+    |m| * 2 [ K(k_n) - E(k_n) ] = i pi (n + 1/2),   k_n^2 = 1 - 4 c_n / |m|,
+
+whose roots reproduce the exact members within the first-order WKB
+accuracy (m = -7, n = 5: 0.0681 - 2.4245i against 0.0696 - 2.4303i;
+m = -10, n = 7: 0.3189 - 3.3461i against 0.3201 - 3.3500i). Inverting
+the series order by order,
+
+    c_n(m) = |m|/4 - i a/2 - (3/8) a^2/|m| + (3i/32) a^3/m^2
+             - (5/256) a^4/|m|^3 + (9i/2048) a^5/m^4 + ...,   a = n + 1/2,
+
+(plus an O(1/|m|) constant k_1 = +0.031 from the (m^2 - 1/4) term
+and the next WKB order, fitted on the n = 0 members). The third term
+is the anharmonic shift that decides the count; the fourth explains
+the damping drift that the P23.1 freeze had recorded as a miss: at
+m = -10, n = 5 it gives Im c = -2.75 + 0.156 = -2.594 against the
+exact -2.5949, and across the towers the imaginary parts of all
+members with Re c > 0 at |m| >= 5 are reproduced to 0.003. The real
+parts of the last member before the crossing are 0.02 to 0.07 below
+the truncated series (the expansion parameter a/|m| is 0.8 there);
+the elliptic form has no such limitation.
+
+The crossing constant is the root of Re[K(k) - E(k)] = 0 on the line
+k^2 = 1 - 4 i y:
+
+    y* = -0.35114692526,   kappa = (2/pi) Im[K - E](k*) = 0.80080533966,
+
+against 0.8165 from the a^2 truncation and 0.8031 from the a^4
+truncation. The escape count of the draining vortex is thus
+
+    N(m) = floor( 0.80080533966 |m| + 1/2 ),
+
+with every case measured (|m| = 1..10, 12, 15; finite-B for |m| <= 7)
+in agreement.
