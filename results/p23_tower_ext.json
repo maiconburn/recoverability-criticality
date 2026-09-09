@@ -1,0 +1,274 @@
+{
+ "-12": {
+  "rows": [
+   {
+    "n": 0,
+    "action_wkb": [
+     2.9921867932525466,
+     -0.24991861317172612
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 1,
+    "action_wkb": [
+     2.9296300442221677,
+     -0.7478011312238607
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 2,
+    "action_wkb": [
+     2.8042409166493143,
+     -1.2398070024767534
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 3,
+    "action_wkb": [
+     2.615452950048154,
+     -1.7219777122394129
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 4,
+    "action_wkb": [
+     2.362377489986308,
+     -2.190297401659877
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 5,
+    "action_wkb": [
+     2.043754326489953,
+     -2.640678699481193
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 6,
+    "action_wkb": [
+     1.6578818831258195,
+     -3.0689603734261315
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 7,
+    "action_wkb": [
+     1.2025245728744853,
+     -3.470925109805609
+    ],
+    "exact": [
+     1.20404,
+     -3.47367
+    ],
+    "spread": "retry: theta 0.4/0.5/0.8 (and rtol 1e-13, rho_max 60) agree to 1e-5; rho_m 0.7 fails at |m|>=12"
+   },
+   {
+    "n": 8,
+    "action_wkb": [
+     0.6747965563884888,
+     -3.8423502862586534
+    ],
+    "exact": [
+     0.6759919433436281,
+     -3.8454327298959545
+    ],
+    "spread": 6.504276467735825e-08
+   },
+   {
+    "n": 9,
+    "action_wkb": [
+     0.07102593870756492,
+     -4.179110559418025
+    ],
+    "exact": [
+     0.07186,
+     -4.18252
+    ],
+    "spread": "retry: theta 0.4/0.5/0.8 (and rtol 1e-13, rho_max 60) agree to 1e-5; rho_m 0.7 fails at |m|>=12"
+   },
+   {
+    "n": 10,
+    "action_wkb": [
+     -0.6133859694615316,
+     -4.477357166667549
+    ],
+    "exact": [
+     -0.61295,
+     -4.48108
+    ],
+    "spread": "retry: theta 0.4/0.5/0.8 (and rtol 1e-13, rho_max 60) agree to 1e-5; rho_m 0.7 fails at |m|>=12"
+   },
+   {
+    "n": 11,
+    "action_wkb": [
+     -1.3840762108170073,
+     -4.733800846023412
+    ],
+    "exact": null,
+    "spread": null
+   }
+  ],
+  "N_law": 10,
+  "N_action_wkb": 10,
+  "N_exact": 10,
+  "kappa_m_plus_half": 10.10966
+ },
+ "-15": {
+  "rows": [
+   {
+    "n": 0,
+    "action_wkb": [
+     3.7437496382046724,
+     -0.24994791395472618
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 1,
+    "action_wkb": [
+     3.6937206260894655,
+     -0.7485930924329487
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 2,
+    "action_wkb": [
+     3.593522287735537,
+     -1.2434811645053199
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 3,
+    "action_wkb": [
+     3.442869056675626,
+     -1.732090449801524
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 4,
+    "action_wkb": [
+     3.2413200340479187,
+     -2.21187478390763
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 5,
+    "action_wkb": [
+     2.9882633683028894,
+     -2.680255778384866
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 6,
+    "action_wkb": [
+     2.682894526655545,
+     -3.134617611063669
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 7,
+    "action_wkb": [
+     2.3241877796740087,
+     -3.5723058150524345
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 8,
+    "action_wkb": [
+     1.9108602344567294,
+     -3.990632203010146
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 9,
+    "action_wkb": [
+     1.4413280092768987,
+     -4.386888983714999
+    ],
+    "exact": null,
+    "spread": null
+   },
+   {
+    "n": 10,
+    "action_wkb": [
+     0.9136548432841781,
+     -4.758376314794379
+    ],
+    "exact": [
+     0.91464,
+     -4.76082
+    ],
+    "spread": "retry: theta 0.4/0.5/0.8 (and rtol 1e-13, rho_max 60) agree to 1e-5; rho_m 0.7 fails at |m|>=12"
+   },
+   {
+    "n": 11,
+    "action_wkb": [
+     0.3254948884564091,
+     -5.102448911673001
+    ],
+    "exact": [
+     0.32625,
+     -5.1051
+    ],
+    "spread": "retry: theta 0.4/0.5/0.8 (and rtol 1e-13, rho_max 60) agree to 1e-5; rho_m 0.7 fails at |m|>=12"
+   },
+   {
+    "n": 12,
+    "action_wkb": [
+     -0.32596593897845777,
+     -5.416588612124676
+    ],
+    "exact": [
+     -0.32545,
+     -5.41944
+    ],
+    "spread": "retry: theta 0.4/0.5/0.8 (and rtol 1e-13, rho_max 60) agree to 1e-5; rho_m 0.7 fails at |m|>=12"
+   },
+   {
+    "n": 13,
+    "action_wkb": [
+     -1.044061408347038,
+     -5.698510291337802
+    ],
+    "exact": null,
+    "spread": null
+   }
+  ],
+  "N_law": 12,
+  "N_action_wkb": 12,
+  "N_exact": 12,
+  "kappa_m_plus_half": 12.512075,
+  "note": "members n <= 9 not solved exactly (cost); n = 9 sits at Re 1.44 by action-WKB, counted as positive; n = 10, 11 verified positive, n = 12 verified negative"
+ }
+}
