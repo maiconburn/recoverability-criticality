@@ -19,7 +19,15 @@ import numpy as np
 sys.path.insert(0, "src")
 from recoverability_ep.dbt_scaled import find_c_wall  # noqa
 
-MS = [int(x) for x in sys.argv[1:]] or [-2, -4]
+ARGS = sys.argv[1:]
+if ARGS and ":" in ARGS[0]:                     # explicit cases m:kind:rho_c (P27)
+    CASELIST = [(int(a.split(":")[0]), a.split(":")[1], float(a.split(":")[2])) for a in ARGS]
+    MS = sorted({c[0] for c in CASELIST}, reverse=True)
+    OUTFILE = "results/p27_cavity_count.json"
+else:
+    CASELIST = None
+    MS = [int(x) for x in ARGS] or [-2, -4]
+    OUTFILE = "results/p26_vortex_core.json"
 
 
 class SeedTimeout(Exception):
@@ -36,11 +44,11 @@ CASES = [("dirichlet", 0.3), ("dirichlet", 0.5), ("dirichlet", 1.0), ("neumann",
 OUT = {}
 for m in MS:
     am = abs(m)
-    for kind, rc in CASES:
+    for kind, rc in (CASES if CASELIST is None else [(k, r) for (mm, k, r) in CASELIST if mm == m]):
         t0 = time.time()
         roots = []
         for re in np.linspace(0.06, am / 4 + 0.3, 10):
-            for im in np.linspace(-0.01, -2.0, 12):
+            for im in list(np.linspace(-0.01, -2.0, 12)) + [-0.002, -0.0005]:
                 signal.alarm(8)
                 try:
                     c, res = find_c_wall(complex(re, im), m, rho_c=rc, kind=kind, rho_m=rc + 0.6, maxit=30)
@@ -68,5 +76,5 @@ for m in MS:
         trapped = [z for z in roots if abs(z.imag) < 0.08 and 0 < z.real < am / 4]
         OUT[key] = {"roots": [[z.real, z.imag] for z in roots], "trapped": [[z.real, z.imag] for z in trapped], "seconds": time.time() - t0}
         print(f"  m={m} {kind} rho_c={rc}: {len(roots)} roots: {[f'{z.real:.4f}{z.imag:+.4f}i' for z in roots]}; trapped (|Im|<0.08, 0<Re<|m|/4): {len(trapped)}  ({time.time() - t0:.0f}s)", flush=True)
-        pathlib.Path("results/p26_vortex_core.json").write_text(json.dumps(OUT, indent=1))
+        pathlib.Path(OUTFILE).write_text(json.dumps(OUT, indent=1))
 print("done", flush=True)
