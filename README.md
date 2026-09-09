@@ -76,7 +76,7 @@ The same mirror-EP mathematics governs the de Sitter static patch: the QNM tower
 
 *Status: preregistered (frozen predictions with kill criteria), internally verified in one session, no external scrutiny yet. Quarantined here — not a main result — until it survives the same adversarial cycle that corrected the main-results threshold three times.*
 
-The single statement these lines support, with its proof sketch, exponents, eight instances and predictions, is collected in `results/PRINCIPLE_LABELS_PAY.md` (the response is analytic through spectral singularities; only labeled quantities pay).
+A shallow-water tank design that tests the vortex results (count law, damping ladder, core diagnosis, absorption) is in `results/EXPERIMENT_DESIGN_VORTEX_TANK.md`. The single statement these lines support, with its proof sketch, exponents, eight instances and predictions, is collected in `results/PRINCIPLE_LABELS_PAY.md` (the response is analytic through spectral singularities; only labeled quantities pay).
 
 ### Further preregistered lines (P9–P28) — same quarantine level as P8
 
