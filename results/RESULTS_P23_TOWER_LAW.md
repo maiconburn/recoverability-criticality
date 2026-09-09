@@ -206,6 +206,28 @@ Complex-ray solver (`dbt_scaled.wronskian_cplx`), every root verified at theta =
 
 Counts N(m) (members with Re c > 0): |m| = 2: 2, |m| = 3: 2, |m| = 4: 3, |m| = 5: 4, |m| = 6: 5, |m| = 7: 6, |m| = 8: 6, |m| = 9: 7, |m| = 10: 8. Largest deviation of Re c_n from the frozen law for n <= N - 2: 2: 0.001, 3: 0.000, 4: 0.001, 5: 0.002, 6: 0.003, 7: 0.005, 8: 0.005, 9: 0.006, 10: 0.007.
 
+## Beyond the freeze: |m| = 12 and 15 (recorded after the freeze)
+
+kappa |m| + 1/2 = 10.11 and 12.51; the law predicts N = 10 and 12, the
+second a borderline case. Action-WKB tower and the exact members near
+the crossing (complex-ray solver, ray angles 0.4 / 0.5 / 0.8 agreeing
+to 1e-5; the rho_m = 0.7 setting no longer converges at these |m|):
+
+| m | n | action-WKB | exact |
+|---|---|---|---|
+| -12 | 7 | 1.2025-3.4709i | 1.2040-3.4737i |
+| -12 | 8 | 0.6748-3.8424i | 0.6760-3.8454i |
+| -12 | 9 | 0.0710-4.1791i | 0.0719-4.1825i |
+| -12 | 10 | -0.6134-4.4774i | -0.6130-4.4811i |
+| -15 | 10 | 0.9137-4.7584i | 0.9146-4.7608i |
+| -15 | 11 | 0.3255-5.1024i | 0.3263-5.1051i |
+| -15 | 12 | -0.3260-5.4166i | -0.3255-5.4194i |
+
+N(12) = 10 and N(15) = 12 (`p23_tower_ext.json`), the action-WKB
+within 0.004 of the exact members even at the crossing. The count law
+now stands at |m| = 1..10, 12, 15; the only reading that survives is
+kappa = 0.8008 from the light-ring action.
+
 ## Kerr: the blind extrapolation
 
 Blind fits use only the deep-converged points with

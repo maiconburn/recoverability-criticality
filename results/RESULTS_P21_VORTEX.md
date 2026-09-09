@@ -305,3 +305,53 @@ scaled potential (c - m/rho^2)^2 - (m^2 - 1/4)/rho^2 that the
 first-order eikonal misses, P21f.3), and whether the same argument,
 with the polynomial modes of Kerr replacing "no mode on the axis",
 governs which Kerr overtones survive extreme rotation.
+
+## P21h.2: the m = -7 finite-B run (verdict 2026-09-09, evening)
+
+Prediction (frozen in `FROZEN_P21H_VORTEX_ESCAPE_RULE.md`): N(7) = 6
+escaping overtones, i.e. n = 0..5 collapse onto the pure-vortex tower
+and n = 6 is absorbed. Run: robust tracker (jump guard 0.08, initial
+step 0.005, all seven B = 0 seeds found: 3.4866-0.3534i, 3.4333-1.0659i,
+3.3287-1.7962i, 3.1775-2.5566i, 2.9891-3.3593i, 2.7779-4.2133i,
+2.5621-5.1205i), plus deep continued-fraction probes near the axis
+(`p23_m7_bridge.py`, `p23_m7_n6_track.py`; kmax 2000 to 12000 at
+40 digits with the residual guard relaxed to 1e-9).
+
+| n | fate | evidence | tower c_n (complex-ray solver) |
+|---|---|---|---|
+| 0 | escapes | omega B = 1.7367-0.2494i at B = 10 | 1.7410-0.2503i |
+| 1 | escapes | 1.6299-0.7426i at B = 10 | 1.6339-0.7430i |
+| 2 | escapes | 1.4146-1.2188i at B = 10 | 1.4272-1.2261i |
+| 3 | escapes | 1.0877-1.6666i at B = 10 | 1.0784-1.6968i |
+| 4 | escapes | 0.6580-2.0425i at B = 3.32 (tracker halts there, Re/|omega| = 0.3, kmax 600) | 0.6203-2.0574i |
+| 5 | escapes (the borderline case: Re c_5 = 0.07) | deep secant continuation to B = 3.06 (Re omega 0.0785 -> 0.0354, omega B 0.1569-2.370i -> 0.1083-2.405i, 16000/32000 terms agree to 1e-5), then kmax-independent roots at B = 6 (omega B = 0.0799-2.424i, 32000/64000 to 7e-4) and B = 8 (0.0753-2.427i); a Muller-only search had reported the mode absent at B = 3.0-4.0 (P24, killed) | 0.0696-2.4303i |
+| 6 | absorbed | deep re-track: Re(omega) = 0.4214, 0.3072, 0.2060, 0.1602, 0.1278 at B = 0.575, 0.625, 0.675, 0.700, 0.719 (slopes -2.3, -2.0, -1.8, -1.7), B_c = 0.79 by linear extrapolation; the kmax-600 tracker's later points (Re ~ 0.07-0.11 at B = 1.3-1.9, Im ~ -3.4) are not reproduced by deep fractions: truncation artifacts of the lesson-6 kind | -0.6405-2.7176i (Re < 0) |
+
+Verdict P21h.2: CONFIRMED. N(7) = 6: n = 0..5 escape onto the tower
+(n = 5 reaching the member with the smallest positive real part yet
+tested, slowly, as 1/B), n = 6 is absorbed linearly at B_c = 0.795.
+Counts 1, 2, 2, 3, 4, 5, 6 for |m| = 1..7 are now all measured at
+finite B, and the law N(m) = floor(0.8008 |m| + 1/2) of P23 has
+no exception in the measured range.
+
+Instrument lesson 10 (scaled solver): the real-axis inner integration
+of `dbt_scaled.wronskian` carries the physical branch as the
+subdominant solution (by exp(2 |Im c| rho_m) at the matching point),
+which made the deep tower members cutoff-sensitive and, at |m| >= 8,
+unusable. `wronskian_cplx` integrates the inner solution along
+rho = r e^{-i theta}, where that branch is dominant; the arc back to the
+real axis needs the first-derivative term of the non-constant
+d rho / dt. Results are invariant to theta, rho_min and rho_m to five
+decimals. The P21f-h towers are superseded by `p23_tower_cplx_m*.json`
+(counts unchanged for |m| <= 7; deep members move by up to 0.07).
+
+Instrument lesson 12 (Muller false negatives near the axis): see
+`RESULTS_P24_VORTEX_MULTIPLET.md`; near-axis roots are to be followed
+by secant continuation, never declared absent from Muller searches.
+
+Instrument lesson 11 (deep fractions): `find_qnm`'s residual guard
+(1e-18) was set for kmax ~ 600 at 30 digits; with thousands of terms
+the residual floor is ~1e-10 and the guard rejects converged roots as
+stalled. For kmax >= 2000 use 40 digits and resid_max = 1e-9, and
+gate consecutive kmax values at 1e-3 rather than 1e-5 near the axis,
+where the fraction converges slowly in kmax.
