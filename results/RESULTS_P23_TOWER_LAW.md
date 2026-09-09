@@ -234,13 +234,33 @@ before the fits), and the window had to be densified
 (`p23_kerr_extrap_fit.py`) because a 0.01 spin step leaves only 2-3
 points inside it.
 
-## What the laboratory can test
+## What the laboratory can test, and why the 2020 Nottingham data cannot yet
 
 At strong rotation (B/A >> 1) the draining vortex rings, in the
-counter-rotating sector, with N(m) modes per azimuthal number, with
-damping rates (2n + 1)/(4 B) independent of m and frequencies
-(|m|/4 - (3/8)(n + 1/2)^2/|m|)/B. For the m = -2 sector this is two
-modes (n = 0, 1) with damping ratio 3 and frequencies 0.467/B,
-0.072/B; the second one is nearly non-propagating. A measurement of
-the number of counter-rotating ringdown modes at high rotation, or of
-their damping ratio 1 : 3 : 5, tests the light-ring picture directly.
+counter-rotating sector, with N(m) = floor(0.8008 |m| + 1/2) modes per
+azimuthal number, with damping rates (2n + 1)/(4 B) independent of m
+and frequencies [|m|/4 - (3/8)(n + 1/2)^2/|m|]/B (B = C/c_s in units of
+the sound-horizon radius; in physical units multiply by c_s^2/C). For
+the m = -2 sector this is two modes (n = 0, 1) with damping ratio
+1 : 3 and frequencies 0.467 c_s^2/C and 0.071 c_s^2/C, the second nearly
+non-propagating. A measurement of the number of counter-rotating
+ringdown modes at high rotation, or of their damping ratio 1 : 3 : 5,
+tests the light-ring picture directly.
+
+Torres, Patrick, Richartz and Weinfurtner (PRL 125, 011301, 2020)
+measured exactly the pure-vortex counter-rotating spectrum (circulation
+C = 151 cm^2/s, drain D = 0, the first 25 counter-rotating modes,
+one peak frequency per m, no damping rates). Their data are NOT a test
+of this tower: with water depth h = 5.55 cm the light ring of the
+non-dispersive model sits at r = 2 C / c_s = 4.1 cm (c_s = sqrt(g h) =
+74 cm/s), where k h = |m| h / r = 1.35 |m| >> 1 for every m, i.e. deep
+water, and the frequencies are set by the gravity-capillary dispersion
+they modelled (their light-ring frequencies grow at about 0.17 Hz per
+unit |m|, against 1.43 Hz per unit |m| for the shallow-water tower).
+The non-dispersive regime needs k h << 1 at the light ring, i.e.
+h << 2 C / (|m| c_s); with C = 1000 cm^2/s and h = 2 cm one gets
+r = 45 cm and k h = 0.044 |m|, shallow for |m| <= 5, in a tank of the
+Nottingham size. That is the experiment the tower predicts: N(m) =
+1, 2, 2, 3, 4 counter-rotating modes for |m| = 1..5 with damping
+rates in the ratio 1 : 3 : 5 : ... and the fundamental at
+f_0 = |m| c_s^2 / (8 pi C) (0.62 |m| Hz for those parameters).
