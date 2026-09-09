@@ -80,9 +80,11 @@ def robust_find(seed, m, B, n_pref, kmax=600, near=None):
     return min(accepted, key=lambda r: abs(r - seed))
 
 
-def seeds_at_B0(m, nmax=5):
+def seeds_at_B0(m, nmax=None):
     """B = 0 seeds for |m| from eikonal guesses omega ~ |m|/2 - i(2n+1)/(2 sqrt 2),
     refined by the continued fraction with two-inversion agreement."""
+    if nmax is None:
+        nmax = (max(NLIST) + 1) if NLIST else 5
     out = []
     for n in range(nmax):
         g = mp.mpc(abs(m) / 2 * (1 - 0.12 * n), -(2 * n + 1) / (2 * mp.sqrt(2)) * 0.92)
