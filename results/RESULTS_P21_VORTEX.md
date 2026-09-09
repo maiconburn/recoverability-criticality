@@ -228,3 +228,20 @@ escape at m = -5 (the floor rule dies), or the extra scaled resonance
 is a mode with no B = 0 ancestor, born from the branch cut at finite
 rotation (the reverse of absorption). `FROZEN_P21G_VORTEX_M5_EMERGENT.md`
 decides.
+
+## P21g: m = -5, four escape and nothing is born (verdict 2026-09-09)
+
+Preregistration `FROZEN_P21G_VORTEX_M5_EMERGENT.md` (commit 83864b9).
+
+| prediction | frozen | measured | verdict |
+|---|---|---|---|
+| P21g.1 finite-B escape count at m = -5: 3 (R2) or 4 (R1) | as stated | n = 0, 1, 2 escape (omega B at B = 10: 1.23-0.25i, 1.08-0.74i, 0.78-1.19i against the scaled 1.237-0.250i, 1.089-0.740i, 0.779-1.203i); n = 3 ALSO escapes: the kmax-600 tracker holds it to B = 4.8 (omega B = 0.307-1.598i) and longer fractions bridge it at B = 5.5, 6.5, 7.5 (kmax 3000-6000, two inversions), 10 (three inversions) and 20 (five inversions), all with omega B = 0.31-1.59i against the scaled c_3 = 0.296-1.586i; n = 4 arrives linearly (Re 0.010 at B = 3.44, slope -0.0134, Im -1.33 finite, B_c ~ 4.2) | four escape: reading R1 |
+| P21g.2 a mode born from the cut near c_3/B | as stated | the root near c_3/B at B = 10 and 20 IS the n = 3 overtone (continuous trajectory from B = 0) | R2 KILLED |
+| P21g.3 universality of birth | conditional on R2 | void | VOID |
+
+Escape counts 1, 2, 2, 3, 4 for |m| = 1..5: the floor rule of P21e is
+dead at |m| = 5 (it was confirmed only for |m| <= 4, as its freeze
+stated). The finite-B count equals the number of pure-vortex tower
+members with Re c > 0 (the member following the last escaping one has
+Re c < 0: m = -4, -0.203 - 1.512i), which is frozen as the rule in
+`FROZEN_P21H_VORTEX_ESCAPE_RULE.md` with m = -6 as the test.

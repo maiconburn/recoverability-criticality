@@ -22,8 +22,10 @@ from recoverability_ep.dbt import find_qnm  # noqa
 mp.mp.dps = 24
 M = int(sys.argv[1]) if len(sys.argv) > 1 else -2
 BMAX = float(sys.argv[2]) if len(sys.argv) > 2 else 10.0
+JUMP_FRAC = float(sys.argv[4]) if len(sys.argv) > 4 else 0.25   # relative jump guard (tighten for dense spectra)
+DB0 = float(sys.argv[5]) if len(sys.argv) > 5 else 0.02
 NLIST = [int(x) for x in sys.argv[3].split(",")] if len(sys.argv) > 3 else None
-OUT = pathlib.Path(f"results/p21_vortex_m{M}_robust" + (("_n" + "-".join(map(str, NLIST))) if NLIST else "") + ".json")
+OUT = pathlib.Path(f"results/p21_vortex_m{M}_robust" + (("_n" + "-".join(map(str, NLIST))) if NLIST else "") + (f"_j{JUMP_FRAC}" if len(sys.argv) > 4 else "") + ".json")
 
 SEEDS = {-1: [(0.406832619667, -0.341236118126), (0.197485919888, -1.23279178598),
               (0.0917790615406, -2.24612961199), (0.03497384613, -3.259712193)],
@@ -109,7 +111,7 @@ def track(m, n, w0, B_end, dB=0.02, max_jump=0.08, min_dB=1e-5):
             seed = w2 + (w2 - w1) * (Bn - B2) / (B2 - B1)
         else:
             seed = w
-        guard = max(max_jump * min(1, abs(w) / mp.mpf("0.3")), mp.mpf("0.25") * abs(w))
+        guard = max(max_jump * min(1, abs(w) / mp.mpf("0.3")), mp.mpf(JUMP_FRAC) * abs(w))
         wn = robust_find(seed, m, Bn, n, near=guard)
         if wn is None or abs(wn - w) > max(max_jump * min(1, abs(w) / mp.mpf("0.3")), mp.mpf("0.25") * abs(w)) or mp.re(wn) * mp.re(w) < 0:
             step /= 2
@@ -131,7 +133,7 @@ for n, w0 in enumerate(seeds):
     if w0 is None or (NLIST is not None and n not in NLIST) or (NLIST is None and n == 0):
         continue
     t0 = time.time()
-    path = track(M, n, w0, BMAX)
+    path = track(M, n, w0, BMAX, dB=DB0)
     Bs = [float(b) for b, _ in path]
     Re = [float(mp.re(w)) for _, w in path]
     Im = [float(mp.im(w)) for _, w in path]
