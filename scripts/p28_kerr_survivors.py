@@ -15,15 +15,18 @@ import time
 import numpy as np
 from qnm.nearby import NearbyRootFinder
 
-A = 0.9999
+A = 0.99          # instrument change (recorded): at 0.9999 the fraction does not converge from rough seeds; the tower moves by ~1e-3 between 0.99 and 0.9999
 L = int(sys.argv[1]) if len(sys.argv) > 1 else 2
 NSTAR = {2: 8, 3: 18, 4: 25}[L]
 
 
-def find(guess, n_inv, A0, Nr_max):
-    f = NearbyRootFinder(a=A, s=-2, m=0, A0=A0, l_max=L + 18, omega_guess=guess, tol=1e-12,
-                         cf_tol=1e-12, n_inv=n_inv, Nr=300, Nr_min=300, Nr_max=Nr_max)
-    return complex(f.do_solve()), complex(f.A)
+def find(guess, n_inv, A0, Nr_max, a=None):
+    f = NearbyRootFinder(a=(A if a is None else a), s=-2, m=0, A_closest_to=A0, l_max=L + 18, omega_guess=guess, tol=1e-12,
+                         cf_tol=1e-12, n_inv=n_inv, Nr=300, Nr_min=300, Nr_max=Nr_max)   # keyword is A_closest_to (A0 was silently ignored)
+    r = f.do_solve()
+    if r is None:
+        raise RuntimeError("no root")
+    return complex(r), complex(f.A)
 
 
 def member(guess, n, A0):
@@ -52,16 +55,35 @@ def member(guess, n, A0):
 
 t0 = time.time()
 members = []
-A0 = float(L * (L + 1) - 2)          # s(s+1) = 2 for s = -2
-w, A0 = find(complex(0.4 if L == 2 else 0.66 if L == 3 else 0.89, -0.075), 0, A0, 1_000_000)
-members.append({"n": 0, "omega": [w.real, w.imag], "gate": True})
-print(f"  l={L} n=0: {w:.6f}", flush=True)
+import qnm
+A0 = float(L * (L + 1) - 2)
+cached = {}
+for nn in range(8):
+    try:
+        wq, Aq, _ = qnm.modes_cache(s=-2, l=L, m=0, n=nn)(a=A)
+        cached[nn] = (complex(wq), complex(Aq))
+    except Exception:
+        pass
+print(f"  l={L}: cached members at a={A}: {sorted(cached)}", flush=True)
+for nn in sorted(cached):
+    wq, Aq = cached[nn]
+    res = member(wq, nn, Aq)           # re-solve with our discipline
+    if res is None:
+        print(f"  l={L} n={nn}: cached {wq:.6f} not reproduced; kept as seed only", flush=True)
+        members.append({"n": nn, "omega": [wq.real, wq.imag], "gate": False, "cached": True})
+        continue
+    w, A0, gate = res
+    members.append({"n": nn, "omega": [w.real, w.imag], "gate": gate, "cached": True})
+    print(f"  l={L} n={nn}: {w:.6f} gate={gate} (cached {wq:.6f})", flush=True)
 fails = 0
 first_cross = None
-n = 1
+for mm in members:
+    if mm["omega"] and mm["omega"][0] < 0.02 and first_cross is None:
+        first_cross = mm["n"]
+n = max(cached) + 1 if cached else 1
 while n <= NSTAR + 3:
     # seed: quadratic extrapolation in n of the last members (Re) and linear (Im)
-    pts = [(mm["n"], complex(*mm["omega"])) for mm in members if mm["gate"]][-4:]
+    pts = [(mm["n"], complex(*mm["omega"])) for mm in members if mm["omega"]][-4:]
     if len(pts) >= 3:
         ns = np.array([p[0] for p in pts]); re = np.array([p[1].real for p in pts]); im = np.array([p[1].imag for p in pts])
         guess = complex(np.polyval(np.polyfit(ns, re, 2), n), np.polyval(np.polyfit(ns, im, 1), n))
@@ -88,7 +110,29 @@ while n <= NSTAR + 3:
     if first_cross is not None and n >= first_cross + 2:
         break
     n += 1
-out = {"l": L, "a": A, "n_star_CZ": NSTAR, "first_cross": first_cross, "members": members, "seconds": time.time() - t0}
+# continuation in spin of the members near the onset: DM (finite Re) versus ZDM-like (Re -> 0 as a -> 1)
+cont = {}
+for mm in members:
+    if not mm["omega"] or mm["n"] < NSTAR - 3:
+        continue
+    nn = mm["n"]; wcur = complex(*mm["omega"]); Acur = A0
+    path = [(A, wcur)]
+    ok = True
+    for a_next in (0.995, 0.999):
+        try:
+            wn, An = find(wcur, nn, Acur, 1_000_000, a=a_next)
+            if abs(wn - wcur) > 0.3 * abs(wcur) + 0.05:
+                ok = False
+                break
+            wcur, Acur = wn, An
+            path.append((a_next, wcur))
+        except Exception:
+            ok = False
+            break
+    cont[str(nn)] = {"path": [[aa, ww.real, ww.imag] for aa, ww in path], "complete": ok,
+                     "Re_ratio_999_over_99": (path[-1][1].real / path[0][1].real) if ok and path[0][1].real != 0 else None}
+    print(f"  l={L} n={nn}: Re at a=0.99, 0.995, 0.999: {[round(ww.real, 5) for _, ww in path]}  (ZDM-like if the ratio falls like sqrt((1-a)): {cont[str(nn)]['Re_ratio_999_over_99']})", flush=True)
+out = {"l": L, "a": A, "n_star_CZ": NSTAR, "first_cross": first_cross, "members": members, "continuation": cont, "seconds": time.time() - t0}
 pathlib.Path(f"results/p28_kerr_survivors_l{L}.json").write_text(json.dumps(out, indent=1))
 print(f"  l={L}: first member with Re < 0.02 at n = {first_cross} (Cook-Zalutskiy onset {NSTAR}); {time.time() - t0:.0f}s", flush=True)
 print("done", flush=True)
