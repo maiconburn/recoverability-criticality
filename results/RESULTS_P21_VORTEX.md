@@ -273,3 +273,35 @@ Instrument lesson 7: for |m| >= 6 the B = 0 overtones are close enough
 tracker hop; use 8% with a 0.005 initial step. Near-axis modes with
 Re(omega)/|omega| below ~0.1 need kmax ~ 6000 at 30 digits; classify
 them where the fraction converges.
+
+## Why the rule holds: a topological argument (theory addendum, 2026-09-09)
+
+Three facts, two of them measured in this cycle and one derived:
+
+1. Each counter-rotating overtone is a continuous curve omega_n(B) on
+   the principal sheet, ordered by damping at B = 0, that can end only
+   by reaching the branch cut on the negative imaginary axis (the DBT
+   has no polynomial modes, so no quasinormal mode can sit on the axis;
+   P21b lemma) or by surviving to B -> infinity.
+2. Any mode that survives to B -> infinity must approach a point of the
+   scaled pure-vortex spectrum, omega ~ c_k(m)/B, because the DBT
+   equation at r = B rho, omega = c/B tends to the B-free pure-vortex
+   equation (P21f derivation, verified at <= 2% on eight modes).
+3. The pure-vortex tower members with Re c_k < 0 have their limit
+   point on the far side of the cut from where every B = 0 overtone
+   starts (Re omega > 0). A curve confined to the principal sheet
+   cannot cross the axis at Im omega < 0.
+
+Hence an overtone whose damping-ordered partner in the pure-vortex
+tower has Re c < 0 cannot reach its only admissible large-B
+destination and must end at the cut at a finite B_c: it is absorbed.
+An overtone whose partner has Re c > 0 has a reachable destination and
+collapses onto it. The rule "escape iff Re c_n(m) > 0" is the
+statement that the label continuity of (1) pairs overtone n with tower
+member n; that pairing is what the m = -6 bridge checked member by
+member. What is NOT derived here: why the pure-vortex tower's real
+parts decrease with n and cross zero where they do (a property of the
+scaled potential (c - m/rho^2)^2 - (m^2 - 1/4)/rho^2 that the
+first-order eikonal misses, P21f.3), and whether the same argument,
+with the polynomial modes of Kerr replacing "no mode on the axis",
+governs which Kerr overtones survive extreme rotation.
