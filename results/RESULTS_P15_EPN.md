@@ -60,3 +60,27 @@ systematic difference between the α < ½ and α > ½ branches that local
 would require the raw records (not the aggregated bootstraps) or data
 with window ∝ 1/γ. The "second law" (geometric parallel cost) remains
 without a live candidate. Data: p15_4.json.
+
+## P15.2 addendum (2026-09-09): NV third-order exceptional line source data
+
+The Source Data of Wu et al., Nat. Nanotechnol. 19, 160 (2024)
+(DOI 10.1038/s41565-023-01583-0; local copy in
+`~/fisica/prelab-data/nv_ep3/`, ten spreadsheets) were inspected for a
+transverse ladder test. Content: population evolutions, retrieved
+Hamiltonian parameters at the seven EP3 points ON the line (Table S1:
+sigma_gamma and sigma_h from 0.02 at the centre to 0.16 at the ends, the
+same along-the-line anisotropy as the trapped-ion LEP3 data), and
+eigenvalues with error bars across the line (Figs. 3b, 4a, 4b). The
+eigenvalue error bars are Monte-Carlo propagations of the parameter
+errors through the characteristic polynomial (their section S6), so
+they measure the Jacobian of the unfolding, not an estimation task; the
+per-gamma parameter errors needed to test control neutrality across the
+line are not provided, the error bars are quoted to one digit, and the
+eigenvalue labels are ambiguous on the broken side. An exploratory
+replication of the propagation with flat parameter errors reproduced
+the reported real-part errors near the EP3 within a factor 2 and
+overshot them by 2-3x far from it, which is consistent with parameter
+errors varying smoothly with gamma but cannot discriminate anything at
+the level of the frozen ladder windows. Verdict: no cycle; the P15.2
+preregistration stays open for a data set with a transverse sweep and
+per-point parameter errors.
