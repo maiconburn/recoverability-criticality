@@ -345,3 +345,30 @@ truncation. The escape count of the draining vortex is thus
 
 with every case measured (|m| = 1..10, 12, 15; finite-B for |m| <= 7)
 in agreement.
+
+## The O(1/|m|) constant k_1 (addendum, 2026-09-10; `results/p23_k1_split.json`)
+
+The exact towers exceed the leading elliptic condition by
+|m| (c_exact - c_WKB1) = +0.0306, +0.0310, +0.0311, +0.0311 at n = 0
+for |m| = 4, 6, 8, 10 (imaginary part -0.007 -> -0.003): k_1 = 0.031.
+Two contributions separate cleanly:
+
+- First-order WKB with the EXACT potential, (m^2 - 1/4)/rho^2 instead
+  of m^2/rho^2 (turning points in closed form,
+  rho_+- = [sqrt(m^2 - 1/4) -+ sqrt(m^2 - 1/4 - 4 c |m|)] / (2c)),
+  shifts the tower by -0.0625/|m| = -1/(16 |m|), the same at every
+  |m| and n to four digits.
+- The remainder, the genuine second-order WKB correction, is
+  +0.0931, +0.0935, +0.0936, +0.0936 per |m| at n = 0 (|m| = 4..10),
+  extrapolating in 1/m^2 to 0.09370, i.e. 3/32 = 0.09375 to 5e-5, with
+  a weak n-dependence (0.0917 at n = 2, |m| = 10) that vanishes as |m|
+  grows.
+
+So k_1 = -1/16 + 3/32 = 1/32 = 0.03125 (measured 0.0311), and the
+analytic tower reads
+
+    c_n(m) = |m|/4 - i a/2 - (3/8) a^2/|m| + 1/(32 |m|) + (3i/32) a^3/m^2 + ...
+
+The value 3/32 for the second-order term is a numerical identification
+(four digits, one free constant), not a derivation; the Dunham
+second-order integral for this potential is the open item.
