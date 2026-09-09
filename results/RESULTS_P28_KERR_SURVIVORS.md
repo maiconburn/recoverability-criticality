@@ -54,3 +54,25 @@ Tombstones 32 (P28.1) and 33 (P28.3). Instrument lesson 14: check a
 library's keyword names against its source before relying on a seed
 (the `A0` silently ignored would have produced l = 2 towers labelled
 l = 3, 4; the identical digits gave it away).
+
+## Follow-up (2026-09-10; `p28b_kerr_extend.py`, `p28b_kerr_extend.json`)
+
+- l = 2, n = 8 carried from a = 0.99 to 0.995 in steps of 0.001 with
+  caps 4e6 / 1.6e7: Re(omega) = 0.0544, 0.0537, 0.0539, 0.0535, 0.0535,
+  0.0533 (ratio 0.98 to the a = 0.99 value, where a sqrt(1-a) law
+  would give 0.71); lost at 0.996. n = 9: 0.0341 at 0.991 (gate
+  failed), lost at 0.992. Up to a = 0.995 the n = 8 member behaves as
+  a damped mode with a small real part; whether it turns zero-damped
+  closer to a = 1 is beyond this instrument.
+- l = 3: one more member, n = 12 at 0.1129 - 2.6060i (Re ratio 0.795,
+  Im spacing 0.249); n = 13 to 16 fail with caps 4e6 / 1.6e7 and seeds
+  from the geometric law. l = 4: n = 16 to 19 fail. The onsets 18 and
+  25 stay out of reach of Leaver's fraction at a = 0.99.
+
+Closing statement: the damped/zero-damped split of the m = 0
+overtones needs an instrument that works at a -> 1 (direct
+integration of the radial Teukolsky equation with the near-horizon
+expansion, or Cook-Zalutskiy's high-precision continuation in spin);
+with Leaver's fraction at fixed spin the reachable statement is the
+one above (geometric decay of Re, quarter-integer damping ladder,
+n = 8 of l = 2 damped to a = 0.995).
