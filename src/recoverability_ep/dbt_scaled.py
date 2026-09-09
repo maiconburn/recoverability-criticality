@@ -160,3 +160,53 @@ def find_c_cplx(c0, m, tol=1e-10, maxit=40, step=0.004 + 0.002j, **kw):
     f = lambda z: complex(wronskian_cplx(complex(z), m, **kw))
     r = mp.findroot(f, (mp.mpc(c0), mp.mpc(c0) + mp.mpc(step)), solver="secant", tol=tol, maxsteps=maxit)
     return complex(r), abs(f(r))
+
+
+def wronskian_wall(c, m, rho_c=0.5, kind="dirichlet", rho_m=None, rho_max=None, phi=None, rtol=1e-11, atol=0.0):
+    """Wronskian for a REFLECTING core: a wall at rho_c with H = 0 (Dirichlet)
+    or H' = 0 (Neumann) instead of the absorbing branch at rho -> 0. The
+    inner solution is integrated outward on the real axis from rho_c to
+    rho_m (no branch selection is needed: the wall fixes the solution up to
+    normalisation); the outer solution is the same outgoing ray as in
+    `wronskian_cplx`. P26."""
+    c = complex(c)
+    if not np.isfinite(c) or abs(c) < 1e-3:
+        return 1.0 + 0j
+    if rho_m is None:
+        rho_m = rho_c + 0.6
+    if rho_max is None:
+        rho_max = min(max(40.0 / abs(c), 30.0), 400.0)
+    if phi is None:
+        alpha = np.angle(c)
+        phi = max(-alpha + 0.3, min(np.pi / 2 - alpha, 2.1))
+        phi = min(phi, np.pi - 0.3)
+    eiphi = np.exp(1j * phi)
+    rho_start = rho_m + rho_max * eiphi
+    H0, dH0 = _outer_series(rho_start, c, m)
+
+    def rhs_out(s, y):
+        rho = rho_m + s * eiphi
+        return [y[1], -eiphi ** 2 * Q(rho, c, m) * y[0]]
+
+    sol = solve_ivp(rhs_out, (rho_max, 0.0), [H0, dH0 * eiphi], method="DOP853", rtol=rtol, atol=atol, max_step=2.0)
+    if not sol.success or not np.all(np.isfinite(sol.y[:, -1])):
+        return 1.0 + 0j
+    Hout, dHout = sol.y[0][-1], sol.y[1][-1] / eiphi
+    y0 = [0.0 + 0j, 1.0 + 0j] if kind == "dirichlet" else [1.0 + 0j, 0.0 + 0j]
+
+    def rhs_in(rho, y):
+        return [y[1], -Q(rho, c, m) * y[0]]
+
+    sol2 = solve_ivp(rhs_in, (rho_c, rho_m), y0, method="DOP853", rtol=rtol, atol=1e-30, max_step=0.05)
+    if not sol2.success or not np.all(np.isfinite(sol2.y[:, -1])):
+        return 1.0 + 0j
+    Hin, dHin = sol2.y[0][-1], sol2.y[1][-1]
+    W = (Hin * dHout - dHin * Hout) / (abs(Hin * dHout) + abs(dHin * Hout))
+    return W if np.isfinite(W) else 1.0 + 0j
+
+
+def find_c_wall(c0, m, tol=1e-10, maxit=40, step=0.004 + 0.002j, **kw):
+    import mpmath as mp
+    f = lambda z: complex(wronskian_wall(complex(z), m, **kw))
+    r = mp.findroot(f, (mp.mpc(c0), mp.mpc(c0) + mp.mpc(step)), solver="secant", tol=tol, maxsteps=maxit)
+    return complex(r), abs(f(r))
