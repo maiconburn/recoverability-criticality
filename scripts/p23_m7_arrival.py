@@ -13,7 +13,7 @@ import mpmath as mp
 sys.path.insert(0, "src")
 from recoverability_ep.dbt import find_qnm  # noqa
 
-mp.mp.dps = 30
+mp.mp.dps = 40
 M = -7
 OUT = {}
 
@@ -26,7 +26,7 @@ def deep(seed, B, n, kmaxes=(3000, 6000)):
             s = mp.mpc(mp.re(seed) * (1 + dr), mp.im(seed) * (1 + di))
             for ninv in (n - 1, n, n + 1):
                 try:
-                    r = find_qnm(s, M, B, n=ninv, kmax=kmax, tol=mp.mpf("1e-13"), maxsteps=60)
+                    r = find_qnm(s, M, B, n=ninv, kmax=kmax, tol=mp.mpf("1e-13"), maxsteps=60, resid_max=mp.mpf("1e-9"))
                 except Exception:
                     continue
                 if mp.re(r) <= 0 or abs(r - seed) > 0.5 * abs(seed) + 0.05:

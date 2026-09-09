@@ -16,7 +16,7 @@ import mpmath as mp
 sys.path.insert(0, "src")
 from recoverability_ep.dbt import find_qnm  # noqa
 
-mp.mp.dps = 30
+mp.mp.dps = 40
 M = -7
 C = {5: mp.mpc("0.0696", "-2.4303"), 6: mp.mpc("-0.6408", "-2.7109")}
 OUT = {}
@@ -31,7 +31,7 @@ def probe(B, target, n, kmaxes=(3000, 6000, 12000)):
                 seed = mp.mpc(abs(mp.re(target)) * fr * (1 if mp.re(target) >= 0 else 1), mp.im(target) * fi)
                 for ninv in (n - 1, n, n + 1):
                     try:
-                        r = find_qnm(seed, M, B, n=ninv, kmax=kmax, tol=mp.mpf("1e-13"), maxsteps=60)
+                        r = find_qnm(seed, M, B, n=ninv, kmax=kmax, tol=mp.mpf("1e-13"), maxsteps=60, resid_max=mp.mpf("1e-9"))
                     except Exception:
                         continue
                     if mp.re(r) <= 0 or abs(r - target) > 0.6 * abs(target) + 0.05:

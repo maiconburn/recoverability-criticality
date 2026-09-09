@@ -55,15 +55,9 @@ negatives are an instrument lesson, recorded below.
 | 2.939 | 0.037915 | -0.817602 | 0.1114 -2.4030i | secant continuation, 16000/32000 agree to 7e-06 |
 | 2.999 | 0.036619 | -0.801616 | 0.1098 -2.4041i | secant continuation, 16000/32000 agree to 1e-05 |
 | 3.059 | 0.035403 | -0.786234 | 0.1083 -2.4052i | secant continuation, 16000/32000 agree to 1e-05 |
-| 3.059 | 0.035403 | -0.786234 | 0.1083 -2.4052i | secant continuation, 16000/32000 agree to 1e-05 |
-| 3.0, 3.5, 4.0 | none | | | seeds within 0.02 of the expected position; 16000-64000 terms converge to n = 4 (B = 3.0) or n = 2 (3.5, 4.0) |
+| 3.0, 3.5, 4.0 (Muller) | none | | | seeds within 0.02 of the expected position; 16000-64000 terms converge to n = 4 (B = 3.0) or n = 2 (3.5, 4.0) |
 | 6.0 | 0.013310 | -0.403985 | 0.0799 - 2.4239i | 32000/64000 agree to 7e-4 |
 | 8.0 | 0.009415 | -0.303363 | 0.0753 - 2.4269i | 32000/64000 agree to 2.7e-3 |
-
-The slopes dRe/dB before the crossing decelerate steadily (-0.077 at
-B = 2.0, -0.048 at 2.33, -0.030 at 2.68): the approach to the axis is
-not the constant-slope arrival of the m = -1 overtones (P21.1) but the
-curved, analytic arrival seen in Kerr (P22), here on the vortex side.
 
 The slopes dRe/dB decelerate steadily (-0.077 at B = 2.0, -0.048 at
 2.33, -0.030 at 2.68, -0.020 at 3.06): the real part is heading for
