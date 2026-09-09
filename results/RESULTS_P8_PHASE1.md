@@ -269,3 +269,38 @@ survey gets there, and the detection would have to come from a different
 observable. This is a scaling forecast anchored on a measured
 constraint, not a full survey Fisher forecast. Script:
 scripts/p8_s4_forecast.py.
+
+## P8-F4' verdict (2026-09-09): the log channel is a confluent limit, not a channel
+
+Preregistration: `FROZEN_P8F4_CONFLUENCE.md` (commit fdd14ae). The F3
+gate script had never been committed and its k_L grid could not be
+recovered from the stored shapes, so the gate data were REGENERATED with
+a documented instrument (`scripts/p8f3_gate_regen.py`: CosmoFlow PiSigma,
+rho = kappa2 = 0.1 ramped one e-fold after the initial conditions,
+k_S = 1, 15 points of k_L in [1e-3, 1e-1], N_ref = 6; a first grid
+reaching k_L = 0.5 was outside the squeezed regime and non-monotonic,
+kept as `p8f4_confluence_v1_grid_to_0.5.json`). Instrument checks on
+the new grid: leading squeezed slopes -0.495 at nu = 1 and -0.341 at
+nu = 0.85 against the tower values -0.5 and -0.35.
+
+| prediction | frozen | measured | verdict |
+|---|---|---|---|
+| F4'.1 localization with the nu-correct basis: R(0.85) < 3, R(1) > 20, ratio > 7 | as stated | R(0.85) = 21.5 with {x^-0.35, x^1.35, x^1.35 ln x}; R(1) = 10.7; ratio 0.50 | KILLED |
+| F4'.2 mimicry at nu = 1 by a log-free three-power basis, nu' in [0.95, 1.05], within a factor 2 | as stated | best nu' = 0.995, rms 5.4e-4 against 3.4e-3 for the log basis (ratio 0.16: the log-free basis fits BETTER) | CONFIRMED |
+
+Reading. Both results say the same thing from two sides. The
+improvement brought by an x^{Delta} ln x term is not localized at the
+degeneracy even when the basis is the correct one away from it (F4'.1
+dead: the third function absorbs the next tower terms, whatever it
+is), and at the degeneracy the log is reproduced, indeed beaten, by two
+nearby powers (F4'.2): the Jordan channel of the static analysis is the
+confluent limit of {x^{1/2+nu}, x^{5/2-nu}} at nu = 1, exactly as
+t e^{-i mu t} is the confluent limit of two damped exponentials
+(P16.1, THEOREM_EP_NEUTRALITY.md). The "survival of the log channel in
+the interacting swept limit" (the P8-F4 cloud run listed in HANDOFF.md)
+is therefore a basis-dependent question and is NOT run. What is physical
+and stands: the exact EP-2 theorem for the dS tower, the analyticity of
+the squeezed shape in nu through 1, and the labeled two-component CRB
+law of P8.1 (a Jacobian-ladder statement). The F3 verdict ("not
+testable with this instrument") is unchanged; the reproducibility hole
+is closed.
