@@ -194,3 +194,37 @@ not a mode. Rule: any root within Re(omega) < 0.05 of the axis must pass
 a kmax-independence gate before it enters a claim; arrival rotations
 are read from the linear approach where the gate passes, never from
 the last 1e-3.
+
+## P21f: the escaping modes are the pure-vortex resonances (verdict 2026-09-09)
+
+Preregistration `FROZEN_P21F_VORTEX_SCALED.md` (commit 68d7dd9), with
+the derivation: in the DBT equation set r = B rho, omega = c/B and let
+B -> infinity; the drain terms drop and the equation becomes the
+B-free pure-vortex problem H'' + [(c - m/rho^2)^2 - (m^2 - 1/4)/rho^2] H = 0,
+outgoing at infinity, one WKB branch rho^{1/2} e^{-+ i|m|/rho} at
+rho -> 0. Solver `src/recoverability_ep/dbt_scaled.py` (direct
+integration along a rotated ray, Wronskian matching); the physical
+inner branch is rho^{1/2} e^{+i|m|/rho} (the other branch fails the
+anchor). Script `scripts/p21f_scaled_vortex.py`, data
+`results/p21f_scaled_vortex.json`.
+
+Gate: the m = -2, n = 0 anchor from the B = 100 track (0.4698 - 0.2549i
+after the 1/B extrapolation) is reproduced at 0.46670 - 0.25362i,
+0.6%: PASSED.
+
+| prediction | frozen | measured | verdict |
+|---|---|---|---|
+| P21f.1 scaled eigenvalues reproduce the finite-B limits within 3% | as stated | m=-1 n=0: 0.1800-0.2634i vs 0.1813-0.2610i (0.9%); m=-2 n=0: 0.6%; m=-2 n=1: 0.0721-0.6872i vs 0.0616-0.6940i (1.8%); m=-3 n=0: 0.7292-0.2512i vs 0.7347-0.2547i (0.9%); m=-3 n=1: 0.5%; m=-4 n=0: 0.9842-0.2515i vs 0.9927-0.2542i (0.9%); m=-4 n=1: 1.0%; m=-4 n=2: 0.4099-1.1623i vs 0.4029-1.1742i (1.1%). Eight of eight within 2% | CONFIRMED |
+| P21f.2 scaled resonance count (Re c > 0, Im c > -2) = floor((|m|+2)/2) for |m| = 1..4, predicting 3, 4 for |m| = 5, 6 | as stated | counts 1, 2, 2, 3, 4, 4: agrees through |m| = 4 and at |m| = 6, but |m| = 5 has FOUR resonances (1.237-0.250i, 1.089-0.740i, 0.779-1.203i, 0.296-1.586i; each a consistent minimum of the Wronskian landscape under changes of matching point and inner cutoff) | KILLED as frozen; the mismatch at |m| = 5 is the subject of P21g |
+| P21f.3 first-order Schutz-Will WKB on the scaled potential within 15% (Re) / 20% (spacing) at |m| >= 3, kill above 30% at |m| = 4 | as stated | m=-4 n=0: WKB 1.062-0.215i vs exact 0.984-0.252i (Re 8%, Im 15%) but for the tower the first-order eikonal misses badly (m=-4: n=1 WKB 1.317-0.357i vs 0.792-0.734i); m=-2 n=0 Re 23%, m=-1 n=0 Re 53% | KILLED (the eikonal limit needs |m| far larger than 4; the tower spacing is not the light-ring Lyapunov exponent at these m) |
+
+Reading. The physics of the escaping family is settled: they are the
+resonances of the pure vortex, the light-ring family that a vortex
+with negligible drain shows, and the drain creates the absorbed family
+together with its branch-cut arrivals. What is NOT settled is the
+counting: the pure vortex has (at least) one more resonance at |m| = 5
+than the finite-B floor rule allows. Either four B = 0 overtones
+escape at m = -5 (the floor rule dies), or the extra scaled resonance
+is a mode with no B = 0 ancestor, born from the branch cut at finite
+rotation (the reverse of absorption). `FROZEN_P21G_VORTEX_M5_EMERGENT.md`
+decides.
