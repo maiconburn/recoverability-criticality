@@ -372,3 +372,9 @@ analytic tower reads
 The value 3/32 for the second-order term is a numerical identification
 (four digits, one free constant), not a derivation; the Dunham
 second-order integral for this potential is the open item.
+
+Large-|m| check of the 3/32 (`p23_k1_large_m.py`, `p23_k1_large_m.json`):
+second-order part 0.09370, 0.09372, 0.09374 at |m| = 15, 20, 30 (n = 0),
+the deficit to 3/32 falling as 1/m^2 (0.011, 0.012, 0.009 in units of
+1/m^2); |m| = 40 is beyond the complex-ray solver. k_1 = 1/32 stands
+at 1e-5.
