@@ -378,3 +378,25 @@ second-order part 0.09370, 0.09372, 0.09374 at |m| = 15, 20, 30 (n = 0),
 the deficit to 3/32 falling as 1/m^2 (0.011, 0.012, 0.009 in units of
 1/m^2); |m| = 40 is beyond the complex-ray solver. k_1 = 1/32 stands
 at 1e-5.
+
+## The 3/32 derived (addendum, 2026-09-10; `results/p23_dunham_contour.json`)
+
+The second-order WKB density for y'' + m^2 q y = 0 is
+S_2' = -i [ q''/(8 q^{3/2}) - 5 q'^2/(32 q^{5/2}) ] when S_0' = +i sqrt(q)
+(Bender-Orszag 10.1.16 with Q = -q). Its half contour integral around
+the two turning points (a circle of radius 1 about rho = 2, the branch
+of sqrt(q) continued along the circle) is finite at the light ring and
+equals
+
+    I_2(1/4) = lim_{h->0} (1/2) oint [ q''/(8 q^{3/2}) - 5 q'^2/(32 q^{5/2}) ] d rho
+             = 0.5890468 = 3 pi / 16 (0.5890486; ratio to pi 0.187499)
+
+(values 0.59146, 0.59024, 0.58964, 0.58934 at h = 0.008, 0.004, 0.002,
+0.001, linear in h). The quantization condition to second order,
+|m| J(gamma) + (3 pi / 16)/|m| = i pi (n + 1/2), gives
+h = i a/(2|m|) - 3/(32 m^2), i.e. c = |m|/4 - i a/2 + 3/(32 |m|): the
+constant identified numerically in the previous addendum, with the
+sign fixed by the relative sign of S_0' and S_2'. With the -1/16 from
+the exact potential, k_1 = 1/32 is derived, not fitted. (The
+first-order contour reproduces -i 2[K - E] on the same circle, which
+fixes the convention.)
