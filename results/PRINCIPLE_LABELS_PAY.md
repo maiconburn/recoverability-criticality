@@ -109,7 +109,8 @@ statement above survived every one of its own kill criteria.
   rotation the m = -1 first overtone is absorbed at B/A = 0.289 with a
   continuous ringdown. Existing data (Torres et al. 2020) are in the
   deep-water regime and do not test this; the shallow regime needs
-  h << 2C/(|m| c_s).
+  h << 2C/(|m| c_s), and the tower assumes an absorbing core (a
+  drain), which their surface flow lacked.
 - Any analogue with a branch cut and no polynomial modes: modes reach
   the cut linearly and nothing is born from it; with polynomial modes
   (Kerr) sequences can end and begin on the axis.

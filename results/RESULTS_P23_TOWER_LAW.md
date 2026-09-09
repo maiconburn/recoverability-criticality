@@ -282,7 +282,13 @@ unit |m|, against 1.43 Hz per unit |m| for the shallow-water tower).
 The non-dispersive regime needs k h << 1 at the light ring, i.e.
 h << 2 C / (|m| c_s); with C = 1000 cm^2/s and h = 2 cm one gets
 r = 45 cm and k h = 0.044 |m|, shallow for |m| <= 5, in a tank of the
-Nottingham size. That is the experiment the tower predicts: N(m) =
+Nottingham size. One caveat on the inner boundary: the tower's inner condition
+(flux into the core, the horizon condition of the draining bathtub
+pushed to rho -> 0 in the B/A -> infinity limit) requires a drain; a
+vortex whose core reflects rather than absorbs would ring with a
+different counter-rotating spectrum, so the experiment needs the
+surface drain that Torres et al. found negligible in their flow.
+That is the experiment the tower predicts: N(m) =
 1, 2, 2, 3, 4 counter-rotating modes for |m| = 1..5 with damping
 rates in the ratio 1 : 3 : 5 : ... and the fundamental at
 f_0 = |m| c_s^2 / (8 pi C) (0.62 |m| Hz for those parameters).
