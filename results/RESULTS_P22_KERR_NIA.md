@@ -184,3 +184,48 @@ Lesson 9 (freezing a "no root in the band" prediction): check every
 neighbouring segment of the reference table against the band before
 freezing. P22.3a died on the 8_1 row that was three lines above the
 9_0 row used to set the band.
+
+## Why the arrival is analytic (theory addendum, 2026-09-09)
+
+Leaver's radial function F(omega, a), the continued fraction or
+equivalently the Wronskian of the two admissible solutions, is built
+from the minimal solution of a recurrence whose large-k behaviour
+carries a square root of omega: u_1(omega) in Cook-Zalutskiy's
+Eqs. 19-20 for Kerr, the Nollert tail (-2 i omega)^{1/2} in the vortex
+fraction. The sign choice Re(u_1) < 0 selects the minimal solution and
+makes F single-valued on the plane cut along the negative imaginary
+axis; F is analytic in (omega, a) on that sheet, and its analytic
+continuation across the cut is the same expression with the other
+sign of u_1, analytic as well, because every ingredient is analytic
+in u_1 and u_1 is analytic in omega away from the branch point
+omega = 0. A quasinormal mode is a root F(omega(a), a) = 0. Wherever
+dF/d omega is nonzero (no exceptional point) the implicit function
+theorem makes omega(a) analytic in a, including at the spin a_0
+where Re omega(a_0) = 0: the cut is a property of the sheet labelling,
+not a singularity of the continued function. Therefore
+
+    Re omega(a) = c_1 (a_0 - a) + c_2 (a_0 - a)^2 + ...
+
+with c_1 nonzero generically: exponent 1, never 1/2, and the mode does
+not stop at the axis but continues onto the second sheet, where it is
+no longer a pole of the retarded Green's function on the physical
+sheet. The response stays continuous because the pole's contribution
+passes continuously into the cut integral (P21b.1, exponent 1.000 in
+the vortex). The measured curvature (c_2/c_1 of order -30 per unit
+spin in Kerr, about zero in the vortex) is the size of the second
+Taylor coefficient of an analytic function and carries no critical
+content.
+
+Two caveats. (i) At a polynomial point (Kerr, m = 0, omega = -i n/4)
+the minimal/dominant distinction of the recurrence degenerates
+(Cook-Zalutskiy Sec. IV) and the argument as stated does not cover
+the endpoint itself; the data (local exponent rising to 0.93 at
+a_0 - a = 0.0017, cubic fit to 1.7%) are consistent with analyticity
+through it, but the pinning of the death of 9_0 to exactly -9i/4
+is the polynomial structure acting, which the vortex (no polynomial
+solutions, P21b lemma) cannot show. (ii) If dF/d omega vanished at the
+arrival the exponent would be 1/2, a genuine exceptional point on the
+axis; none was seen in either system. The argument also explains the
+re-emergence: a second-sheet root can cross back to the principal
+sheet at another spin, again analytically, which is what 9_1 does at
+a_1 = 0.40462 with the same rising-slope shape.
