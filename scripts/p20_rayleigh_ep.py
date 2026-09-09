@@ -193,14 +193,17 @@ def symplectic(m):
     return O
 
 
-def cov_from_G(G):
+def cov_from_G(G, vacuum=True):
+    """Real quadrature covariance (sigma_vac = I) from G_ij = <a_i^dag a_j>.
+    vacuum=False builds the covariance of a DERIVATIVE dG (no identity)."""
     m = G.rows
     S = mp.matrix(2 * m, 2 * m)
+    one = 1 if vacuum else 0
     for i in range(m):
         for j in range(m):
             re_, im_ = mp.re(G[i, j]), mp.im(G[i, j])
-            S[i, j] = (1 if i == j else 0) + 2 * re_
-            S[m + i, m + j] = (1 if i == j else 0) + 2 * re_
+            S[i, j] = (one if i == j else 0) + 2 * re_
+            S[m + i, m + j] = (one if i == j else 0) + 2 * re_
             S[i, m + j] = 2 * im_
             S[m + i, j] = -2 * im_
     return S
@@ -225,7 +228,15 @@ def gaussian_qfi(sigma, dsigma, sign=-1):
     O = symplectic(m2 // 2)
     Mm = kron(sigma, sigma) + sign * kron(O, O)
     v = vec(dsigma)
-    sol = mp.lu_solve(Mm, v)
+    # Mm is symmetric; pure modes make it singular (Safranek's pure-state
+    # limit), so use the symmetric pseudo-inverse with a relative cutoff.
+    E, Q = mp.eigsy(Mm)
+    emax = max(abs(E[i]) for i in range(len(E)))
+    cut = emax * mp.mpf('1e-25')
+    y = Q.T * v
+    for i in range(len(E)):
+        y[i] = y[i] / E[i] if abs(E[i]) > cut else mp.mpf(0)
+    sol = Q * y
     resid = mp.mnorm(Mm * sol - v) / max(mp.mnorm(v), mp.mpf('1e-40'))
     if resid > mp.mpf('1e-15'):
         raise RuntimeError(f"gaussian_qfi residual {mp.nstr(resid)}")
@@ -251,9 +262,48 @@ def gate_gaussian_qfi():
     print(f"GATE squeezed vacuum r=0.3: F={mp.nstr(F, 10)} expected 2 "
           f"rel err {mp.nstr(err, 3)}", flush=True)
     ok &= err < mp.mpf('1e-6')
-    # two-mode thermal with a rotating mode basis: QFI must be basis
-    # independent. Compare (n1,n2) thermal in fixed basis vs rotated by
-    # theta with dtheta-dependence only through populations: skip.
+    # Multimode gate (added after the first run exposed a spurious vacuum
+    # term in the derivative covariance): two thermal modes with
+    # epsilon-dependent populations AND a rotating mode basis, against a
+    # brute-force Fock-space QFI (numpy, cutoff 14 photons per mode).
+    import numpy as np
+    from scipy.linalg import expm
+    NC = 14
+    a = np.diag(np.sqrt(np.arange(1, NC)), 1)
+    a1, a2 = np.kron(a, np.eye(NC)), np.kron(np.eye(NC), a)
+
+    def thermal(n):
+        p = np.array([(n / (1 + n)) ** k / (1 + n) for k in range(NC)])
+        return np.diag(p)
+
+    def state(e):
+        rho0 = np.kron(thermal(0.5), thermal(0.05 + 0.3 * e))
+        U = expm(0.5 * e * (a1.conj().T @ a2 - a2.conj().T @ a1))
+        return U @ rho0 @ U.conj().T
+
+    def Gnum(e):
+        rho = state(e)
+        ops = [a1, a2]
+        return np.array([[np.trace(rho @ ops[i].conj().T @ ops[j])
+                          for j in range(2)] for i in range(2)])
+
+    e0, h = 0.1, 1e-4
+    rho, drho = state(e0), (state(e0 + h) - state(e0 - h)) / (2 * h)
+    p, V = np.linalg.eigh(rho)
+    D = V.conj().T @ drho @ V
+    Fb = 0.0
+    for i in range(len(p)):
+        for j in range(len(p)):
+            s = p[i] + p[j]
+            if s > 1e-13:
+                Fb += 2 * abs(D[i, j]) ** 2 / s
+    Gm = mp.matrix(Gnum(e0).tolist())
+    dGm = mp.matrix(((Gnum(e0 + h) - Gnum(e0 - h)) / (2 * h)).tolist())
+    Fg = gaussian_qfi(cov_from_G(Gm), cov_from_G(dGm, vacuum=False))
+    err = abs(Fg / Fb - 1)
+    print(f"GATE two-mode thermal+rotation: gaussian {mp.nstr(Fg, 8)} vs Fock "
+          f"brute force {Fb:.8f} rel err {mp.nstr(err, 3)}", flush=True)
+    ok &= err < mp.mpf('1e-3')
     return bool(ok)
 
 
@@ -268,7 +318,7 @@ def M3(srcfun, eps, nbg=NBG):
         return G_matrix(srcfun(e), basis)
     G = G_of(eps) + nbg * mp.eye(len(basis))
     dG = cdiff(G_of, eps)
-    return gaussian_qfi(cov_from_G(G), cov_from_G(dG) - mp.eye(2 * len(basis)) * 0)
+    return gaussian_qfi(cov_from_G(G), cov_from_G(dG, vacuum=False))
 
 
 def M3_marginalized_S1(eps):

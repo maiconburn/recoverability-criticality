@@ -162,3 +162,45 @@ exponent 0 (control, theorem), p−1 / 2p−2 / 2p−1 (Vandermonde),
 N−1 (symmetric Jacobian). The RECONSTRUCTION cost law
 (ε ~ e^{−αN}/√d, halving at the EP) is a separate law and proceeds
 with its own EGB validation: not covered by this document.
+
+## Extension to counting statistics and the quantum Fisher information (P20, 2026-09-09)
+
+The theorem above assumes additive Gaussian noise, where the Fisher
+matrix is J^T J and analyticity of the channel is the whole story. Under
+photon counting the Fisher information carries a 1/n_k factor per
+detection mode, and Tsang, Nair and Lu (PRX 6, 031033, 2016) showed that
+a mode whose population vanishes LINEARLY in the parameter gives a
+Fisher information that stays finite for the separation of two
+incoherent sources (constant Fisher for the gap: exponent 0 instead of
+1). P20 (`FROZEN_P20_RAYLEIGH_EP.md`, `RESULTS_P20_RAYLEIGH_EP.md`) asks
+whether this can happen at an EP.
+
+Statement. Let epsilon be the physical unfolding parameter
+(rho ~ epsilon, transversal), and let the source have second-order
+statistics analytic in epsilon and positive semidefinite. Then the
+population of every fixed detection mode is a nonnegative analytic
+function of epsilon, hence either nonzero at the EP or vanishing to
+EVEN order; the counting Fisher information for epsilon is finite at
+the EP, the control exponent stays 0 and the gap exponent stays 1, for
+any mode-resolved or direct photon-counting measurement and for the
+quantum Fisher information of classical (zero-mean Gaussian) light.
+
+Proof. A nonnegative real-analytic function with a zero at epsilon = 0
+has a zero of even order 2m; then (dn/depsilon)^2 / n ~ epsilon^{2m-2}
+is finite. The quantum Fisher information of a Gaussian state with
+analytic, full-rank-regularized covariance is analytic; the dark-mode
+contribution is the same even-order ratio. QED.
+
+Loophole. Tsang's linear population requires a source whose statistics
+are fixed in the eigenmode amplitudes as s -> 0: since the eigenmode
+amplitudes of any finite source scale as 1/s, this is a statement about
+s = sqrt(epsilon), non-analytic in the physical parameter. It is the
+only loophole found; partial coherence does not close it (the curse
+resurges only at exactly full coherence).
+
+Verification (P20, four-digit): coherent source 0.0000 / -1.0000 under
+counting, direct detection and QFI; eigenmode-incoherent fixed-variance
+source +0.5000 / 0.0000 (Tsang reproduced in the time domain, classical
+counting and QFI agree); port-incoherent analytic source in four
+configurations 0.0000 / -1.0000, with the tuned configuration's total
+population vanishing with slope 2.0000 (even order, as the proof says).
