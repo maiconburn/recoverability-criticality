@@ -245,3 +245,31 @@ stated). The finite-B count equals the number of pure-vortex tower
 members with Re c > 0 (the member following the last escaping one has
 Re c < 0: m = -4, -0.203 - 1.512i), which is frozen as the rule in
 `FROZEN_P21H_VORTEX_ESCAPE_RULE.md` with m = -6 as the test.
+
+## P21h: the escape rule Re c_n(m) > 0 (verdict 2026-09-09)
+
+Preregistration `FROZEN_P21H_VORTEX_ESCAPE_RULE.md` (commit 8463c66).
+Run: m = -6, robust tracker with a tightened jump guard (0.08 of
+|omega|, initial step 0.005; the default guard let the n = 2 track hop
+at B = 0.18 in a spectrum whose overtones are 0.75 apart at |omega| ~ 3),
+plus a long-fraction bridge (kmax 3000 / 6000) for the near-axis n = 4.
+
+| prediction | frozen | measured | verdict |
+|---|---|---|---|
+| P21h.1 m = -6: five escaping modes n = 0..4 with omega B -> the scaled tower; n = 5 absorbed | as stated | n = 0..3 escape with omega B at B = 10 (or the last converged point) 1.486-0.249i, 1.361-0.741i, 1.109-1.209i, 0.724-1.637i against the scaled 1.490-0.251i, 1.362-0.746i, 1.105-1.205i, 0.741-1.638i; n = 4 escapes: bridged at B = 3.5, 4.5, 6, 8 with kmax 6000 (omega B = 0.216-1.994i, 0.207-2.002i, 0.201-2.007i, 0.197-2.011i) against the scaled c_4 = 0.190-2.045i; at B = 10 the fraction no longer converges at kmax 6000 (Re/|omega| ~ 0.09). n = 5 had no B = 0 seed from the eikonal guesses: its absorption is untested | CONFIRMED on the testable part (five escape); "n = 5 absorbed" untested |
+| P21h.2 m = -7 scaled tower count | reported as prediction | six members with Re c > 0: 1.741-0.250i, 1.633-0.742i, 1.427-1.225i, 1.075-1.697i, 0.606-2.031i, 0.143-2.419i, so N(7) = 6 | prediction for a future m = -7 finite-B run |
+| P21h.3 fixed-n damping varies by < 15% across m | as stated | n = 0: -0.25..-0.26; n = 1: -0.69..-0.75; n = 2: -1.16..-1.22; n = 3: -1.59..-1.70; n = 4: -2.03..-2.04 (all < 10%) | CONFIRMED |
+
+Escape counts 1, 2, 2, 3, 4, 5 for |m| = 1..6, equal to the number of
+pure-vortex tower members with Re c > 0 in every case tested. The
+member that follows the last escaping one has Re c < 0 where computed
+(m = -4). The rule stands; its derivation (why the Re c = 0 crossing of
+the pure-vortex tower decides absorption) is the next theory target,
+together with the astrophysical question of whether the same
+mechanism governs which Kerr overtones survive extreme rotation.
+
+Instrument lesson 7: for |m| >= 6 the B = 0 overtones are close enough
+(0.75 apart at |omega| ~ 3) that a 25% relative jump guard lets the
+tracker hop; use 8% with a 0.005 initial step. Near-axis modes with
+Re(omega)/|omega| below ~0.1 need kmax ~ 6000 at 30 digits; classify
+them where the fraction converges.
