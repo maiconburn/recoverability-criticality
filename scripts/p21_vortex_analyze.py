@@ -20,6 +20,17 @@ for key in sorted(k for k in R if k.startswith("counter_m")):
         ax.plot([p[1] for p in path], [p[2] for p in path], "-", lw=1,
                 label=f"m={m} {nk}")
         if "approach_exponent" in rec:
+            # exponent from the raw approach: Re(omega) vs (Bc_lin - B) on the last decade
+            import math
+            Bc = rec["Bc_linear_extrap"]
+            pts = [(p[0], p[1]) for p in path if Bc is not None and 1e-4 < (Bc - p[0]) < 0.05 and p[1] > 0]
+            if len(pts) >= 3:
+                xs = [math.log(Bc - b) for b, _ in pts]; ys = [math.log(r) for _, r in pts]
+                mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
+                p_raw = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / sum((x - mx) ** 2 for x in xs)
+                slopes = [(path[i][1] - path[i - 1][1]) / (path[i][0] - path[i - 1][0]) for i in range(len(path) - 6, len(path))]
+                print(f"  m={m} {nk}: RAW approach exponent (Bc from linear extrapolation) = {p_raw:.3f}; "
+                      f"last dRe/dB slopes {['%.4f' % s for s in slopes]}")
             print(f"  m={m} {nk}: arrival B_last={rec['arrival_B_last']:.5f} "
                   f"omega_last={rec['omega_last']}  exponent={rec['approach_exponent']:.3f} "
                   f"(coarse {rec['approach_exponent_coarse']:.3f})  Bc_fit={rec['Bc_fit']:.5f} "
