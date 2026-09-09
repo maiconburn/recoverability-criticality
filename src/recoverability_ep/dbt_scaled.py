@@ -99,3 +99,64 @@ def find_c(c0, m, branch=-1, tol=1e-10, maxit=60, **kw):
     f = lambda z: complex(wronskian(complex(z), m, branch, **kw))
     r = mp.findroot(f, mp.mpc(c0), solver="muller", tol=tol, maxsteps=maxit)
     return complex(r), abs(f(r))
+
+
+def wronskian_cplx(c, m, branch=+1, rho_m=1.0, rho_min=0.02, theta=0.5, rho_max=None, phi=None,
+                   rtol=1e-11, atol=0.0):
+    """Wronskian with the INNER solution integrated along the ray
+    rho = r e^{-i theta} (r from rho_min to rho_m), then along the arc back
+    to the real point rho_m. On that ray the physical branch
+    rho^{1/2} exp(+i|m|/rho) has modulus exp(-|m| sin(theta)/r), i.e. it is
+    the GROWING solution in the direction of integration, so the
+    admixture of the other branch is suppressed instead of amplified
+    (on the real axis both branches have equal modulus near rho = 0 and
+    the wanted one is subdominant by exp(2 |Im c| rho_m) at the matching
+    point, which made the deep members of the tower cutoff-sensitive for
+    |m| >= 8). The outer solution is the same as in `wronskian`.
+    """
+    c = complex(c)
+    if rho_max is None:
+        rho_max = max(40.0 / abs(c), 30.0)
+    if phi is None:
+        alpha = np.angle(c)
+        phi = max(-alpha + 0.3, min(np.pi / 2 - alpha, 2.1))
+        phi = min(phi, np.pi - 0.3)
+    eiphi = np.exp(1j * phi)
+    rho_start = rho_m + rho_max * eiphi
+    H0, dH0 = _outer_series(rho_start, c, m)
+
+    def rhs_out(s, y):
+        rho = rho_m + s * eiphi
+        return [y[1], -eiphi ** 2 * Q(rho, c, m) * y[0]]
+
+    sol = solve_ivp(rhs_out, (rho_max, 0.0), [H0, dH0 * eiphi], method="DOP853", rtol=rtol, atol=atol)
+    Hout, dHout = sol.y[0][-1], sol.y[1][-1] / eiphi
+
+    # inner, leg 1: along the ray rho = r e^{-i theta}, r in [rho_min, rho_m]
+    e = np.exp(-1j * theta)
+    Hi, dHi = _inner_wkb(rho_min * e, c, m, branch)          # dH/drho at the complex start
+
+    def rhs_ray(r, y):                                        # d/dr = e d/drho
+        rho = r * e
+        return [y[1], -e ** 2 * Q(rho, c, m) * y[0]]
+
+    sol1 = solve_ivp(rhs_ray, (rho_min, rho_m), [Hi, dHi * e], method="DOP853", rtol=rtol, atol=atol)
+    H1, dH1 = sol1.y[0][-1], sol1.y[1][-1] / e                # back to dH/drho
+    # inner, leg 2: along the arc rho = rho_m e^{-i t}, t from theta to 0
+    def rhs_arc(t, y):                                        # d/dt = g d/drho, g = -i rho, dg/dt = -i g
+        rho = rho_m * np.exp(-1j * t)                         # y1 = g H', so y1' = g^2 H'' + (dg/dt) H' = -g^2 Q H - i y1
+        g = -1j * rho
+        return [y[1], -g ** 2 * Q(rho, c, m) * y[0] - 1j * y[1]]
+
+    g0 = -1j * rho_m * e
+    sol2 = solve_ivp(rhs_arc, (theta, 0.0), [H1, dH1 * g0], method="DOP853", rtol=rtol, atol=atol)
+    Hin, dHin = sol2.y[0][-1], sol2.y[1][-1] / (-1j * rho_m)
+    return (Hin * dHout - dHin * Hout) / (abs(Hin * dHout) + abs(dHin * Hout))
+
+
+def find_c_cplx(c0, m, tol=1e-10, maxit=40, step=0.004 + 0.002j, **kw):
+    """Local secant iteration on wronskian_cplx (no Muller hops)."""
+    import mpmath as mp
+    f = lambda z: complex(wronskian_cplx(complex(z), m, **kw))
+    r = mp.findroot(f, (mp.mpc(c0), mp.mpc(c0) + mp.mpc(step)), solver="secant", tol=tol, maxsteps=maxit)
+    return complex(r), abs(f(r))
