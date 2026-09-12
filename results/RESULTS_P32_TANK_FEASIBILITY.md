@@ -36,10 +36,21 @@ law of this repository, written as an experimental design.
 
 | prediction | frozen | measured | verdict |
 |---|---|---|---|
-| P32.1 excitation: every mode with n <= N(m)-1 has E_n > 0.02, stable within a factor 3 across three initial-data settings | KILL: E_n < 0.005 in all three | m = -2: E_1 = 0.137, 0.619, 0.456; m = -3: 0.306, 0.486, 0.641; m = -4: E_1 = 0.652, 2.384, 0.563 and E_2 = 0.493, 1.582, 0.304; m = -5: E = 1.386, 1.907, 0.844 (first setting). All modes excited, none near the floor; spread factors 4.2 to 5.2 exceed the factor-3 clause | CONFIRMED on the kill; the stability clause missed (excitation is initial-data dependent, as excitation factors must be) |
+| P32.1 excitation: every mode with n <= N(m)-1 has E_n > 0.02, stable within a factor 3 across three initial-data settings | KILL: E_n < 0.005 in all three | m = -2: E_1 = 0.137, 0.619, 0.456; m = -3: 0.306, 0.486, 0.641; m = -4: E_1 = 0.652, 2.384, 0.563 and E_2 = 0.493, 1.582, 0.304; m = -5: E_1 = 1.386, 4.682, 2.334, E_2 = 1.907, 6.953, 2.632, E_3 = 0.844, 3.843, 1.193. All modes excited, none near the floor, and at |m| = 4, 5 the overtones are often MORE excited than the fundamental; spread factors 3.4 to 5.2 exceed the factor-3 clause | CONFIRMED on the kill; the stability clause missed (excitation is initial-data dependent, as excitation factors must be) |
 | P32.2 fixed-frequency residual below 10% of the signal r.m.s. | KILL: above 30% | residuals 0.15 to 0.60 across settings and m | KILLED (tombstone 35) |
-| P32.3 blind pencil recovers N(m) modes at 1% noise for m = -2, -3 | KILL: fewer than N(m) for both | 0 of 2 at both; with the corrected unit conversion also 0 of 4 (|m| = 5), 1 of 8 (|m| = 10), 0 of 12 (|m| = 15), at 0.1% and 1% | KILLED (tombstone 36) |
+| P32.3 blind pencil recovers N(m) modes at 1% noise for m = -2, -3 | KILL: fewer than N(m) for both | 0 of 2 at both; with the corrected unit conversion also 1 of 3 (|m| = 4, order 12, 1% noise), 0 of 4 (|m| = 5), 1 of 8 (|m| = 10), 0 of 12 (|m| = 15); at 5% noise 0 everywhere | KILLED (tombstone 36) |
 | P32.4 the deep overtones will not be blindly resolvable; the protocol must move to fixed-frequency amplitude fitting | recorded, no kill | true, and stronger: NO mode is blindly resolvable at any tested |m|, including the fundamental | CONFIRMED, stronger than stated |
+
+Initial-data dependence of the residual (recorded, beyond the freeze):
+the residual is not a fixed property of the ringdown. At m = -5 the
+broad, distant perturbation (x0 = 40, width 6) gives residual 0.095,
+BELOW the frozen 10% threshold, while the narrow, close one
+(x0 = 15, width 2) gives 0.58 at m = -2 and 0.60 at m = -3. Broad
+smooth data launched from outside the light ring excites the escaping
+tower cleanly; narrow data near the barrier dumps energy into the
+strongly damped non-escaping modes. Practical hint for the tank: the
+perturbation should be broad, smooth and applied outside the light
+ring (r > 2C/c_s), not a local splash near the drain.
 
 Post-mortem on P32.2: the residual is NOT the branch-cut tail. Adding
 power-law columns t^-1, t^-2, t^-3 to the fit moves the residual only
