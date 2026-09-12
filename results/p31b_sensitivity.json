@@ -1,0 +1,56 @@
+{
+ "deltas": [
+  1e-05,
+  2e-05,
+  5e-05,
+  0.0001,
+  0.0002,
+  0.0005,
+  0.001,
+  0.002,
+  0.005,
+  0.01
+ ],
+ "8-9_perturb8": {
+  "labelled": 0.01,
+  "symmetric": 0.01,
+  "gain": 1.0,
+  "n_ref": 423,
+  "n_test": 423
+ },
+ "8-9_perturb9": {
+  "labelled": 0.005,
+  "symmetric": 0.005,
+  "gain": 1.0,
+  "n_ref": 423,
+  "n_test": 423
+ },
+ "4-5_perturb4": {
+  "labelled": 0.005,
+  "symmetric": 0.005,
+  "gain": 1.0,
+  "n_ref": 1202,
+  "n_test": 1202
+ },
+ "4-5_perturb5": {
+  "labelled": null,
+  "symmetric": null,
+  "gain": null,
+  "n_ref": 1202,
+  "n_test": 1202
+ },
+ "12-13_perturb12": {
+  "labelled": null,
+  "symmetric": null,
+  "gain": null,
+  "n_ref": 1586,
+  "n_test": 1587
+ },
+ "12-13_perturb13": {
+  "labelled": null,
+  "symmetric": null,
+  "gain": null,
+  "n_ref": 1586,
+  "n_test": 1587
+ }
+}

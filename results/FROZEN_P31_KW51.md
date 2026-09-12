@@ -87,3 +87,35 @@ result.
 Instrument: `scripts/p31_kw51.py`; output `results/p31_kw51.json`.
 Data are NOT committed (licence, and `prelab-data/` is outside the
 repository).
+
+## Addendum P31.5 (frozen 2026-09-12, after the first run, before any sensitivity computation)
+
+The first run made P31.3 undecidable: the retrofit shifts the higher
+frequencies by 1 to 2%, which is 10 to 20 residual standard deviations,
+so BOTH parameterisations flag 100% of the during and post hours at a
+1% pre-retrofit false-alarm rate. The metric had no headroom. It also
+showed that the blind PCA baseline of P31.4 cannot be computed as
+written: all 14 modes are simultaneously present in only 116 hours
+(1.0% of the record).
+
+Replacement metric with headroom, frozen before computing it: MINIMUM
+DETECTABLE SHIFT. Take the pre-retrofit hours only, split them in half
+(first half as the reference for mean and covariance, second half as
+the test set), and inject a multiplicative frequency shift delta into
+ONE member of a pair in the test set. Build the Hotelling T^2 chart in
+each parameterisation with the threshold at a 1% false-alarm rate on
+the reference half, and record the smallest delta at which the chart
+flags at least 50% of the test hours.
+
+P31.5: for the 8-9 pair the SYMMETRIC parameterisation
+(s = f_8 + f_9, p = f_8 f_9) has a minimum detectable shift at least
+1.3 times SMALLER than the labelled parameterisation (f_8, f_9), and
+for the separated control pair 12-13 the two agree within a factor
+1.15.
+KILL: the symmetric minimum detectable shift is larger than the
+labelled one for the 8-9 pair, or the control pair differs by more
+than a factor 1.3.
+
+Recorded without a kill: the same comparison for the 4-5 pair, whose
+residuals were found positively correlated (+0.237) rather than
+anticorrelated, so no gain is expected there.
