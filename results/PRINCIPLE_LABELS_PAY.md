@@ -72,7 +72,7 @@ signal.
   epsilon wherever dF/d omega is nonzero. (`RESULTS_P22_KERR_NIA.md`,
   theory addendum.)
 
-## Eight instances, each preregistered
+## Nine instances, each preregistered
 
 | instance | system | labeled cost (measured) | response cost (measured) | record |
 |---|---|---|---|---|
@@ -83,6 +83,7 @@ signal.
 | 5 | cosmological collider, nu = 1 confluence (P8-F4') | the "Jordan log channel" is the confluent limit of two powers, not an extra channel (F4'.1 killed, F4'.2 confirmed) | | `RESULTS_P8_PHASE1.md` |
 | 6 | Kerr-de Sitter excitation factors (Rossi, Oshita, Berti 2026) | rank-2 Riesz cluster P +- = P/2 +- D/s explains the enhancement and opposite phases; cluster moments finite | | `RESULTS_P15_EPN.md` addendum |
 | 7 | draining vortex, counter-rotating overtones (P21-P24) | absorption by the branch cut linear in rotation (exponents 1.000, 1.004, 1.002); no purely imaginary mode (lemma); survivors collapse onto the branch point as c_n/B; escape rule Re c_n > 0; tower |m| 2[K(k) - E(k)] = i pi (n + 1/2), k^2 = 1 - 4 c/|m|; count N(m) = floor(0.8008 |m| + 1/2), measured 1, 2, 2, 3, 4, 5, 6 | time-domain ringdown continuous through the absorption, exponent 1.000 | `RESULTS_P21_VORTEX.md`, `RESULTS_P23_TOWER_LAW.md`, `RESULTS_P24_VORTEX_MULTIPLET.md` |
+| 9 | hydrodynamic gradient expansion at a spectral-curve critical point (P33): scalar channel of the 5D Einstein black brane, mirror EP at q^2_c = -5.0123755 | a loop around the EP exchanges the labelled modes (1.6e-13) and the labelled dispersion relation converges only to \|q^2\| = 5.100 +- 0.038, the EP itself; the labelled error is the invariant error amplified by 1/gap (measured 2.8, 56, 365 against 1/(2s) = 1.3, 28, 272) | the invariant rho has a simple ZERO at the EP (8.7e-17) and converges to \|q^2\| = 7.559, 1.48x further; at q^2 = -6.3475 an order-12 series gives rho to 2.9% where the labelled series errs by 233% | `RESULTS_P33_HYDRO_LABELS.md` |
 | 8 | Kerr overtones reaching the negative imaginary axis (P22, P23.2) | arrival linear at the endpoint (local exponent -> 1, cubic law), death spins to 2e-4 of Cook-Zalutskiy, pinned to -i n/4 where a polynomial mode exists; re-emergence; a cubic from Re in [0.01, 0.04] predicts death spins blind to 5e-4 while a fold model misses by 5e-3 | (continuity not measured in Kerr) | `RESULTS_P22_KERR_NIA.md`, `RESULTS_P23_TOWER_LAW.md` |
 
 Twenty-seven predictions died along the way (`GRAVEYARD.md`); the
@@ -121,6 +122,10 @@ statement above survived every one of its own kill criteria.
 - The source must be analytic in the control parameter; Tsang's
   non-analytic source is a real loophole and is where super-resolution
   lives.
+- P33 is the transverse tensor channel, which has no conserved-charge
+  mode: the structure is the same as the hydrodynamic series but the
+  numbers are not those of the sound or shear channel, which were not
+  computed.
 - The Kerr side lacks the continuity measurement (time-domain
   Teukolsky) and a count law: the analogue of "which overtones survive
   extreme rotation" is Cook-Zalutskiy's multiplet bookkeeping plus the
