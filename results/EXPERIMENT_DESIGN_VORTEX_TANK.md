@@ -3,6 +3,30 @@
 Status: a design derived from P21-P27 (all preregistered and closed).
 Internal document; no experiment has been proposed to anyone.
 
+SUPERSEDED IN PART by P32 (`RESULTS_P32_TANK_FEASIBILITY.md`), the
+feasibility audit of this note. Three changes, all downward revisions
+of what this note claimed:
+1. The design point below (h = 1 cm, C = 500 cm^2/s, B = 10) is NOT in
+   the feasible window: viscous damping is 20 to 40% of the tower
+   damping there. Use the P32 points instead (|m| = 5: h = 2.6 cm,
+   C = 2525 cm^2/s; |m| = 10: h = 2.4 cm, C = 2425 cm^2/s; both with
+   the light ring at 100 cm, and B = C/D ~ 30 to keep the pump at
+   ~73 L/min).
+2. The counter-rotating modes are mostly NOT oscillatory: the tower's
+   quality factor is an invariant, Q_0 = |m|/2 and
+   Q_n ~ |m|/(2(2n+1)), so only about |m|/4 of the N(m) modes have
+   Q > 1 and the experiment must target |m| = 5 to 10, not |m| = 1
+   to 5 as written below.
+3. The protocol of "fit with a matrix pencil and count the modes"
+   DOES NOT WORK (0 to 1 of 2 to 12 modes recovered at 1% noise). The
+   primary observable is the fixed-frequency cluster moment of the
+   tower (required per-sample SNR 0.3 at every |m|); the falsifier is
+   restated as a likelihood-ratio test against the wrong count. See
+   P32 for the replacement protocol.
+The core diagnosis (absorbing versus reflecting, P26/P27) survives
+unchanged and is the easier measurement: a reflecting core shows a
+narrow line with Q ~ 10^2 to 10^3 that no absorbing core produces.
+
 ## What is being tested
 
 1. The count law: at strong rotation the counter-rotating ringdown of
