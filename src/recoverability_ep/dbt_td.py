@@ -55,7 +55,10 @@ def evolve(m, B, rs_min=-60.0, rs_max=400.0, drs=0.05, t_max=300.0, cfl=0.5,
     r = r_of_rstar(rs)
     V = potential(r, m)
     W = B * m / r ** 2
-    dt = cfl * drs
+    # Stability: the rotation term enters as -2i W P, so the step must resolve
+    # 1/|W| as well as the grid (|W| = B|m| at the horizon). Without this the
+    # evolution overflows for B|m| >~ 20 (P32 shakedown).
+    dt = cfl * min(drs, 1.0 / max(np.max(np.abs(W)), 1e-12))
     nt = int(t_max / dt)
     H = np.exp(-(rs - x0) ** 2 / (2 * width ** 2)) * np.exp(1j * omega0 * rs)
     P = -np.gradient(H, drs)
