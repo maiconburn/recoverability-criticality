@@ -72,7 +72,7 @@ signal.
   epsilon wherever dF/d omega is nonzero. (`RESULTS_P22_KERR_NIA.md`,
   theory addendum.)
 
-## Nine instances, each preregistered
+## Ten instances, each preregistered
 
 | instance | system | labeled cost (measured) | response cost (measured) | record |
 |---|---|---|---|---|
@@ -83,6 +83,7 @@ signal.
 | 5 | cosmological collider, nu = 1 confluence (P8-F4') | the "Jordan log channel" is the confluent limit of two powers, not an extra channel (F4'.1 killed, F4'.2 confirmed) | | `RESULTS_P8_PHASE1.md` |
 | 6 | Kerr-de Sitter excitation factors (Rossi, Oshita, Berti 2026) | rank-2 Riesz cluster P +- = P/2 +- D/s explains the enhancement and opposite phases; cluster moments finite | | `RESULTS_P15_EPN.md` addendum |
 | 7 | draining vortex, counter-rotating overtones (P21-P24) | absorption by the branch cut linear in rotation (exponents 1.000, 1.004, 1.002); no purely imaginary mode (lemma); survivors collapse onto the branch point as c_n/B; escape rule Re c_n > 0; tower |m| 2[K(k) - E(k)] = i pi (n + 1/2), k^2 = 1 - 4 c/|m|; count N(m) = floor(0.8008 |m| + 1/2), measured 1, 2, 2, 3, 4, 5, 6 | time-domain ringdown continuous through the absorption, exponent 1.000 | `RESULTS_P21_VORTEX.md`, `RESULTS_P23_TOWER_LAW.md`, `RESULTS_P24_VORTEX_MULTIPLET.md` |
+| 10 | KW51 railway bridge, 11328 hourly modal identifications (P31) | the close pair at 3.904/4.063 Hz has anticorrelated tracking residuals, corr = -0.747, against a common-mode baseline of +0.543 and +0.935 for separated pairs | the sum of the pair is determined 1.90x better than the quadrature sum of the members; no detection gain, because a full-covariance chart is reparameterisation-invariant | `RESULTS_P31_KW51.md` |
 | 9 | hydrodynamic gradient expansion at a spectral-curve critical point (P33): scalar channel of the 5D Einstein black brane, mirror EP at q^2_c = -5.0123755 | a loop around the EP exchanges the labelled modes (1.6e-13) and the labelled dispersion relation converges only to \|q^2\| = 5.100 +- 0.038, the EP itself; the labelled error is the invariant error amplified by 1/gap (measured 2.8, 56, 365 against 1/(2s) = 1.3, 28, 272) | the invariant rho has a simple ZERO at the EP (8.7e-17) and converges to \|q^2\| = 7.559, 1.48x further; at q^2 = -6.3475 an order-12 series gives rho to 2.9% where the labelled series errs by 233% | `RESULTS_P33_HYDRO_LABELS.md` |
 | 8 | Kerr overtones reaching the negative imaginary axis (P22, P23.2) | arrival linear at the endpoint (local exponent -> 1, cubic law), death spins to 2e-4 of Cook-Zalutskiy, pinned to -i n/4 where a polynomial mode exists; re-emergence; a cubic from Re in [0.01, 0.04] predicts death spins blind to 5e-4 while a fold model misses by 5e-3 | (continuity not measured in Kerr) | `RESULTS_P22_KERR_NIA.md`, `RESULTS_P23_TOWER_LAW.md` |
 
@@ -116,6 +117,23 @@ statement above survived every one of its own kill criteria.
   the cut linearly and nothing is born from it; with polynomial modes
   (Kerr) sequences can end and begin on the axis.
 
+## The sharpest limit, from P31
+
+A symmetric REPARAMETERISATION buys nothing against an estimator that
+uses the full covariance. Hotelling's T^2 with the sample covariance is
+exactly invariant under invertible affine coordinate changes (verified
+to 8e-12 on the KW51 bridge pair), and the map from a pair to its sum
+and product is affine to leading order. Every gain this repository has
+measured came from changing the MODEL, not the coordinates: replacing
+the two crossing overtone columns by one cluster column (P29, 5 to 11
+times better), fitting the confluent basis instead of two poles (P30),
+asking for the barrier action instead of the individual resonance
+(P23), resumming the pair invariant instead of the labelled dispersion
+relation (P33, 48% more reach in momentum). The diagnostic that a pair
+is confused (anticorrelated residuals, a sum determined better than
+quadrature) tells you WHICH direction to drop; it is not itself a
+better estimator.
+
 ## Limits, honestly
 
 - Linear response only; strong-field or nonlinear ringdown is outside.
@@ -135,4 +153,6 @@ statement above survived every one of its own kill criteria.
 - Applications outside physics (identifiability in machine learning
   under permutation symmetry is the one honest analogue) are
   untested; one applied line (radar sensor management) was tried and
-  died against a physics-blind baseline.
+  died against a physics-blind baseline, and the bridge-monitoring line
+  (P31) found the label confusion but no detection gain, for the
+  invariance reason above.
