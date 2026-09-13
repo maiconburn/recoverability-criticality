@@ -400,3 +400,26 @@ sign fixed by the relative sign of S_0' and S_2'. With the -1/16 from
 the exact potential, k_1 = 1/32 is derived, not fitted. (The
 first-order contour reproduces -i 2[K - E] on the same circle, which
 fixes the convention.)
+
+## Prior art found after the fact (audit, 2026-09-13): the series is a 2012 result
+
+Dolan, Oliveira and Crispino, PRD 85, 044031 (2012), Eq. (51), give
+the geodesic expansion of the DBT quasinormal frequency to O(m^-3)
+(computed to O(m^-9)) for general overtone n with the counter-rotating
+light-ring parameters. Its C -> infinity limit in the scaled units of
+this cycle (taken symbolically from their LaTeX source) is
+
+    c_n = |m|/4 - iN/2 + (1/32 - 3N^2/8)/|m| + (3iN^3/32 - 7iN/128)/m^2
+          + (-5N^4/256 - 17N^2/512 - 9/4096)/|m|^3,   N = n + 1/2,
+
+which contains every coefficient "derived" above (-3/8, 1/32 = -1/16 +
+3/32, 3i/32, -5/256) and three we never derived. At |m| = 10 it
+reproduces the exact members to 1e-4 for n <= 3, better than our
+series. The anharmonic term, the k_1 split and the 3/32 contour
+integral are therefore consistency checks of a fourteen-year-old
+result, not new content. What is not in that paper: the exact action
+J = 2[K - E] that resums the (asymptotic, as they note) series, the
+crossing constant kappa = 0.80080533966 as the root of Re[K - E] = 0,
+the count as a closed form, the exact towers to |m| = 15, and the
+statement that these are the modes that survive absorption. See
+`AUDIT_PRIOR_ART_2026-09-13.md`.
