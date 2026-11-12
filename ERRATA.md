@@ -1,6 +1,6 @@
 # ERRATA
 
-**Current status: E3 supersedes E1 and E2. No single extinction threshold exists; see E3 for the current statement.**
+**Current status: E3 supersedes E1 and E2. No single extinction threshold exists; see E3 for the current statement. E4 (QPU report) is independent of E1–E3.**
 
 ## E1 (2026-08-29, corrected in v1.2): EP-extinction threshold
 
@@ -135,3 +135,44 @@ termination. Nothing built on individual EPs (the cost law, the halving, the
 zero-parameter rate, the two saddles) depends on where the last family ends.
 Data: results/micro_needle.json, results/forest_scan.json,
 results/wide_profile.json, results/deep_family.json.
+
+## E4 (2026-11-12) — QPU report: the "≤ 0.02 at every r" bound was wrong; the spectral rise is a plateau, not an EP peak
+
+Reported by an external recount of the released data (QIA list, indahl.ai,
+entry for Zenodo record 22172952, dated 2026-10-27). Both points below were
+re-verified from `prelab/qpu_results.json` and `prelab/ibm_sim_reference.json`.
+
+**v1.0–v1.6.1 claimed** (`prelab/REPORT_QPU.md`): the QPU tracks the frozen
+Aer+noise reference point by point in F_Petz with "dif ≤ 0.02 em todos os r"
+(difference ≤ 0.02 at every r).
+
+**Corrected:** the bound fails at r = 0.95, where QPU − reference =
+0.8347 − 0.8116 = **+0.0230**. The other points are r = 1.05: +0.015,
+r = 1.2: +0.015, and ≤ 0.010 elsewhere. Correct statement: |dif| < 0.024 at
+every r (≤ 0.02 at 8 of 9 points).
+
+**Wording correction (spectral task):** the EP-band σ_spectral (mean of
+r = 0.95, 1.0, 1.05) is 0.00776 against 0.00195 at the r = 0.2 anchor, a ratio
+of 3.98 (printed 4.0×), which reproduces. But σ at r = 0.8 (0.00743, 4% below
+the band) and r = 1.2 (0.00725, 7% below) is nearly the same, so the 4× is a
+rise from the far anchor into the region r ∈ [0.8, 1.2], not a peak localized
+at the EP. This is the morphology the frozen simulator reference predicted
+before hardware (`prelab/REPORT_IBM_SIM.md`: peak on the flank r ≈ 0.8–1.2;
+reference σ at r = 0.8 is 0.00997, above its own EP band). Phrases such as
+"elevated 4× at the EP" in `README.md` and `prelab/REPORT_QPU.md` are reworded
+accordingly.
+
+**What is unaffected:** the no-locking verdict. F_Petz in the EP band (0.8285)
+vs the flanks r = 0.5/0.8/1.2/2.0 (0.8355) gives −0.007, which reproduces; the
+preregistered locking criterion (an F_Petz feature co-located with the
+spectral rise in the EP band) remains absent.
+
+Check:
+
+```python
+import json
+q = {r["r"]: r for r in json.load(open("prelab/qpu_results.json"))["rows"]}
+s = {r["r"]: r for r in json.load(open("prelab/ibm_sim_reference.json"))["rows"]}
+for r in sorted(q):
+    print(r, round(q[r]["F_petz"] - s[r]["F_petz"], 4))
+```

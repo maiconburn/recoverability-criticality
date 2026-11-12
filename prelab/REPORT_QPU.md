@@ -6,10 +6,10 @@
 
 | | banda do EP (r∈[0.9,1.1]) | referência longe | veredito |
 |---|---|---|---|
-| σ espectral (Task A) | 0.0078 | 0.0019 (r=0.2) | **elevada 4.0×** — sente o EP ✓ |
+| σ espectral (Task A) | 0.0078 | 0.0019 (r=0.2) | **elevada 4.0×** sobre a âncora r=0.2 — platô em r∈[0.8,1.2], não pico localizado no EP (morfologia prevista pela referência congelada; ver ERRATA E4) ✓ |
 | F Petz físico (Task B) | 0.8285 | 0.8355 (flancos) | **dif = −0.007, dentro do shot noise** — NÃO sente o EP ✓ |
 
-- QPU rastreia a referência congelada (Aer + ruído tipo-Heron) ponto a ponto em F_Petz (dif ≤ 0.02 em todos os r; 0.953 vs 0.955 em r=4).
+- QPU rastreia a referência congelada (Aer + ruído tipo-Heron) ponto a ponto em F_Petz (|dif| < 0.024 em todos os r, máximo 0.0230 em r=0.95: 0.8347 vs 0.8116; ≤ 0.02 nos outros 8 pontos; 0.953 vs 0.955 em r=4). *Corrigido em 2026-11-12 (ERRATA E4): a versão original dizia "dif ≤ 0.02 em todos os r", o que falha em r=0.95.*
 - **Critério pré-registrado**: travamento exigiria feature de F_Petz co-localizada com o pico espectral na banda do EP → **AUSENTE**.
 - Anomalias registradas (não afetam o veredito): σ espectral em r=0.50 (0.0285) e r=4.0 (0.0198) acima da referência — artefatos de robustez do fit (basin ruim / aliasing da grade de 8 tempos com leitura real); banda do EP e âncoras limpas.
 
