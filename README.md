@@ -1,6 +1,6 @@
 # Critical Reconstruction Cost near Exceptional Points
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22156019.svg)](https://doi.org/10.5281/zenodo.22156019)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22156018.svg)](https://doi.org/10.5281/zenodo.22156018)
 
 **A theoretical law with independent gravitational, experimental-data and quantum-hardware probes.**
 

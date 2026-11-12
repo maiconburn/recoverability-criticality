@@ -18,5 +18,5 @@ abstract: >
   no-locking measurement.
 license: MIT
 version: v1.6.2
-doi: 10.5281/zenodo.22156019
+doi: 10.5281/zenodo.22156018
 repository-code: https://github.com/maiconburn/recoverability-criticality
